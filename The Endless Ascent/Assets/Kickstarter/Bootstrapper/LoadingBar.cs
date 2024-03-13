@@ -14,6 +14,7 @@ namespace Kickstarter.Bootstrapper
     {
         [SerializeField] private StyleSheet styleSheet;
 
+        private VisualElement backdrop;
         private ProgressBar _loadingBar;
 
         private const float initialValue = 0;
@@ -28,8 +29,8 @@ namespace Kickstarter.Bootstrapper
 
         private void BuildLoadingBar(VisualElement root)
         {
-            var backdrop = root.CreateChild<VisualElement>("loading_backdrop");
-            _loadingBar = backdrop.CreateChild<ProgressBar>("loading_bar");
+            backdrop = root.CreateChild<VisualElement>("loading_backdrop");
+            _loadingBar = backdrop.CreateChild<ProgressBar>();
             _loadingBar.value = initialValue;
             _loadingBar.lowValue = initialValue;
             _loadingBar.highValue = targetValue;
@@ -42,7 +43,9 @@ namespace Kickstarter.Bootstrapper
 
         public void Enable(bool enable = true)
         {
-            _loadingBar.style.display = enable ? DisplayStyle.Flex : DisplayStyle.None;
+            var display = enable ? DisplayStyle.Flex : DisplayStyle.None;
+            backdrop.style.display = display;
+            _loadingBar.style.display = display;
         }
     }
 }
