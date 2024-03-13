@@ -17,7 +17,7 @@ namespace Kickstarter.Observer
         /// Registers an observer into relevant observer lists based on implemented observer types.
         /// </summary>
         /// <param name="observer">The observer to be added.</param>
-        public void AddObserver(object observer)
+        public void AddObserver<TObserver>(TObserver observer) where TObserver : IObserver
         {
             var observerType = observer.GetType();
             var interfaceTypes = observerType.GetInterfaces().Where(i => i.IsGenericType && i.GetGenericTypeDefinition() == typeof(IObserver<>));
@@ -39,7 +39,7 @@ namespace Kickstarter.Observer
         /// Unregisters an observer from relevant observer lists, preventing further notification updates.
         /// </summary>
         /// <param name="observer">The observer to be removed.</param>
-        public void RemoveObserver(object observer)
+        public void RemoveObserver<T>(T observer)
         {
             var observerType = observer.GetType();
             var interfaceTypes = observerType.GetInterfaces().Where(i => i.IsGenericType && i.GetGenericTypeDefinition() == typeof(IObserver<>));
@@ -61,15 +61,24 @@ namespace Kickstarter.Observer
         /// Notifies registered observers listening for specific data types with matching argument values.
         /// </summary>
         /// <param name="argument">The argument to be passed to observers.</param>
-        /// <typeparam name="TType">The type of notification argument (Enum).</typeparam>
-        protected void NotifyObservers<TType>(TType argument) where TType : Enum
+        /// <typeparam name="TType">The type of notification argument (Enum or Observable.Notification).</typeparam>
+        protected void NotifyObservers<TType>(TType argument)
         {
             if (!observerLists.ContainsKey(typeof(TType)))
                 return;
             var observers = GetObserverList<TType>();
-            for (int i = observers.Count - 1; i >= 0; i--)
-                if (observers[i] is IObserver<TType> observer)
-                    observer.OnNotify(argument);
+
+            switch (argument)
+            {
+                case INotification:
+                case Enum:
+                    for (int i = observers.Count - 1; i >= 0; i--)
+                        if (observers[i] is IObserver<TType> observer)
+                            observer.OnNotify(argument);
+                    break;
+                default:
+                    throw new Exception("Invalid Argument Type Used for Notification");
+            }
         }
         
         private IList GetObserverList(Type type)
@@ -82,6 +91,11 @@ namespace Kickstarter.Observer
         private List<object> GetObserverList<T>()
         {
             return observerLists[typeof(T)];
+        }
+        
+        public interface INotification
+        {
+            
         }
     }
 }
