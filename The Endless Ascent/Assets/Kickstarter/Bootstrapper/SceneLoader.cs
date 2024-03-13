@@ -14,14 +14,12 @@ namespace Kickstarter.Bootstrapper
         private bool _isLoading;
         
         // Components
-        private Camera _loadingCamera;
         private LoadingBar _loadingBar;
 
         public SceneGroupManager manager { get; } = new SceneGroupManager();
 
         private void Awake()
         {
-            _loadingCamera = Camera.main;
             _loadingBar = GetComponentInChildren<LoadingBar>();
         }
 
@@ -48,7 +46,6 @@ namespace Kickstarter.Bootstrapper
         private void EnableLoadingCanvas(bool enable = true)
         {
             _isLoading = enable;
-            _loadingCamera.gameObject.SetActive(_isLoading);
             _loadingBar.Enable(_isLoading);
         }
 

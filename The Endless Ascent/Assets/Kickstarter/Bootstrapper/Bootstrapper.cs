@@ -7,9 +7,9 @@ namespace Kickstarter.Bootstrapper
     public class Bootstrapper : PersistentSignleton<Bootstrapper>
     {
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
-        private static void Init()
+        private async static void Init()
         {
-            SceneManager.LoadSceneAsync("Bootstrapper", mode: LoadSceneMode.Single);
+            await SceneManager.LoadSceneAsync("Bootstrapper", mode: LoadSceneMode.Single);
         }
     }
 }

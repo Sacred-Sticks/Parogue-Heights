@@ -13,6 +13,8 @@ namespace Kickstarter.Bootstrapper
     [RequireComponent(typeof(UIDocument))]
     public class LoadingBar : MonoBehaviour, ILoadingBar
     {
+        [SerializeField] private StyleSheet styleSheet;
+
         private ProgressBar _loadingBar;
 
         private const float initialValue = 0;
@@ -21,6 +23,7 @@ namespace Kickstarter.Bootstrapper
         private void Awake()
         {
             var root = GetComponent<UIDocument>().rootVisualElement;
+            root.styleSheets.Add(styleSheet);
             BuildLoadingBar(root);
         }
 

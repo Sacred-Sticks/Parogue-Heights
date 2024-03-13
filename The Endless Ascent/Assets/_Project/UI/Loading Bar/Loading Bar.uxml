@@ -1,3 +1,2 @@
-<engine:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:engine="UnityEngine.UIElements" xmlns:editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
-    <Style src="project://database/Assets/_Project/UI/Loading%20Bar/Loading%20Bar.uss?fileID=7433441132597879392&amp;guid=4edb3fed816656a449f16bd0f73ed518&amp;type=3#Loading Bar" />
+<engine:UXML xmlns:engine="UnityEngine.UIElements" >
 </engine:UXML>
