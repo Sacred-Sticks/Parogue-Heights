@@ -32,6 +32,6 @@ ___
 
 * Created in: Unity 2023.2.14f1
 * Using:
-  * Kickstarter 2.2.0
+  * Kickstarter 2.3.0
   * Cinemachine
-  * [SceneReference](https://github.com/starikcetin/Eflatun.SceneReference.git#4.0.0)
+  * [SceneReference](git+https://github.com/starikcetin/Eflatun.SceneReference.git#4.0.0)
