@@ -1,7 +1,7 @@
 using Kickstarter.Observer;
 using UnityEngine;
 
-namespace Dodge_Bots
+namespace The_Endless_Ascent
 {
     public abstract class LocomotionController : Observable
     {
@@ -11,8 +11,6 @@ namespace Dodge_Bots
         protected bool isGrounded;
         private Vector3 airborneVelocity;
         private Vector3 initialAirborneVelocity;
-
-        private Coroutine trampolineRoutine;
 
         // Cached References & Constant Values
         protected Rigidbody body;
@@ -31,7 +29,7 @@ namespace Dodge_Bots
         private void Start()
         {
             jumpVelocity = Mathf.Sqrt(Mathf.Abs(jumpHeight * Physics.gravity.y * 2));
-            transform.root.TryGetComponent(out CapsuleCollider capsule);
+            var capsule = transform.root.GetComponentInChildren<CapsuleCollider>();
             groundRadius = capsule.radius * radiusMultiplier;
         }
         #endregion

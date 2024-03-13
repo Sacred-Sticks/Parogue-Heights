@@ -1,7 +1,7 @@
 ﻿using Kickstarter.Inputs;
 using UnityEngine;
 
-namespace Dodge_Bots
+namespace The_Endless_Ascent
 {
     public class PlayerController : LocomotionController, IInputReceiver
     {

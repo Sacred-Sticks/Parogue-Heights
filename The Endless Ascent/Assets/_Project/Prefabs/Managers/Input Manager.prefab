@@ -46,4 +46,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inputObjects:
   - {fileID: 11400000, guid: 9c6dbb0ddd1bb814aa8f8b492e21dded, type: 2}
+  - {fileID: 11400000, guid: 26bf7e812f9d93349b0c6589c9e5badd, type: 2}
   - {fileID: 11400000, guid: b39ed4aa455b663449fde9e14a1059fe, type: 2}

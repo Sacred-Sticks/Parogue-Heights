@@ -49,6 +49,10 @@ MonoBehaviour:
   - GroupName: Gameplay
     Scenes:
     - Reference:
+        asset: {fileID: 102900000, guid: 0a88499545b812d469b4c245302bae0b, type: 3}
+        guid: 0a88499545b812d469b4c245302bae0b
+      Type: 6
+    - Reference:
         asset: {fileID: 102900000, guid: 9d787e5b9f881ce44b8d1ccac943c5e7, type: 3}
         guid: 9d787e5b9f881ce44b8d1ccac943c5e7
       Type: 2

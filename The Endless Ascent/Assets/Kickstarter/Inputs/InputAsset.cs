@@ -23,7 +23,7 @@ namespace Kickstarter.Inputs
         /// </summary>
         /// <param name="devices">Array of input devices.</param>
         /// <param name="players">Array of players.</param>
-        public abstract void Initialize(InputDevice[] devices, Player[] players);
+        public abstract void Initialize(InputDevice[] devices);
     }
 
     /// <summary>
@@ -40,9 +40,9 @@ namespace Kickstarter.Inputs
         /// </summary>
         /// <param name="devices">Array of input devices.</param>
         /// <param name="players">Array of player components to be assigned an input device.</param>
-        public override void Initialize(InputDevice[] devices, Player[] players)
+        public override void Initialize(InputDevice[] devices)
         {
-            CreateMaps(devices, players.Reverse().ToArray());
+            CreateMaps(devices);
             AddRegistration();
         }
 
@@ -80,16 +80,20 @@ namespace Kickstarter.Inputs
             listeners.Remove(listener);
         }
 
+        private static readonly Player.PlayerIdentifier[] playerIdentifiers = Enum.GetValues(typeof(Player.PlayerIdentifier))
+            .Cast<Player.PlayerIdentifier>()
+            .ToArray();
+
         private bool actionsRegistered;
 
         private void OnEnable() => actionsRegistered = false;
 
-        private void CreateMaps(IReadOnlyCollection<InputDevice> devices, IReadOnlyList<Player> players)
+        private void CreateMaps(IReadOnlyCollection<InputDevice> devices)
         {
             playerDevices = new Dictionary<InputDevice, Player.PlayerIdentifier>();
             var inputDevices = devices.Where(d => d is not Mouse).ToArray();
-            for (int i = 0; i < Math.Min(inputDevices.Length, players.Count); i++)
-                playerDevices.Add(inputDevices.ToArray()[i], players[i].Identifier);
+            for (int i = 0; i < Math.Min(inputDevices.Length, playerIdentifiers.Length); i++)
+                playerDevices.Add(inputDevices[i], playerIdentifiers[i]);
 
             actionMap = new Dictionary<Player.PlayerIdentifier, List<Action<TType>>>();
         }
@@ -108,7 +112,7 @@ namespace Kickstarter.Inputs
                 return;
             var value = context.ReadValue<TType>();
             actionMap.TryGetValue(player, out var listeners);
-            listeners.ForEach(listener => listener(value));
+            listeners?.ForEach(listener => listener(value));
         }
     }
 }

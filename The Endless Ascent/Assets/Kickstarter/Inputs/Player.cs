@@ -26,14 +26,14 @@ namespace Kickstarter.Inputs
 
         private void Awake()
         {
-            inputReceivers = GetComponents<IInputReceiver>();
+            inputReceivers = GetComponentsInChildren<IInputReceiver>();
         }
         
-        private void Start()
-        {
-            foreach (var inputReceiver in inputReceivers)
-                inputReceiver.RegisterInputs(Identifier);
-        }
+        //private void Start()
+        //{
+        //    foreach (var inputReceiver in inputReceivers)
+        //        inputReceiver.RegisterInputs(Identifier);
+        //}
 
         private void OnEnable()
         {

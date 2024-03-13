@@ -13,11 +13,51 @@ MonoBehaviour:
   m_Name: Move Input
   m_EditorClassIdentifier: 
   inputAction:
-    m_Name: 
+    m_Name: Input
     m_Type: 0
     m_ExpectedControlType: 
     m_Id: 39b0b965-fa36-44bf-9ede-1f3198f67e2e
     m_Processors: 
     m_Interactions: 
-    m_SingletonActionBindings: []
+    m_SingletonActionBindings:
+    - m_Name: WASD
+      m_Id: 7f788c55-2679-4c16-9607-813a77a1c0f7
+      m_Path: 2DVector
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Input
+      m_Flags: 4
+    - m_Name: up
+      m_Id: 473f0bc8-b586-4fa2-8041-5f5a1854022f
+      m_Path: <Keyboard>/w
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Input
+      m_Flags: 8
+    - m_Name: down
+      m_Id: 24670100-ba47-44b4-9d4a-1f95cc5bcefe
+      m_Path: <Keyboard>/s
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Input
+      m_Flags: 8
+    - m_Name: left
+      m_Id: 179465c7-1e12-4707-956d-e26cbe628a60
+      m_Path: <Keyboard>/a
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Input
+      m_Flags: 8
+    - m_Name: right
+      m_Id: 84d75629-9355-4074-83c0-6ea4c1faad4e
+      m_Path: <Keyboard>/d
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Input
+      m_Flags: 8
     m_Flags: 0
