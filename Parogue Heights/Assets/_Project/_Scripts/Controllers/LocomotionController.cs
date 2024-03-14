@@ -1,7 +1,7 @@
 using Kickstarter.Observer;
 using UnityEngine;
 
-namespace The_Endless_Ascent
+namespace Parogue_Heights
 {
     public abstract class LocomotionController : Observable
     {

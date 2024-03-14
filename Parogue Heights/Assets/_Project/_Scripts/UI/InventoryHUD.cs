@@ -2,16 +2,15 @@ using Kickstarter.DependencyInjection;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-namespace The_Endless_Ascent
+namespace Parogue_Heights
 {
     [RequireComponent(typeof(UIDocument))]
-    public class InventoryHUD : MonoBehaviour, IInventoryHUD
+    public class InventoryHUD : MonoBehaviour, IInventoryHUD, IDependencyProvider
     {
         [Provide] private IInventoryHUD inventoryHUD => this;
+        public int SlotCount => slotCount;
 
         [SerializeField] private StyleSheet styleSheet;
-
-        private int activeSlotIndex;
 
         // Constants
         private const string rootStr = "root";
@@ -47,17 +46,18 @@ namespace The_Endless_Ascent
         }
 
         #region InventoryHUD
-        public void ActivateSlot(int slotIndex)
+        public void ActivateSlot(int newSlotIndex, int formerSlotIndex = 0)
         {
-            slots[activeSlotIndex].RemoveFromClassList(activeStr);
-            activeSlotIndex = slotIndex;
-            slots[activeSlotIndex].AddToClassList(activeStr);
+            slots[formerSlotIndex].RemoveFromClassList(activeStr);
+            slots[newSlotIndex].AddToClassList(activeStr);
         }
         #endregion
     }
 
     public interface IInventoryHUD
     {
-        public void ActivateSlot(int slotIndex);
+        public int SlotCount { get; }
+
+        public void ActivateSlot(int newSlotIndex, int formerSlotIndex);
     }
 }

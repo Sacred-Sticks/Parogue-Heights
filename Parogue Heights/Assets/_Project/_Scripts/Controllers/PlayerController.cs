@@ -1,7 +1,7 @@
 ﻿using Kickstarter.Inputs;
 using UnityEngine;
 
-namespace The_Endless_Ascent
+namespace Parogue_Heights
 {
     public class PlayerController : LocomotionController, IInputReceiver
     {

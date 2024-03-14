@@ -23,5 +23,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Project/Scenes/Managers.unity
     guid: 0a88499545b812d469b4c245302bae0b
+  - enabled: 1
+    path: Assets/_Project/Scenes/Dependency Injector.unity
+    guid: d5ea8bcbcca5dad458167f3bd823bcdb
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0

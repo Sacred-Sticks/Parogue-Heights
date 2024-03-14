@@ -1,5 +1,51 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3512891309665888353
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1796370472851921419}
+  - component: {fileID: 6756661566110179868}
+  m_Layer: 0
+  m_Name: Inventory Controller
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1796370472851921419
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3512891309665888353}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2379311258967802235}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6756661566110179868
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3512891309665888353}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d55615b1e7233b429f7477db1e94378, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inventoryCycleInput: {fileID: 11400000, guid: c58ab35cf358dcd4399cf10cc9e74623,
+    type: 2}
 --- !u!1 &3691294978610476208
 GameObject:
   m_ObjectHideFlags: 0
@@ -34,6 +80,7 @@ Transform:
   - {fileID: 9020960450958548585}
   - {fileID: 644466218890125567}
   - {fileID: 4412450698744279745}
+  - {fileID: 1796370472851921419}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &4631187299492375390
@@ -313,7 +360,7 @@ MonoBehaviour:
   rotationSpeed: 0.25
   cameraSpeed: 0.5
   rotationInput: {fileID: 11400000, guid: b39ed4aa455b663449fde9e14a1059fe, type: 2}
-  verticalRange: 89
+  verticalRange: 70
 --- !u!1 &7762198899256241362
 GameObject:
   m_ObjectHideFlags: 0

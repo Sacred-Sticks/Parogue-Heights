@@ -68,6 +68,10 @@ MonoBehaviour:
         asset: {fileID: 102900000, guid: 30307ab4823b88947bc20afd37af0e70, type: 3}
         guid: 30307ab4823b88947bc20afd37af0e70
       Type: 0
+    - Reference:
+        asset: {fileID: 102900000, guid: d5ea8bcbcca5dad458167f3bd823bcdb, type: 3}
+        guid: d5ea8bcbcca5dad458167f3bd823bcdb
+      Type: 6
 --- !u!1 &8079173975806723985
 GameObject:
   m_ObjectHideFlags: 0

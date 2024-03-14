@@ -3,7 +3,7 @@ using Kickstarter.Extensions;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace The_Endless_Ascent
+namespace Parogue_Heights
 {
     public class TowerGenerator : MonoBehaviour, IGenerator, IDependencyProvider
     {
