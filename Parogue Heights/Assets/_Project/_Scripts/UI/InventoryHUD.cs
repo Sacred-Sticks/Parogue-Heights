@@ -22,7 +22,8 @@ namespace Parogue_Heights
         private const string slotStr = "slot";
         private const string activeStr = "active";
         private VisualElement root;
-        private readonly List<VisualElement> slots = new List<VisualElement>();
+        private readonly List<InventorySlot> slots = new List<InventorySlot>();
+        private readonly Dictionary<InventorySlot, VisualElement> slotsHUD = new Dictionary<InventorySlot, VisualElement>();
         private readonly Dictionary<ITool.ToolType, Sprite> toolSprites = new Dictionary<ITool.ToolType, Sprite>();
 
         #region UnityEvents
@@ -50,17 +51,25 @@ namespace Parogue_Heights
         #region InventoryHUD
         public void ActivateSlot(int newSlotIndex, int formerSlotIndex = 0)
         {
-            if (slots.Count == 0)
+            if (slotsHUD.Count == 0)
                 return;
-            slots[formerSlotIndex].RemoveFromClassList(activeStr);
-            slots[newSlotIndex].AddToClassList(activeStr);
+            slotsHUD[slots[formerSlotIndex]].RemoveFromClassList(activeStr);
+            slotsHUD[slots[newSlotIndex]].AddToClassList(activeStr);
         }
 
         public void AddSlot(InventorySlot slot)
         {
             var slotElement = container.CreateChild<VisualElement>(slotStr);
             slotElement.style.backgroundImage = new StyleBackground(toolSprites[slot.ToolType]);
-            slots.Add(slotElement);
+            slots.Add(slot);
+            slotsHUD.Add(slot, slotElement);
+        }
+
+        public void RemoveSlot(InventorySlot slot)
+        {
+            slotsHUD[slot].RemoveFromHierarchy();
+            slotsHUD.Remove(slot);
+            slots.Remove(slot);
         }
         #endregion
     }
@@ -69,5 +78,6 @@ namespace Parogue_Heights
     {
         public void ActivateSlot(int newSlotIndex, int formerSlotIndex);
         public void AddSlot(InventorySlot slot);
+        public void RemoveSlot(InventorySlot slot);
     }
 }
