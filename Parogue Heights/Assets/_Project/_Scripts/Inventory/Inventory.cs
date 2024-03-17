@@ -66,7 +66,7 @@ namespace Parogue_Heights
 
         private void RemoveSlot(InventorySlot slot)
         {
-
+            inventorySlots.Remove(slot);
         }
 
         #region Inventory

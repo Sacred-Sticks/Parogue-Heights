@@ -55,7 +55,6 @@ namespace Parogue_Heights
         public void GainUses()
         {
             Uses += InitialUses;
-            Debug.Log($"Gained {InitialUses} uses for Trampoline. Total uses: {Uses}");
         }
         
         public void OnActivateBegin() 
