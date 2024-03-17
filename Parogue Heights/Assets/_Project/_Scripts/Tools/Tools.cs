@@ -46,6 +46,11 @@ namespace Parogue_Heights
         private GameObject _trampolinePrefab;
         private LayerMaskData _platformMask;
 
+        private void LowerUses()
+        {
+            Uses--;
+        }
+
         #region Tool
         public void GainUses()
         {
@@ -64,8 +69,8 @@ namespace Parogue_Heights
 
         public void OnActivateEnd() 
         {
-            Uses--;
             trampolineHologram.AddComponent<TrampolinePlatform>();
+            LowerUses();
         }
         #endregion
     }
