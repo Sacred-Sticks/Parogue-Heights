@@ -24,7 +24,7 @@ namespace Parogue_Heights
         private void SpawnTool()
         {
             token = Instantiate(tokenPrefab, transform.position + Vector3.up * tokenHeight, Quaternion.identity, transform).transform;
-            token.DOLocalMove(token.position + Vector3.up * tokenMoveHeight, tweenDuration / 2)
+            token.DOMove(token.position + Vector3.up * tokenMoveHeight, tweenDuration / 2)
                 .SetEase(Ease.Linear)
                 .SetLoops(-1, LoopType.Yoyo);
             token.DORotate(new Vector3(0, 360, 0), tweenDuration, RotateMode.LocalAxisAdd)
@@ -42,7 +42,7 @@ namespace Parogue_Heights
         }
 
         #region Platform
-        public void OnPlayerEnter()
+        public void OnPlayerEnter(Rigidbody body)
         {
             ProvideTool();
         }

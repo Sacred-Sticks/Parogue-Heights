@@ -1,7 +1,9 @@
-﻿namespace Parogue_Heights
+﻿using UnityEngine;
+
+namespace Parogue_Heights
 {
     public interface IPlatform
     {
-        void OnPlayerEnter();
+        void OnPlayerEnter(Rigidbody body);
     }
 }

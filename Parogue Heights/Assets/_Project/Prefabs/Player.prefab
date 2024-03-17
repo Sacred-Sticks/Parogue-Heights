@@ -46,6 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inventoryCycleInput: {fileID: 11400000, guid: c58ab35cf358dcd4399cf10cc9e74623,
     type: 2}
+  useToolInput: {fileID: 11400000, guid: 3178ed988baf01e439a146685f526754, type: 2}
 --- !u!1 &3691294978610476208
 GameObject:
   m_ObjectHideFlags: 0

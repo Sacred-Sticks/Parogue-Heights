@@ -20,10 +20,10 @@ namespace Parogue_Heights
         public static void DeregisterPlatform(Vector3 key)
             => platformStorage.Remove(key);
 
-        public static void ActivatePlatform(Vector3 key)
+        public static void ActivatePlatform(Vector3 key, Rigidbody body)
         {
             if (platformStorage.ContainsKey(key))
-                platformStorage[key].OnPlayerEnter();
+                platformStorage[key].OnPlayerEnter(body);
         }
     }
 }

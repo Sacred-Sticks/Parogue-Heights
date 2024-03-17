@@ -1,4 +1,4 @@
-﻿using System;
+﻿using UnityEngine;
 
 namespace Parogue_Heights
 {
@@ -9,7 +9,7 @@ namespace Parogue_Heights
             return tool switch
             {
                 Trampoline _ => ToolType.Trampoline,
-                _ => throw new ArgumentOutOfRangeException(nameof(tool), tool, null)
+                _ => default,
             };
         }
 
@@ -31,25 +31,41 @@ namespace Parogue_Heights
         public Trampoline()
         {
             Uses = InitialUses;
+            _trampolinePrefab = Resources.Load<GameObject>("Trampoline");
         }
 
         public int Uses { get; private set; }
 
         private int InitialUses = 5;
+        private const float range = 10f;
 
+        private GameObject trampolineHologram;
+
+        // Constants
+        private GameObject _trampolinePrefab;
+
+        #region Tool
         public void GainUses()
         {
             Uses += InitialUses;
+            Debug.Log($"Gained {InitialUses} uses for Trampoline. Total uses: {Uses}");
         }
         
         public void OnActivateBegin() 
-        { 
+        {
+            var cameraTransform = Camera.main.transform;
+            var ray = new Ray(cameraTransform.position, cameraTransform.forward);
+            if (!Physics.Raycast(ray, out var hit))
+                return;
+            trampolineHologram = Object.Instantiate(_trampolinePrefab, hit.point, Quaternion.identity);
             // Place Hologram of Trampoline at Cursor Raycast Position
         }
 
         public void OnActivateEnd() 
-        { 
+        {
+            Uses--;
             // Transform Hologram into Trampoline
         }
+        #endregion
     }
 }
