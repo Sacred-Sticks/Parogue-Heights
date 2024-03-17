@@ -31,7 +31,8 @@ namespace Parogue_Heights
         public Trampoline()
         {
             Uses = InitialUses;
-            _trampolinePrefab = Resources.Load<GameObject>("Trampoline");
+            _trampolinePrefab = Resources.Load<GameObject>("Prefabs/Platforms/Trampoline");
+            _platformMask = Resources.Load<LayerMaskData>("Objects/Layer Masks/Platform Layers");
         }
 
         public int Uses { get; private set; }
@@ -43,6 +44,7 @@ namespace Parogue_Heights
 
         // Constants
         private GameObject _trampolinePrefab;
+        private LayerMaskData _platformMask;
 
         #region Tool
         public void GainUses()
@@ -55,16 +57,15 @@ namespace Parogue_Heights
         {
             var cameraTransform = Camera.main.transform;
             var ray = new Ray(cameraTransform.position, cameraTransform.forward);
-            if (!Physics.Raycast(ray, out var hit))
+            if (!Physics.Raycast(ray, out var hit, range, _platformMask.Mask))
                 return;
             trampolineHologram = Object.Instantiate(_trampolinePrefab, hit.point, Quaternion.identity);
-            // Place Hologram of Trampoline at Cursor Raycast Position
         }
 
         public void OnActivateEnd() 
         {
             Uses--;
-            // Transform Hologram into Trampoline
+            trampolineHologram.AddComponent<TrampolinePlatform>();
         }
         #endregion
     }

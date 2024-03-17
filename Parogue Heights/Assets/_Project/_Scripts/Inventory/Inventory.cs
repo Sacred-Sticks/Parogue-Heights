@@ -39,9 +39,6 @@ namespace Parogue_Heights
 
         private void OnUseToolInputChange(float input)
         {
-            if (input == 0)
-                return;
-
             if (inventorySlots.Count == 0)
                 return;
 
