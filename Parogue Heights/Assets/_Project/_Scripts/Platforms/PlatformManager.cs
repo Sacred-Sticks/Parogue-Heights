@@ -17,6 +17,9 @@ namespace Parogue_Heights
         public static void RegisterPlatform(Vector3 key, IPlatform platform)
             => platformStorage.Add(key, platform);
 
+        public static void DeregisterPlatform(Vector3 key)
+            => platformStorage.Remove(key);
+
         public static void ActivatePlatform(Vector3 key)
         {
             if (platformStorage.ContainsKey(key))

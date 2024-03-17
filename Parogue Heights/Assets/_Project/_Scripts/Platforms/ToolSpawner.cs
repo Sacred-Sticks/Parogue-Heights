@@ -32,16 +32,19 @@ namespace Parogue_Heights
                 .SetLoops(-1, LoopType.Restart);
         }
 
-        private void CollectTool()
+        private void ProvideTool()
         {
+            token.DOPause();
             Destroy(token.gameObject);
             var tool = ToolFactory.CreateRandomTool();
+            Inventory.Instance.CollectTool(tool);
+            PlatformManager.DeregisterPlatform(transform.position);
         }
 
         #region Platform
         public void OnPlayerEnter()
         {
-            CollectTool();
+            ProvideTool();
         }
         #endregion
     }

@@ -151,6 +151,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   styleSheet: {fileID: 7433441132597879392, guid: 0901f1632cc3c714285debf998db36cf,
     type: 3}
+  _toolSprites:
+  - {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
 --- !u!114 &1821445214
 MonoBehaviour:
   m_ObjectHideFlags: 0

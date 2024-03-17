@@ -1,4 +1,6 @@
 using Kickstarter.DependencyInjection;
+using Kickstarter.Extensions;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -8,23 +10,26 @@ namespace Parogue_Heights
     public class InventoryHUD : MonoBehaviour, IInventoryHUD, IDependencyProvider
     {
         [Provide] private IInventoryHUD inventoryHUD => this;
-        public int SlotCount => slotCount;
 
         [SerializeField] private StyleSheet styleSheet;
+        [Space]
+        [SerializeField, EnumData(typeof(ITool.ToolType))] private Sprite[] _toolSprites;
 
         // Constants
+        private VisualElement container;
         private const string rootStr = "root";
         private const string containerStr = "container";
         private const string slotStr = "slot";
         private const string activeStr = "active";
-        private const int slotCount = 5;
         private VisualElement root;
-        private VisualElement[] slots = new VisualElement[slotCount];
+        private readonly List<VisualElement> slots = new List<VisualElement>();
+        private readonly Dictionary<ITool.ToolType, Sprite> toolSprites = new Dictionary<ITool.ToolType, Sprite>();
 
         #region UnityEvents
         private void Awake()
         {
             root = GetComponent<UIDocument>().rootVisualElement;
+            toolSprites.LoadDictionary(_toolSprites);
         }
 
         private void Start()
@@ -37,10 +42,7 @@ namespace Parogue_Heights
         private void BuildDocument()
         {
             root.AddToClassList(rootStr);
-            var container = root.CreateChild<VisualElement>(containerStr);
-
-            for (int i = 0; i < slotCount; i++)
-                slots[i] = container.CreateChild<VisualElement>(slotStr);
+            container = root.CreateChild<VisualElement>(containerStr);
 
             ActivateSlot(0);
         }
@@ -48,16 +50,25 @@ namespace Parogue_Heights
         #region InventoryHUD
         public void ActivateSlot(int newSlotIndex, int formerSlotIndex = 0)
         {
+            if (slots.Count == 0)
+                return;
             slots[formerSlotIndex].RemoveFromClassList(activeStr);
             slots[newSlotIndex].AddToClassList(activeStr);
+        }
+
+        public void AddSlot(InventorySlot slot)
+        {
+            var slotElement = container.CreateChild<VisualElement>(slotStr);
+            StyleBackground styleBackground = new StyleBackground(toolSprites[slot.ToolType]);
+            slotElement.style.backgroundImage = styleBackground;
+            slots.Add(slotElement);
         }
         #endregion
     }
 
     public interface IInventoryHUD
     {
-        public int SlotCount { get; }
-
         public void ActivateSlot(int newSlotIndex, int formerSlotIndex);
+        public void AddSlot(InventorySlot slot);
     }
 }
