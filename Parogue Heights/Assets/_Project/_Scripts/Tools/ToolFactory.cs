@@ -9,15 +9,6 @@ namespace Parogue_Heights
             typeof(Trampoline),
         };
 
-        public static ITool CreateTool(Tool toolData)
-        {
-            return toolData.ItemName switch
-            {
-                "Trampoline" => new Trampoline(),
-                _ => default
-            };
-        }
-
         public static ITool CreateRandomTool()
         {
             int index = UnityEngine.Random.Range(0, _allTypes.Length);

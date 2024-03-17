@@ -26,7 +26,7 @@
 
         public void GainCount()
         {
-
+            Tool.GainUses();
         }
 
     }
