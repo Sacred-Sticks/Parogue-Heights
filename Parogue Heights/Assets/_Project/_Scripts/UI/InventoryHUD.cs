@@ -59,8 +59,7 @@ namespace Parogue_Heights
         public void AddSlot(InventorySlot slot)
         {
             var slotElement = container.CreateChild<VisualElement>(slotStr);
-            StyleBackground styleBackground = new StyleBackground(toolSprites[slot.ToolType]);
-            slotElement.style.backgroundImage = styleBackground;
+            slotElement.style.backgroundImage = new StyleBackground(toolSprites[slot.ToolType]);
             slots.Add(slotElement);
         }
         #endregion
