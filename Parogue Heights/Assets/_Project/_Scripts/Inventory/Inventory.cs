@@ -46,9 +46,6 @@ namespace Parogue_Heights
                 inventorySlots[activeSlotIndex].Tool.OnActivateBegin : 
                 inventorySlots[activeSlotIndex].Tool.OnActivateEnd;
             action?.Invoke();
-
-            if (inventorySlots[activeSlotIndex].Tool.Uses <= 0)
-                RemoveSlot(inventorySlots[activeSlotIndex]);
         }
         #endregion
 
@@ -64,14 +61,14 @@ namespace Parogue_Heights
             inventoryHUD.ActivateSlot(activeSlotIndex, formerIndex);
         }
 
-        private void RemoveSlot(InventorySlot slot)
+        #region Inventory
+        public void RemoveSlot(InventorySlot slot)
         {
             inventorySlots.Remove(slot);
             inventoryHUD.RemoveSlot(slot);
         }
 
-        #region Inventory
-        public void CollectTool(ITool tool)
+        public void CollectTool(Tool tool)
         {
             foreach (var inventorySlot in inventorySlots)
             {
@@ -81,6 +78,7 @@ namespace Parogue_Heights
                 return;
             }
             var slot = new InventorySlot(tool);
+            tool.InventorySlot = slot;
             inventoryHUD.AddSlot(slot);
             inventorySlots.Add(slot);
         }
@@ -89,6 +87,7 @@ namespace Parogue_Heights
 
     public interface IInventory
     {
-        public void CollectTool(ITool tool);
+        public void RemoveSlot(InventorySlot slot);
+        public void CollectTool(Tool tool);
     }
 }
