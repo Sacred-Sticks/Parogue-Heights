@@ -28,7 +28,6 @@
         {
             Tool.GainUses();
         }
-
     }
 
     public interface IInventorySlot
