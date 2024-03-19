@@ -100,8 +100,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1696906989626248122}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.04428282, y: -0.01664338, z: 0.0007378421, w: 0.99888015}
-  m_LocalPosition: {x: 0.5, y: 1.9, z: -3.5}
+  m_LocalRotation: {x: 0.04431343, y: -0, z: -0, w: 0.9990177}
+  m_LocalPosition: {x: 0, y: 1.9, z: -3.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -336,7 +336,7 @@ MonoBehaviour:
   CameraDistance: 2.5
   CameraCollisionFilter:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 8
   IgnoreTag: 
   CameraRadius: 0.001
   DampingIntoCollision: 0
