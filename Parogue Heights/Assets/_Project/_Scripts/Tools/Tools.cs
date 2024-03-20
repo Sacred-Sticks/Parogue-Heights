@@ -65,7 +65,7 @@ namespace Parogue_Heights
             var ray = new Ray(cameraTransform.position, cameraTransform.forward);
             if (!Physics.Raycast(ray, out var hit, range, _platformMask.Mask))
                 return;
-            trampolineHologram = Object.Instantiate(_trampolinePrefab, hit.point, Quaternion.identity);
+            trampolineHologram = Object.Instantiate(_trampolinePrefab, hit.point, Quaternion.FromToRotation(Vector3.up, hit.normal));
         }
 
         public override void OnActivateEnd() 

@@ -7,7 +7,7 @@ namespace Parogue_Heights
         public static float bounceForce { private get; set; } = 15f;
 
         #region UnityEvents
-        private void Awake()
+        private void Start()
         {
             PlatformManager.RegisterPlatform(transform.position, this);
         }
