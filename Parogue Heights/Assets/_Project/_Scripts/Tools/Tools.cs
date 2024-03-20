@@ -8,7 +8,7 @@ namespace Parogue_Heights
         {
             return tool switch
             {
-                Trampoline _ => ToolType.Trampoline,
+                BouncePad _ => ToolType.Trampoline,
                 _ => default,
             };
         }
@@ -28,12 +28,12 @@ namespace Parogue_Heights
 
     }
 
-    public sealed class Trampoline : Tool
+    public sealed class BouncePad : Tool
     {
-        public Trampoline()
+        public BouncePad()
         {
             Uses = InitialUses;
-            _trampolinePrefab = Resources.Load<GameObject>("Prefabs/Platforms/Trampoline");
+            _trampolinePrefab = Resources.Load<GameObject>("Prefabs/Platforms/Bounce Pad");
             _platformMask = Resources.Load<LayerMaskData>("Objects/Layer Masks/Platform Layers");
         }
 
@@ -70,7 +70,7 @@ namespace Parogue_Heights
 
         public override void OnActivateEnd() 
         {
-            trampolineHologram.AddComponent<TrampolinePlatform>();
+            trampolineHologram.AddComponent<BouncePadPlatform>();
             LowerUses();
         }
         #endregion

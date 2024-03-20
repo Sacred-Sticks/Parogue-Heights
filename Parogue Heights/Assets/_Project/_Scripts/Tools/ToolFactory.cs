@@ -6,7 +6,7 @@ namespace Parogue_Heights
     {
         public static Type[] _allTypes = new Type[]
         {
-            typeof(Trampoline),
+            typeof(BouncePad),
         };
 
         public static Tool CreateRandomTool()
