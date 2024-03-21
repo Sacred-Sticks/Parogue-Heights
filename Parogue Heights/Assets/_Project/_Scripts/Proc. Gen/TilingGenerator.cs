@@ -12,8 +12,15 @@ namespace Parogue_Heights
         private void Start()
         {
             var origin = transform.position -
-                (tileDimensions.z * floorTileUnits.z / 2 * Vector3.forward) -
-                (tileDimensions.x * floorTileUnits.x / 2 * Vector3.right);
+                (tileDimensions.z * floorTileUnits.z / 2) * Vector3.forward -
+                (tileDimensions.x * floorTileUnits.x / 2) * Vector3.right;
+            var originScale = floorTileUnits - Vector3.one;
+            originScale = new Vector3(
+                originScale.x / floorTileUnits.x,
+                originScale.y / floorTileUnits.y,
+                originScale.z / floorTileUnits.z
+                );
+            origin.Scale(originScale);
             var tilePrefab = Resources.Load<GameObject>(tilePrefabPath);
             for (int x = 0; x < floorTileUnits.x; x++)
             {
