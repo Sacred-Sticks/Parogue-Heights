@@ -16,7 +16,7 @@ namespace Parogue_Heights
         {
             for (int i = 0; i < layerGroupSize; i++)
                 generator.GenerateLayer();
-            transform.position = generator.Offset / 2;
+            transform.position = generator.Offset;
         }
     }
 

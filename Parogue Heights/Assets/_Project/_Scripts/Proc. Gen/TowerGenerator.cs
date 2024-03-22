@@ -17,7 +17,7 @@ namespace Parogue_Heights
         public Vector3 Offset { get; private set; }
 
         // Constants and Readonly
-        private const int initialLayers = 10;
+        private const int initialLayers = 20;
         private readonly Dictionary<IGenerator.LayerHeight, Layer> sortedPrefabs 
             = new Dictionary<IGenerator.LayerHeight, Layer>();
 
