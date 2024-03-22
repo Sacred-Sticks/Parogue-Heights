@@ -1,7 +1,7 @@
 using Kickstarter.DependencyInjection;
 using Kickstarter.Extensions;
+using System.Collections;
 using System.Collections.Generic;
-using System.Threading.Tasks;
 using UnityEngine;
 
 namespace Parogue_Heights
@@ -17,7 +17,7 @@ namespace Parogue_Heights
         public Vector3 Offset { get; private set; }
 
         // Constants and Readonly
-        private const int initialLayers = 5;
+        private const int initialLayers = 10;
         private readonly Dictionary<IGenerator.LayerHeight, Layer> sortedPrefabs 
             = new Dictionary<IGenerator.LayerHeight, Layer>();
 
@@ -27,9 +27,9 @@ namespace Parogue_Heights
             sortedPrefabs.LoadDictionary(layers);
         }
 
-        private async void Start()
+        private IEnumerator Start()
         {
-            await Task.Delay(25);
+            yield return new WaitUntil(() => WallManagement.wallGenerators.Count == 4);
             GenerateInitialLayers();
         }
         #endregion
@@ -47,13 +47,13 @@ namespace Parogue_Heights
             IncrementLayer();
             WallManagement.GenerateWalls(position.y);
         }
-        #endregion
 
-        private void GenerateInitialLayers()
+        public void GenerateInitialLayers()
         {
             for (int i = 0; i < initialLayers; i++)
                 GenerateLayer();
         }
+        #endregion
 
         private void IncrementLayer()
         {
@@ -86,6 +86,7 @@ namespace Parogue_Heights
         public Vector3 Offset { get; }
 
         public void GenerateLayer();
+        public void GenerateInitialLayers();
 
         public enum LayerHeight
         {

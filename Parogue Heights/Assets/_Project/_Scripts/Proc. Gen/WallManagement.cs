@@ -5,7 +5,7 @@ namespace Parogue_Heights
 {
     public class WallManagement : MonoBehaviour
     {
-        private static readonly List<IWallGenerator> wallGenerators = new List<IWallGenerator>();
+        public static readonly List<IWallGenerator> wallGenerators = new List<IWallGenerator>();
 
         private void Awake()
         {
