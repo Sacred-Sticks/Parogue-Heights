@@ -7,7 +7,6 @@ namespace Parogue_Heights
     {
         [SerializeField] private int tilesNeeded;
 
-        private const string wallPrefabPath = "Prefabs/Platforms/Wall Tile";
         private GameObject wallPrefab;
         private readonly Vector2 wallTileSize = new Vector2(3, 3);
         private int wallLayersGenerated;
@@ -15,7 +14,7 @@ namespace Parogue_Heights
         #region UnityEvents
         private void Awake()
         {
-            wallPrefab = Resources.Load<GameObject>(wallPrefabPath);
+            wallPrefab = Resources.Load<GameObject>(ResourcePaths.WallTile);
         }
 
         private void Start()

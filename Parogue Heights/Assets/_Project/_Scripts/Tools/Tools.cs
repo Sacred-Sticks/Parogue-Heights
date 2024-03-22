@@ -34,8 +34,8 @@ namespace Parogue_Heights
         public BouncePad()
         {
             Uses = InitialUses;
-            _trampolinePrefab = Resources.Load<GameObject>("Prefabs/Platforms/Bounce Pad");
-            _platformMask = Resources.Load<LayerMaskData>("Objects/Layer Masks/Platform Layers");
+            _trampolinePrefab = Resources.Load<GameObject>(ResourcePaths.BouncePad);
+            _platformMask = Resources.Load<LayerMaskData>(ResourcePaths.PlatformMask);
         }
 
         private int InitialUses = 5;
