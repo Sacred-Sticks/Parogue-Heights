@@ -1,4 +1,7 @@
-﻿using UnityEngine;
+﻿using System;
+using System.Collections;
+using System.Threading.Tasks;
+using UnityEngine;
 
 namespace Parogue_Heights
 {
@@ -38,9 +41,10 @@ namespace Parogue_Heights
         }
 
         private int InitialUses = 5;
-        private const float range = 10f;
+        private const float range = 25f;
 
-        private GameObject trampolineHologram;
+        private GameObject hologram;
+        private bool isPlacing;
 
         // Constants
         private GameObject _trampolinePrefab;
@@ -53,24 +57,46 @@ namespace Parogue_Heights
                 Inventory.Instance.RemoveSlot(InventorySlot);
         }
 
+        private async void HologramFollowCenter(Transform cameraTransform)
+        {
+            isPlacing = true;
+            while (isPlacing)
+            {
+                var ray = new Ray(cameraTransform.position, cameraTransform.forward);
+                if (!Physics.Raycast(ray, out var hit, range, _platformMask.Mask))
+                {
+                    await Task.Delay(TimeSpan.FromSeconds(Time.deltaTime));
+                    continue;
+                }
+                hologram.transform.position = hit.point;
+                hologram.transform.rotation = Quaternion.FromToRotation(Vector3.up, hit.normal);
+                await Task.Delay(TimeSpan.FromSeconds(Time.deltaTime));
+            }
+        }
+
         #region Tool
         public override void GainUses()
         {
             Uses += InitialUses;
         }
-        
-        public override void OnActivateBegin() 
+
+        public override void OnActivateBegin()
         {
             var cameraTransform = Camera.main.transform;
             var ray = new Ray(cameraTransform.position, cameraTransform.forward);
             if (!Physics.Raycast(ray, out var hit, range, _platformMask.Mask))
                 return;
-            trampolineHologram = Object.Instantiate(_trampolinePrefab, hit.point, Quaternion.FromToRotation(Vector3.up, hit.normal));
+            hologram = UnityEngine.Object.Instantiate(_trampolinePrefab, hit.point, Quaternion.FromToRotation(Vector3.up, hit.normal));
+            HologramFollowCenter(cameraTransform);
         }
 
-        public override void OnActivateEnd() 
+        public override void OnActivateEnd()
         {
-            trampolineHologram.AddComponent<BouncePadPlatform>();
+            if (hologram == null)
+                return;
+            isPlacing = false;
+            hologram.AddComponent<BouncePadPlatform>();
+            hologram = null;
             LowerUses();
         }
         #endregion
