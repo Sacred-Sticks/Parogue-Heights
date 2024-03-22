@@ -2,13 +2,13 @@
 {
     public class InventorySlot
     {
-        public InventorySlot(Tool tool)
+        public InventorySlot(ITool tool)
         {
             _tool = tool;
         }
 
-        private Tool _tool;
-        public Tool Tool => _tool;
+        private ITool _tool;
+        public ITool Tool => _tool;
         private int _count;
         public int Count
         {
@@ -22,7 +22,7 @@
                 }
             }
         }
-        public Tool.ToolType ToolType => Tool.GetToolType(Tool);
+        public ITool.ToolType ToolType => ITool.GetToolType(Tool);
 
         public void GainCount()
         {
@@ -32,9 +32,9 @@
 
     public interface IInventorySlot
     {
-        public Tool Tool { get; }
+        public ITool Tool { get; }
         public int Count { get; set; }
-        public Tool.ToolType ToolType { get; }
+        public ITool.ToolType ToolType { get; }
         public void GainCount();
     }
 }

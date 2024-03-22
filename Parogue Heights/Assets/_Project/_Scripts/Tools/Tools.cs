@@ -5,9 +5,9 @@ using UnityEngine;
 
 namespace Parogue_Heights
 {
-    public abstract class Tool
+    public interface ITool
     {
-        public static ToolType GetToolType(Tool tool)
+        public static ToolType GetToolType(ITool tool)
         {
             return tool switch
             {
@@ -21,17 +21,16 @@ namespace Parogue_Heights
             Trampoline,
         }
 
-        public int Uses { get; protected set; }
-        public InventorySlot InventorySlot { protected get; set; }
+        public int Uses { get; }
+        public InventorySlot InventorySlot { set; }
 
-        protected abstract void LowerUses();
-        public abstract void GainUses();
-        public abstract void OnActivateBegin();
-        public abstract void OnActivateEnd();
+        public void GainUses();
+        public void OnActivateBegin();
+        public void OnActivateEnd();
 
     }
 
-    public sealed class BouncePad : Tool
+    public sealed class BouncePad : ITool
     {
         public BouncePad()
         {
@@ -50,7 +49,8 @@ namespace Parogue_Heights
         private GameObject _trampolinePrefab;
         private LayerMaskData _platformMask;
 
-        protected override void LowerUses()
+
+        private void LowerUses()
         {
             Uses--;
             if (Uses <= 0)
@@ -75,12 +75,15 @@ namespace Parogue_Heights
         }
 
         #region Tool
-        public override void GainUses()
+        public int Uses { get; private set; }
+        public InventorySlot InventorySlot { private get; set; }
+
+        public void GainUses()
         {
             Uses += InitialUses;
         }
 
-        public override void OnActivateBegin()
+        public void OnActivateBegin()
         {
             var cameraTransform = Camera.main.transform;
             var ray = new Ray(cameraTransform.position, cameraTransform.forward);
@@ -90,7 +93,7 @@ namespace Parogue_Heights
             HologramFollowCenter(cameraTransform);
         }
 
-        public override void OnActivateEnd()
+        public void OnActivateEnd()
         {
             if (hologram == null)
                 return;

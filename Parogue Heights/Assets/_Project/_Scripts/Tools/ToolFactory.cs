@@ -9,10 +9,10 @@ namespace Parogue_Heights
             typeof(BouncePad),
         };
 
-        public static Tool CreateRandomTool()
+        public static ITool CreateRandomTool()
         {
             int index = UnityEngine.Random.Range(0, _allTypes.Length);
-            return _allTypes[index].GetConstructor(Type.EmptyTypes).Invoke(null) as Tool;
+            return _allTypes[index].GetConstructor(Type.EmptyTypes).Invoke(null) as ITool;
         }
     }
 }
