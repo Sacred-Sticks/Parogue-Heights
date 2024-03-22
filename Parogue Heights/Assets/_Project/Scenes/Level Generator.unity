@@ -171,6 +171,7 @@ MonoBehaviour:
     - {fileID: 6998518171175410163, guid: 0bea271d549cefb45ae38fd8b8c165f7, type: 3}
     - {fileID: 6998518171175410163, guid: 426827854bf64074bbdee2393a5f3975, type: 3}
     - {fileID: 6998518171175410163, guid: 0de7539cfc26eed4a900977585ff298f, type: 3}
+    - {fileID: 6998518171175410163, guid: dfa075bea17c6414db7462a91a5e1e0c, type: 3}
     _layerHeight: 7.5
   - _layerVariants: []
     _layerHeight: 15

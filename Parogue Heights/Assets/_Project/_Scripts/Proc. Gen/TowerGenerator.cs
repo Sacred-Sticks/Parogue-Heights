@@ -37,7 +37,9 @@ namespace Parogue_Heights
         {
             var layer = sortedPrefabs[currentLayerCategory];
             var selectedVariant = layer.LayerVariants[Random.Range(0, layer.LayerVariants.Length)];
-            Instantiate(selectedVariant, transform.position + offset, Quaternion.identity, transform);
+            int multiple = Random.Range(0, 4);
+            var angles = new Vector3(0, 90 * multiple, 0);
+            Instantiate(selectedVariant, transform.position + offset, Quaternion.Euler(angles), transform);
             offset += Vector3.up * layer.LayerHeight;
             IncrementLayer();
         }
