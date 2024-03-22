@@ -13,7 +13,7 @@ namespace Parogue_Heights
 
         private int layersGenerated;
         private IGenerator.LayerHeight currentLayerCategory = IGenerator.LayerHeight.Initial;
-        private Vector3 offset;
+        public Vector3 Offset { get; private set; }
 
         // Constants and Readonly
         private const int initialLayers = 5;
@@ -39,8 +39,8 @@ namespace Parogue_Heights
             var selectedVariant = layer.LayerVariants[Random.Range(0, layer.LayerVariants.Length)];
             int multiple = Random.Range(0, 4);
             var angles = new Vector3(0, 90 * multiple, 0);
-            Instantiate(selectedVariant, transform.position + offset, Quaternion.Euler(angles), transform);
-            offset += Vector3.up * layer.LayerHeight;
+            Instantiate(selectedVariant, transform.position + Offset, Quaternion.Euler(angles), transform);
+            Offset += Vector3.up * layer.LayerHeight;
             IncrementLayer();
         }
         #endregion
@@ -79,6 +79,8 @@ namespace Parogue_Heights
 
     public interface IGenerator
     {
+        public Vector3 Offset { get; }
+
         public void GenerateLayer();
 
         public enum LayerHeight
