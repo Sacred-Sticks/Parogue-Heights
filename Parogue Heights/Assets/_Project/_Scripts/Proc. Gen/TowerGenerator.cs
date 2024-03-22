@@ -1,6 +1,7 @@
 using Kickstarter.DependencyInjection;
 using Kickstarter.Extensions;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using UnityEngine;
 
 namespace Parogue_Heights
@@ -26,8 +27,9 @@ namespace Parogue_Heights
             sortedPrefabs.LoadDictionary(layers);
         }
 
-        private void Start()
+        private async void Start()
         {
+            await Task.Delay(25);
             GenerateInitialLayers();
         }
         #endregion
@@ -39,9 +41,11 @@ namespace Parogue_Heights
             var selectedVariant = layer.LayerVariants[Random.Range(0, layer.LayerVariants.Length)];
             int multiple = Random.Range(0, 4);
             var angles = new Vector3(0, 90 * multiple, 0);
-            Instantiate(selectedVariant, transform.position + Offset, Quaternion.Euler(angles), transform);
+            var position = transform.position + Offset;
+            Instantiate(selectedVariant, position, Quaternion.Euler(angles), transform);
             Offset += Vector3.up * layer.LayerHeight;
             IncrementLayer();
+            WallManagement.GenerateWalls(position.y);
         }
         #endregion
 
