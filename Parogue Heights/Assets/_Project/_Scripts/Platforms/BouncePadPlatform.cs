@@ -14,6 +14,8 @@ namespace Parogue_Heights
         #endregion
 
         #region Platform
+        public GameObject GameObject => gameObject;
+
         public void OnPlayerEnter(Rigidbody body)
         {
             body.AddForce(transform.up * bounceForce, ForceMode.VelocityChange);

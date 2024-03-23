@@ -4,6 +4,7 @@ namespace Parogue_Heights
 {
     public interface IPlatform
     {
-        void OnPlayerEnter(Rigidbody body);
+        public GameObject GameObject { get; }
+        public void OnPlayerEnter(Rigidbody body);
     }
 }

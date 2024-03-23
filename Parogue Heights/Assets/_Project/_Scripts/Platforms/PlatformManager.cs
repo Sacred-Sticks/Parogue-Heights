@@ -7,6 +7,8 @@ namespace Parogue_Heights
     {
         private static Dictionary<Vector3, IPlatform> platformStorage;
 
+        private static float radius = 3.5f;
+
         #region UnityEvents
         private void Awake()
         {
@@ -24,6 +26,14 @@ namespace Parogue_Heights
         {
             if (platformStorage.ContainsKey(key))
                 platformStorage[key].OnPlayerEnter(body);
+        }
+
+        public static bool IsWithinRadius(Vector3 position)
+        {
+            foreach (var key in platformStorage.Keys)
+                if (Vector3.SqrMagnitude(key - position) < radius * radius)
+                    return true;
+            return false;
         }
     }
 }

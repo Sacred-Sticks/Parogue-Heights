@@ -42,6 +42,8 @@ namespace Parogue_Heights
         }
 
         #region Platform
+        public GameObject GameObject => gameObject;
+
         public void OnPlayerEnter(Rigidbody body)
         {
             ProvideTool();

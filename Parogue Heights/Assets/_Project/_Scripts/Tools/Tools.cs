@@ -67,6 +67,11 @@ namespace Parogue_Heights
                     await Task.Delay(TimeSpan.FromSeconds(Time.deltaTime));
                     continue;
                 }
+                if (PlatformManager.IsWithinRadius(hit.point))
+                {
+                    await Task.Delay(TimeSpan.FromSeconds(Time.deltaTime));
+                    continue;
+                }
                 hologram.transform.position = hit.point;
                 hologram.transform.rotation = Quaternion.FromToRotation(Vector3.up, hit.normal);
                 await Task.Delay(TimeSpan.FromSeconds(Time.deltaTime));
@@ -87,6 +92,8 @@ namespace Parogue_Heights
             var cameraTransform = Camera.main.transform;
             var ray = new Ray(cameraTransform.position, cameraTransform.forward);
             if (!Physics.Raycast(ray, out var hit, range, _platformMask.Mask))
+                return;
+            if (PlatformManager.IsWithinRadius(hit.point))
                 return;
             hologram = UnityEngine.Object.Instantiate(_trampolinePrefab, hit.point, Quaternion.FromToRotation(Vector3.up, hit.normal));
             HologramFollowCenter(cameraTransform);
