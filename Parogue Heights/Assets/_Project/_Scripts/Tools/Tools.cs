@@ -15,13 +15,20 @@ namespace Parogue_Heights
             };
         }
 
+        public static void LowerUses(ITool tool)
+        {
+            tool.Uses--;
+            if (tool.Uses <= 0)
+                Inventory.Instance.RemoveSlot(tool.InventorySlot);
+        }
+
         public enum ToolType
         {
             Trampoline,
         }
 
-        public int Uses { get; }
-        public InventorySlot InventorySlot { set; }
+        public int Uses { get; set;  }
+        public InventorySlot InventorySlot { get;  set; }
 
         public void GainUses();
         public void OnActivateBegin();
@@ -48,14 +55,6 @@ namespace Parogue_Heights
         private GameObject _trampolinePrefab;
         private LayerMaskData _platformMask;
 
-
-        private void LowerUses()
-        {
-            Uses--;
-            if (Uses <= 0)
-                Inventory.Instance.RemoveSlot(InventorySlot);
-        }
-
         private async void HologramFollowCenter(Transform cameraTransform)
         {
             isPlacing = true;
@@ -79,8 +78,8 @@ namespace Parogue_Heights
         }
 
         #region Tool
-        public int Uses { get; private set; }
-        public InventorySlot InventorySlot { private get; set; }
+        public int Uses { get; set; }
+        public InventorySlot InventorySlot { get; set; }
 
         public void GainUses()
         {
@@ -106,7 +105,29 @@ namespace Parogue_Heights
             isPlacing = false;
             hologram.AddComponent<BouncePadPlatform>();
             hologram = null;
-            LowerUses();
+            ITool.LowerUses(this);
+        }
+        #endregion
+    }
+
+    public sealed class Hookshot : ITool
+    {
+        private const int initialUses = 3;
+
+        #region Tool
+        public int Uses { get; set; }
+        public InventorySlot InventorySlot { get; set; }
+
+        public void GainUses() => Uses += initialUses;
+
+        public void OnActivateBegin()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void OnActivateEnd()
+        {
+            throw new NotImplementedException();
         }
         #endregion
     }

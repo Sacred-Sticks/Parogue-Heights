@@ -9,7 +9,7 @@ namespace Parogue_Heights
         #region UnityEvents
         private void Start()
         {
-            PlatformManager.RegisterPlatform(transform.position, this);
+            GenericRegistry<Vector3, IPlatform>.Register(transform.position, this);
         }
         #endregion
 
