@@ -16,7 +16,7 @@ namespace Parogue_Heights
         #region UnityEvents
         private void Start()
         {
-            GenericRegistry<Vector3, IPlatform>.Register(transform.position, this);
+            Registry.Register<IPlatform>(transform.position, this);
             SpawnTool();
         }
         #endregion
@@ -38,7 +38,7 @@ namespace Parogue_Heights
             Destroy(token.gameObject);
             var tool = ToolFactory.CreateRandomTool();
             Inventory.Instance.CollectTool(tool);
-            GenericRegistry<Vector3, IPlatform>.Deregister(transform.position);
+            Registry.Deregister(transform.position);
         }
 
         #region Platform
