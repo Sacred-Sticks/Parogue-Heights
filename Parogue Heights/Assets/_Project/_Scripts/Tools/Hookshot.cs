@@ -19,6 +19,8 @@ namespace Parogue_Heights
         private const float range = 25f;
         private const float radius = 1;
         private const float forceStrength = 10f;
+        private const float stoppingDistance = 0.5f;
+        private const float height = 2;
         private readonly Rigidbody body;
         private readonly LayerMaskData _platformMask;
 
@@ -28,9 +30,11 @@ namespace Parogue_Heights
             var newVelocity = (goalPosition - body.position).normalized * forceStrength;
             while (hookshotActive)
             {
-                body.AddForce(newVelocity - body.velocity, ForceMode.VelocityChange);
-                if (Vector3.SqrMagnitude(body.position - goalPosition) < 4f)
-                    OnActivateEnd();
+                var velocity = newVelocity - body.velocity;
+                var currentPosition = body.position + body.transform.up * height;
+                if (Vector3.SqrMagnitude(currentPosition - goalPosition) < stoppingDistance * stoppingDistance)
+                    velocity = -body.velocity;
+                body.AddForce(velocity, ForceMode.VelocityChange);
                 await Task.Delay(TimeSpan.FromSeconds(Time.fixedDeltaTime));
             }
         }
@@ -44,7 +48,7 @@ namespace Parogue_Heights
         public void OnActivateBegin()
         {
             var cameraTransform = Camera.main.transform;
-            var ray = new Ray(cameraTransform.position, cameraTransform.forward);
+            var ray = new Ray(body.position, cameraTransform.forward);
             if (!Physics.SphereCast(ray, radius, out var hit, range, _platformMask.Mask))
                 return;
             body.useGravity = false;
@@ -55,6 +59,7 @@ namespace Parogue_Heights
         {
             body.useGravity = true;
             hookshotActive = false;
+            ITool.LowerUses(this);
         }
         #endregion
     }

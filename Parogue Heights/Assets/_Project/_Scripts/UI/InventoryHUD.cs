@@ -53,7 +53,8 @@ namespace Parogue_Heights
         {
             if (slotsHUD.Count == 0)
                 return;
-            slotsHUD[slots[formerSlotIndex]].RemoveFromClassList(activeStr);
+            if (slotsHUD.Count >= formerSlotIndex - 1)
+                slotsHUD[slots[formerSlotIndex]].RemoveFromClassList(activeStr);
             slotsHUD[slots[newSlotIndex]].AddToClassList(activeStr);
         }
 
