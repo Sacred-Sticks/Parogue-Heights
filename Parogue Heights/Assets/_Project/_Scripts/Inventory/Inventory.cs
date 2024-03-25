@@ -46,6 +46,9 @@ namespace Parogue_Heights
                 inventorySlots[activeSlotIndex].Tool.OnActivateBegin : 
                 inventorySlots[activeSlotIndex].Tool.OnActivateEnd;
             action?.Invoke();
+
+            if (activeSlotIndex >= inventorySlots.Count && activeSlotIndex > 0)
+                CycleInventory(-1);
         }
         #endregion
 

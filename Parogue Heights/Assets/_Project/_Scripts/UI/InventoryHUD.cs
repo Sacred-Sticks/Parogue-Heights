@@ -53,7 +53,7 @@ namespace Parogue_Heights
         {
             if (slotsHUD.Count == 0)
                 return;
-            if (slotsHUD.Count >= formerSlotIndex - 1)
+            if (slotsHUD.Count > formerSlotIndex)
                 slotsHUD[slots[formerSlotIndex]].RemoveFromClassList(activeStr);
             slotsHUD[slots[newSlotIndex]].AddToClassList(activeStr);
         }
@@ -64,6 +64,8 @@ namespace Parogue_Heights
             slotElement.style.backgroundImage = new StyleBackground(toolSprites[slot.ToolType]);
             slots.Add(slot);
             slotsHUD.Add(slot, slotElement);
+            if (slots.Count == 1)
+                ActivateSlot(0);
         }
 
         public void RemoveSlot(InventorySlot slot)
