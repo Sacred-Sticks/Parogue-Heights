@@ -35,8 +35,14 @@ namespace Parogue_Heights
             Jump();
         }
         #endregion
-        
+
         #region UnityEvents
+        protected override void Start()
+        {
+            base.Start();
+            Registry.Register(RegistryStrings.PlayerRigidbody, body);
+        }
+
         private void FixedUpdate()
         {
             CheckGrounded();

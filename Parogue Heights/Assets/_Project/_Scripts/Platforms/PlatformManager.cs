@@ -22,8 +22,8 @@ namespace Parogue_Heights
 
         public static bool IsWithinRadius(Vector3 position)
         {
-            foreach (var key in Registry.Collection.Keys.Select(v => (Vector3) v))
-                if (Vector3.SqrMagnitude(key - position) < radius * radius)
+            foreach (var key in Registry.Collection.Keys.Where(v => v is Vector3))
+                if (Vector3.SqrMagnitude((Vector3)key - position) < radius * radius)
                     return true;
             return false;
         }

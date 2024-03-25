@@ -8,6 +8,7 @@ namespace Parogue_Heights
         public static Type[] _allTypes = new Type[]
         {
             typeof(BouncePad),
+            typeof(Hookshot),
         };
 
         public static ITool CreateRandomTool()

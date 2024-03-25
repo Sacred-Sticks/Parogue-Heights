@@ -26,7 +26,7 @@ namespace Parogue_Heights
             transform.root.TryGetComponent(out body);
         }
 
-        private void Start()
+        protected virtual void Start()
         {
             jumpVelocity = Mathf.Sqrt(Mathf.Abs(jumpHeight * Physics.gravity.y * 2));
             var capsule = transform.root.GetComponentInChildren<CapsuleCollider>();
