@@ -1,4 +1,4 @@
-# The Endless Ascent
+# Parogue Heights
 
 The Endless Ascent is a Unity Game where the player will control a character from an over the shoulder, third person perspective. The player is trying to gain height to avoid the rising threat of acid underneath them. They will utilize a variety of tools and platforms to gain altitude. As they climb, the acid will gain speed in it's own ascent, making it more difficult for the player to keep up.
 
