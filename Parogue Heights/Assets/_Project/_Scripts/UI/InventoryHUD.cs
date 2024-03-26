@@ -70,6 +70,9 @@ namespace Parogue_Heights
 
         public void RemoveSlot(InventorySlot slot)
         {
+            int index = slots.IndexOf(slot);
+            if (slots.Count > 1 && index < slots.Count - 1)
+                ActivateSlot(index + 1, index);
             slotsHUD[slot].RemoveFromHierarchy();
             slotsHUD.Remove(slot);
             slots.Remove(slot);
