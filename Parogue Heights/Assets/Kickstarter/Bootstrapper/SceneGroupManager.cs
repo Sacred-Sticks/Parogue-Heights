@@ -70,7 +70,7 @@ namespace Kickstarter.Bootstrapper
                     continue;
 
                 string sceneName = sceneAt.name;
-                if (sceneName.Equals(activeScene) || sceneName == "Bootstrapper")
+                if (sceneName == "Bootstrapper")
                     continue;
                 scenes.Add(sceneName);
             }
