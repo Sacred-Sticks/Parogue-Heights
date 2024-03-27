@@ -119,51 +119,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &264581901
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 264581903}
-  - component: {fileID: 264581902}
-  m_Layer: 0
-  m_Name: East Wall
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &264581902
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 264581901}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dd5c0e74e0488654899a070070dfd7d5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tilesNeeded: 10
---- !u!4 &264581903
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 264581901}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 15, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!1 &351895016
 GameObject:
   m_ObjectHideFlags: 0
@@ -211,22 +166,29 @@ MonoBehaviour:
   layers:
   - _layerVariants:
     - {fileID: 2977623535649358797, guid: 1250aa237f17b3947a013df91cf281fa, type: 3}
-    _layerHeight: 2.5
+    _layerHeight: 3
   - _layerVariants:
     - {fileID: 6998518171175410163, guid: 0bea271d549cefb45ae38fd8b8c165f7, type: 3}
     - {fileID: 6998518171175410163, guid: 426827854bf64074bbdee2393a5f3975, type: 3}
     - {fileID: 6998518171175410163, guid: 0de7539cfc26eed4a900977585ff298f, type: 3}
     - {fileID: 6998518171175410163, guid: dfa075bea17c6414db7462a91a5e1e0c, type: 3}
-    _layerHeight: 7.5
+    _layerHeight: 6
   - _layerVariants:
-    - {fileID: 6998518171175410163, guid: dfa075bea17c6414db7462a91a5e1e0c, type: 3}
+    - {fileID: 6998518171175410163, guid: e83574db815819c44b18a9106eb36b7d, type: 3}
+    - {fileID: 6998518171175410163, guid: 7377056ca80903743a9aae94bee31bca, type: 3}
+    - {fileID: 6998518171175410163, guid: 9c213890d5045db4daa8fb58a2e25e80, type: 3}
+    - {fileID: 6998518171175410163, guid: c56456fc5686d36478febf24e153f377, type: 3}
+    - {fileID: 6998518171175410163, guid: cef1666352a034147a465be50099c408, type: 3}
+    - {fileID: 6998518171175410163, guid: 07888f30696d8e2469c828fdeebd4714, type: 3}
+    - {fileID: 6998518171175410163, guid: d8198f883c5aa1e4486b7c63fd38f083, type: 3}
+    _layerHeight: 9
+  - _layerVariants:
+    - {fileID: 6998518171175410163, guid: 11a4c816af24eab4fb488b966bdfe116, type: 3}
+    - {fileID: 6998518171175410163, guid: 021e5b3e3c8b5e742946459eebded2cb, type: 3}
     _layerHeight: 15
   - _layerVariants:
-    - {fileID: 6998518171175410163, guid: dfa075bea17c6414db7462a91a5e1e0c, type: 3}
-    _layerHeight: 20
-  - _layerVariants:
-    - {fileID: 6998518171175410163, guid: dfa075bea17c6414db7462a91a5e1e0c, type: 3}
-    _layerHeight: 30
+    - {fileID: 6998518171175410163, guid: 3c809b445ffe8444b993e2807835540d, type: 3}
+    _layerHeight: 21
 --- !u!1 &968433419
 GameObject:
   m_ObjectHideFlags: 0
@@ -266,96 +228,6 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &976396346
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 976396348}
-  - component: {fileID: 976396347}
-  m_Layer: 0
-  m_Name: West Wall
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &976396347
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 976396346}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dd5c0e74e0488654899a070070dfd7d5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tilesNeeded: 10
---- !u!4 &976396348
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 976396346}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -15, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
---- !u!1 &1241673414
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1241673416}
-  - component: {fileID: 1241673415}
-  m_Layer: 0
-  m_Name: North Wall
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1241673415
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1241673414}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dd5c0e74e0488654899a070070dfd7d5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tilesNeeded: 10
---- !u!4 &1241673416
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1241673414}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 15}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -544,51 +416,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &2129402535
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2129402537}
-  - component: {fileID: 2129402536}
-  m_Layer: 0
-  m_Name: South Wall
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &2129402536
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2129402535}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dd5c0e74e0488654899a070070dfd7d5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tilesNeeded: 10
---- !u!4 &2129402537
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2129402535}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 0, y: 0, z: -15}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -597,7 +424,3 @@ SceneRoots:
   - {fileID: 351895018}
   - {fileID: 968433421}
   - {fileID: 1627583861}
-  - {fileID: 1241673416}
-  - {fileID: 2129402537}
-  - {fileID: 976396348}
-  - {fileID: 264581903}

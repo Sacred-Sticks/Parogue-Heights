@@ -27,9 +27,8 @@ namespace Parogue_Heights
             sortedPrefabs.LoadDictionary(layers);
         }
 
-        private IEnumerator Start()
+        private void Start()
         {
-            yield return new WaitUntil(() => WallManagement.wallGenerators.Count == 4);
             GenerateInitialLayers();
         }
         #endregion
@@ -45,7 +44,6 @@ namespace Parogue_Heights
             Instantiate(selectedVariant, position, Quaternion.Euler(angles), transform);
             Offset += Vector3.up * layer.LayerHeight;
             IncrementLayer();
-            WallManagement.GenerateWalls(position.y);
         }
 
         public void GenerateInitialLayers()
