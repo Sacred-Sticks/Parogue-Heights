@@ -19,6 +19,11 @@ namespace Parogue_Heights
             Registry.Register<IPlatform>(transform.position, this);
             SpawnTool();
         }
+
+        private void OnDestroy()
+        {
+            token.DOPause();
+        }
         #endregion
 
         private void SpawnTool()
