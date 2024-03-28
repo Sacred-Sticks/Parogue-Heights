@@ -9,6 +9,7 @@ namespace Parogue_Heights
         {
             typeof(BouncePad),
             typeof(Hookshot),
+            typeof(JetBoots),
         };
 
         public static ITool CreateRandomTool()

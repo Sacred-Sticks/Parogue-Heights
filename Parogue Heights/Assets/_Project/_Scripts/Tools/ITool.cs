@@ -8,6 +8,7 @@
             {
                 BouncePad _ => ToolType.BouncePad,
                 Hookshot _ => ToolType.Hookshot,
+                JetBoots _ => ToolType.JetBoots,
                 _ => default,
             };
         }
@@ -23,6 +24,7 @@
         {
             BouncePad,
             Hookshot,
+            JetBoots,
         }
 
         public int Uses { get; set; }

@@ -30,6 +30,8 @@ namespace Parogue_Heights
             var newVelocity = (goalPosition - body.position).normalized * forceStrength;
             while (hookshotActive)
             {
+                if (body == null)
+                    hookshotActive = false;
                 var velocity = newVelocity - body.velocity;
                 var currentPosition = body.position + body.transform.up * height;
                 if (Vector3.SqrMagnitude(currentPosition - goalPosition) < stoppingDistance * stoppingDistance)

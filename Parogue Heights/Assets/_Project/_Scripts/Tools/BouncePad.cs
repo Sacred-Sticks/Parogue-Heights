@@ -27,6 +27,8 @@ namespace Parogue_Heights
             isPlacing = true;
             while (isPlacing)
             {
+                if (cameraTransform == null)
+                    isPlacing = false;
                 var ray = new Ray(cameraTransform.position, cameraTransform.forward);
                 if (!Physics.Raycast(ray, out var hit, range, _platformMask.Mask))
                 {
