@@ -3,5 +3,17 @@ VisualElement {}
 .root {
 	flex: 1;
 	display: flex;
-	flex-direction: column-reverse;
+	flex-direction: column;
+	padding: 10px;
+	align-items: center;
+}
+
+.title {
+	font-size: 20px;
+	-unity-font-style: bold;
+	color: #AFAFAF;
+}
+
+.play_button {
+	height: 5px;
 }
