@@ -16,7 +16,7 @@ PlayerSettings:
   productName: Parogue Heights
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
-  m_SplashScreenBackgroundColor: {r: 1, g: 0.3066038, b: 0.8102282, a: 1}
+  m_SplashScreenBackgroundColor: {r: 0.18867922, g: 0.18867922, b: 0.18867922, a: 1}
   m_ShowUnitySplashScreen: 1
   m_ShowUnitySplashLogo: 1
   m_SplashScreenOverlayOpacity: 0.5
