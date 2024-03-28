@@ -46,20 +46,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _sceneGroups:
+  - GroupName: Main Menu
+    Scenes:
+    - Reference:
+        asset: {fileID: 102900000, guid: 35895331cdc682f42852ed9893fb91db, type: 3}
+        guid: 35895331cdc682f42852ed9893fb91db
+      Type: 1
+    - Reference:
+        asset: {fileID: 102900000, guid: d5ea8bcbcca5dad458167f3bd823bcdb, type: 3}
+        guid: d5ea8bcbcca5dad458167f3bd823bcdb
+      Type: 6
   - GroupName: Gameplay
     Scenes:
     - Reference:
         asset: {fileID: 102900000, guid: 0a88499545b812d469b4c245302bae0b, type: 3}
         guid: 0a88499545b812d469b4c245302bae0b
       Type: 6
-    - Reference:
-        asset: {fileID: 102900000, guid: 9d787e5b9f881ce44b8d1ccac943c5e7, type: 3}
-        guid: 9d787e5b9f881ce44b8d1ccac943c5e7
-      Type: 2
-    - Reference:
-        asset: {fileID: 102900000, guid: 09caab211672cb449a667fee2cc43dfa, type: 3}
-        guid: 09caab211672cb449a667fee2cc43dfa
-      Type: 3
     - Reference:
         asset: {fileID: 102900000, guid: afa574623e2c85c4eb6892a3c12b8f8a, type: 3}
         guid: afa574623e2c85c4eb6892a3c12b8f8a
@@ -68,6 +70,14 @@ MonoBehaviour:
         asset: {fileID: 102900000, guid: 30307ab4823b88947bc20afd37af0e70, type: 3}
         guid: 30307ab4823b88947bc20afd37af0e70
       Type: 0
+    - Reference:
+        asset: {fileID: 102900000, guid: 9d787e5b9f881ce44b8d1ccac943c5e7, type: 3}
+        guid: 9d787e5b9f881ce44b8d1ccac943c5e7
+      Type: 2
+    - Reference:
+        asset: {fileID: 102900000, guid: 09caab211672cb449a667fee2cc43dfa, type: 3}
+        guid: 09caab211672cb449a667fee2cc43dfa
+      Type: 3
     - Reference:
         asset: {fileID: 102900000, guid: d5ea8bcbcca5dad458167f3bd823bcdb, type: 3}
         guid: d5ea8bcbcca5dad458167f3bd823bcdb

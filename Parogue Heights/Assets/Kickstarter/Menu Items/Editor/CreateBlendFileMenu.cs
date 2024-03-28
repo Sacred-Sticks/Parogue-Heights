@@ -4,7 +4,7 @@ using System.IO;
 
 namespace Kickstarter.MenuItems
 {
-    public class CreateBlendFileMenu : MonoBehaviour
+    public class CreateBlendFileMenu
     {
         [MenuItem("Assets/Create/Kickstarter/Blend File")]
         public static void CreateBlendFile()

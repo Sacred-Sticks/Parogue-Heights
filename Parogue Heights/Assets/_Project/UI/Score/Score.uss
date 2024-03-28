@@ -1,0 +1,14 @@
+VisualElement {}
+
+.root {
+	flex: 1;
+	display: flex;
+	flex-direction: row-reverse;
+}
+
+.score {
+	margin-top: 1px;
+	margin-right: 5px;
+	font-size: 10px;
+	color: #AFAFFF;
+}
