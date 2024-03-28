@@ -4,10 +4,17 @@ namespace Parogue_Heights
 {
     public class MouseLockManagement : MonoBehaviour
     {
+        #region UnityEvents
         private void Start()
         {
             SetCursorLock(true);
         }
+
+        private void OnDestroy()
+        {
+            SetCursorLock(false);
+        }
+        #endregion
 
         public static void ToggleMouseLock()
         {

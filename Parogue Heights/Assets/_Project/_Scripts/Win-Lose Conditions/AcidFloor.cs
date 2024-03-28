@@ -10,7 +10,7 @@ namespace Parogue_Heights
         [Provide] private ILoseCondition loseCondition => this;
         [Inject] private SceneLoader sceneLoader;
 
-        private string sceneGroupName = "Gameplay";
+        private string sceneGroupName = "Main Menu";
 
         private const float initialSpeed = 0f;
         private const float speedMultiplier = 0.5f;
