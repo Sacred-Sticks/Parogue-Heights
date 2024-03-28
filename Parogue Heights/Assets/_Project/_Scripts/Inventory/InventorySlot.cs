@@ -9,19 +9,7 @@
 
         private ITool _tool;
         public ITool Tool => _tool;
-        private int _count;
-        public int Count
-        {
-            get => _count;
-            set
-            {
-                _count = value;
-                if (_count < 1)
-                {
-                    
-                }
-            }
-        }
+        public int Count => Tool.Uses;
         public ITool.ToolType ToolType => ITool.GetToolType(Tool);
 
         public void GainCount()

@@ -19,17 +19,16 @@ namespace Parogue_Heights
         private VisualElement container;
         private const string rootStr = "root";
         private const string containerStr = "container";
-        public const string slotStr = "slot";
-        public const string activeStr = "active";
         private VisualElement root;
         private readonly List<InventorySlot> slots = new List<InventorySlot>();
-        private readonly Dictionary<InventorySlot, SlotElement> slotsHUD = new Dictionary<InventorySlot, SlotElement>();
+        private static readonly Dictionary<InventorySlot, SlotElement> slotsHUD = new Dictionary<InventorySlot, SlotElement>();
         public static readonly Dictionary<ITool.ToolType, Sprite> toolSprites = new Dictionary<ITool.ToolType, Sprite>();
 
         #region UnityEvents
         private void Awake()
         {
             root = GetComponent<UIDocument>().rootVisualElement;
+            toolSprites.Clear();
             toolSprites.LoadDictionary(_toolSprites);
         }
 
@@ -53,6 +52,8 @@ namespace Parogue_Heights
         {
             if (slotsHUD.Count == 0)
                 return;
+            if (slots.Count == 0)
+                return;
             if (slotsHUD.Count > formerSlotIndex)
                 slotsHUD[slots[formerSlotIndex]].Deactivate();
             slotsHUD[slots[newSlotIndex]].Activate();
@@ -75,6 +76,12 @@ namespace Parogue_Heights
             slotsHUD[slot].RemoveFromHierarchy();
             slotsHUD.Remove(slot);
             slots.Remove(slot);
+        }
+
+        public static void ChangeSlotCount(InventorySlot slot, int count)
+        {
+            if (slot != null)
+                slotsHUD[slot].ChangeCount(count);
         }
         #endregion
     }

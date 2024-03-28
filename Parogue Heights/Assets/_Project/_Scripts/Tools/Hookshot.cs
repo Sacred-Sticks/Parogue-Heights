@@ -40,7 +40,16 @@ namespace Parogue_Heights
         }
 
         #region Tool
-        public int Uses { get; set; }
+        private int uses;
+        public int Uses
+        {
+            get => uses;
+            set
+            {
+                uses = value;
+                InventoryHUD.ChangeSlotCount(InventorySlot, Uses);
+            }
+        }
         public InventorySlot InventorySlot { get; set; }
 
         public void GainUses() => Uses += initialUses;
