@@ -15,5 +15,13 @@ VisualElement {}
 }
 
 .play_button {
-	height: 5px;
+	width: 30%;
+	padding: 3px;
+	font-size: 10px
+}
+
+.quit_button {
+	width: 15%;
+	padding: 3px;
+	font-size: 5px;
 }

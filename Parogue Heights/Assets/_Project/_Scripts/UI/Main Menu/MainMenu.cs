@@ -16,6 +16,7 @@ namespace Parogue_Heights
         private const string rootStr = "root";
         private const string titleStr = "title";
         private const string playButtonStr = "play_button";
+        private const string quitButtonStr = "quit_button";
 
         #region UnityEvents
         private void Awake()
@@ -31,14 +32,23 @@ namespace Parogue_Heights
         {
             var title = root.CreateChild<Label>(titleStr);
             title.text = "Parogue Heights";
-            var button = root.CreateChild<Button>(playButtonStr);
-            button.text = "Play";
-            button.clickable.clicked += StartGame;
+            var playButton = root.CreateChild<Button>(playButtonStr);
+            playButton.text = "Play";
+            playButton.clickable.clicked += StartGame;
+            
+            var quitButton = root.CreateChild<Button>(quitButtonStr);
+            quitButton.text = "Quit";
+            quitButton.clickable.clicked += QuitGame;
         }
 
         private void StartGame()
         {
             sceneLoader.LoadSceneGroup(gameplayStr);
+        }
+
+        private void QuitGame()
+        {
+            Application.Quit();
         }
     }
 }
