@@ -188,6 +188,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 6752036443525953669, guid: d60c8569058bc0e4dabcd7bf8d3c5f4c,
+        type: 3}
+      propertyPath: rotationSpeed
+      value: 0.25
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -217,26 +222,6 @@ PrefabInstance:
       propertyPath: m_LookAt
       value: 
       objectReference: {fileID: 902683900}
-    - target: {fileID: 3586388003485761069, guid: 760920a7f12f83f44a621c2bc6d93e52,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 1.2787502e-16
-      objectReference: {fileID: 0}
-    - target: {fileID: 3586388003485761069, guid: 760920a7f12f83f44a621c2bc6d93e52,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -9.087799e-18
-      objectReference: {fileID: 0}
-    - target: {fileID: 3988676407759507064, guid: 760920a7f12f83f44a621c2bc6d93e52,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 1.2787502e-16
-      objectReference: {fileID: 0}
-    - target: {fileID: 3988676407759507064, guid: 760920a7f12f83f44a621c2bc6d93e52,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -9.087799e-18
-      objectReference: {fileID: 0}
     - target: {fileID: 4814552617175299197, guid: 760920a7f12f83f44a621c2bc6d93e52,
         type: 3}
       propertyPath: m_Name

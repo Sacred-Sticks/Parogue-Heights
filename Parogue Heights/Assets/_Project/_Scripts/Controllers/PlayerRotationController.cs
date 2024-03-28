@@ -1,5 +1,6 @@
 ﻿using Kickstarter.Inputs;
 using UnityEngine;
+using UnityEngine.Windows;
 
 namespace Dodge_Bots
 {
@@ -8,6 +9,8 @@ namespace Dodge_Bots
         [SerializeField] private float cameraSpeed;
         [SerializeField] private Vector2Input rotationInput;
         [SerializeField] private float verticalRange;
+
+        Vector2 rawInput;
         
         #region InputHandler
         public void RegisterInputs(Player.PlayerIdentifier playerIdentifier)
@@ -22,10 +25,16 @@ namespace Dodge_Bots
 
         private void OnRotationInputChange(Vector2 input)
         {
-            RotateCamera(input.y);
-            RotateTowards(input.x);
+            rawInput += input;
         }
         #endregion
+
+        private void FixedUpdate()
+        {
+            RotateCamera(rawInput.y);
+            RotateTowards(rawInput.x);
+            rawInput = Vector2.zero;
+        }
 
         private void RotateCamera(float direction)
         {
