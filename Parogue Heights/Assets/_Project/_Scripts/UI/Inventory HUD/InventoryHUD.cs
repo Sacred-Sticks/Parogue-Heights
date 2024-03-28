@@ -13,7 +13,7 @@ namespace Parogue_Heights
 
         [SerializeField] private StyleSheet styleSheet;
         [Space]
-        [SerializeField, EnumData(typeof(ITool.ToolType))] private Sprite[] _toolSprites;
+        [SerializeField, EnumData(typeof(ITool.ToolType))] private Texture2D[] _toolSprites;
 
         // Constants
         private VisualElement container;
@@ -22,7 +22,7 @@ namespace Parogue_Heights
         private VisualElement root;
         private readonly List<InventorySlot> slots = new List<InventorySlot>();
         private static readonly Dictionary<InventorySlot, SlotElement> slotsHUD = new Dictionary<InventorySlot, SlotElement>();
-        public static readonly Dictionary<ITool.ToolType, Sprite> toolSprites = new Dictionary<ITool.ToolType, Sprite>();
+        public static readonly Dictionary<ITool.ToolType, Texture2D> toolSprites = new Dictionary<ITool.ToolType, Texture2D>();
 
         #region UnityEvents
         private void Awake()

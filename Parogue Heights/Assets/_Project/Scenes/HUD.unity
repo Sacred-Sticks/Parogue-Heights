@@ -216,9 +216,9 @@ MonoBehaviour:
   styleSheet: {fileID: 7433441132597879392, guid: 0901f1632cc3c714285debf998db36cf,
     type: 3}
   _toolSprites:
-  - {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
-  - {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
-  - {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2800000, guid: 341d50fbd81152b4a8201a55e8353a96, type: 3}
+  - {fileID: 2800000, guid: bb5e109ef0c6ab147b3db14fbcbe491e, type: 3}
+  - {fileID: 2800000, guid: dfc0b875ab963fc4eb2aa11bd8dbc41b, type: 3}
 --- !u!114 &1821445214
 MonoBehaviour:
   m_ObjectHideFlags: 0
