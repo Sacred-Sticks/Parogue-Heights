@@ -19,12 +19,12 @@ namespace Parogue_Heights
         private VisualElement container;
         private const string rootStr = "root";
         private const string containerStr = "container";
-        private const string slotStr = "slot";
-        private const string activeStr = "active";
+        public const string slotStr = "slot";
+        public const string activeStr = "active";
         private VisualElement root;
         private readonly List<InventorySlot> slots = new List<InventorySlot>();
-        private readonly Dictionary<InventorySlot, VisualElement> slotsHUD = new Dictionary<InventorySlot, VisualElement>();
-        private readonly Dictionary<ITool.ToolType, Sprite> toolSprites = new Dictionary<ITool.ToolType, Sprite>();
+        private readonly Dictionary<InventorySlot, SlotElement> slotsHUD = new Dictionary<InventorySlot, SlotElement>();
+        public static readonly Dictionary<ITool.ToolType, Sprite> toolSprites = new Dictionary<ITool.ToolType, Sprite>();
 
         #region UnityEvents
         private void Awake()
@@ -54,14 +54,13 @@ namespace Parogue_Heights
             if (slotsHUD.Count == 0)
                 return;
             if (slotsHUD.Count > formerSlotIndex)
-                slotsHUD[slots[formerSlotIndex]].RemoveFromClassList(activeStr);
-            slotsHUD[slots[newSlotIndex]].AddToClassList(activeStr);
+                slotsHUD[slots[formerSlotIndex]].Deactivate();
+            slotsHUD[slots[newSlotIndex]].Activate();
         }
 
         public void AddSlot(InventorySlot slot)
         {
-            var slotElement = container.CreateChild<VisualElement>(slotStr);
-            slotElement.style.backgroundImage = new StyleBackground(toolSprites[slot.ToolType]);
+            var slotElement = new SlotElement(container, slot);
             slots.Add(slot);
             slotsHUD.Add(slot, slotElement);
             if (slots.Count == 1)
