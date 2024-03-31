@@ -2,3 +2,42 @@ VisualElement
 {
 
 }
+
+:root 
+{
+	background-color: rgb(30, 30, 30);
+	flex: 1;
+	justify-content: space-around;
+	align-items: center;
+}
+
+.container 
+{
+	display: flex;
+	flex: 1;
+	flex-direction: column-reverse;
+	align-items: center;
+	justify-content: center;
+	height: 100%;
+	width: 50%;
+	margin: 50px;
+}
+
+.control 
+{
+	width: 100%;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.control Label
+{
+	color: red;
+	font-size: 50px;
+}
+
+.close_button
+{
+	font-size: 40px;
+	margin: 50px;
+}

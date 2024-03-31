@@ -5,6 +5,8 @@ namespace Parogue_Heights
 {
     public abstract class Menu : MonoBehaviour
     {
+        [SerializeField] protected StyleSheet styleSheet;
+
         protected VisualElement root;
 
         public virtual void Open()

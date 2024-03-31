@@ -11,8 +11,6 @@ namespace Parogue_Heights
         [Provide] private MainMenu mainMenu => this;
         [Inject] private SceneLoader sceneLoader;
 
-        [SerializeField] private StyleSheet stylesheet;
-
         private string gameplayStr = "Gameplay";
         private const string rootStr = "root";
         private const string titleStr = "title";
@@ -25,7 +23,7 @@ namespace Parogue_Heights
         private void Awake()
         {
             root = GetComponent<UIDocument>().rootVisualElement;
-            root.styleSheets.Add(stylesheet);
+            root.styleSheets.Add(styleSheet);
             root.AddToClassList(rootStr);
             BuildDocument();
         }
@@ -48,7 +46,15 @@ namespace Parogue_Heights
                 Close();
                 Registry.Get<ToolsMenu>("Tools_Menu").Open();
             };
-            
+
+            var controlsButton = root.CreateChild<Button>(controlsButtonStr);
+            controlsButton.text = "Controls";
+            controlsButton.clickable.clicked += () =>
+            {
+                Close();
+                Registry.Get<ControlsMenu>("Controls_Menu").Open();
+            };
+
             var quitButton = root.CreateChild<Button>(quitButtonStr);
             quitButton.text = "Quit";
             quitButton.clickable.clicked += QuitGame;

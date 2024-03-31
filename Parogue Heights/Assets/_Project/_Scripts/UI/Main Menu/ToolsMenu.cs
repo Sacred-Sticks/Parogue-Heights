@@ -9,7 +9,6 @@ namespace Parogue_Heights
     {
         [Inject] private MainMenu mainMenu;
         
-        [SerializeField] private StyleSheet styleSheet;
         [SerializeField, EnumData(typeof(ITool.ToolType))] private ToolData[] _toolData;
 
         // Constants
