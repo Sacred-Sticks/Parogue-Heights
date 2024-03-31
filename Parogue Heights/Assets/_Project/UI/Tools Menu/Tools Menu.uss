@@ -1,0 +1,65 @@
+VisualElement 
+{
+
+}
+
+ScrollView 
+{
+	overflow: scroll;
+}
+
+:root 
+{
+	background-color: rgb(20, 20, 20);
+}
+
+.container
+{
+	flex-direction: row;
+	overflow: scroll;
+}
+
+.close_button
+{
+	font-size: 20px;
+	width: 20%;
+	align-self: center;
+}
+
+.tool_container 
+{
+	flex-direction: row;
+	height: 500px;
+	width: 100%;
+	border-width: 5px;
+	border-color: #0F0F0F;
+}
+
+.tool_data_container
+{
+	padding: 10px;
+}
+
+.tool_name
+{
+	font-size: 80px;
+	color: rgb(255, 255, 255);
+}
+
+.tool_description
+{
+	font-size: 40px;
+	color: rgb(200, 200, 200);
+}
+
+.tool_image 
+{
+	margin: 25px;
+	background-color: rgb(100, 100, 100);
+	border-width: 5px;
+	border-color: #FFFFFF;
+	border-radius: 25px;
+	width: 450px;
+	height: 450px;
+	align-self: center;
+}

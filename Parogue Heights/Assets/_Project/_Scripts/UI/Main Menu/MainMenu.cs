@@ -6,8 +6,9 @@ using UnityEngine.UIElements;
 namespace Parogue_Heights
 {
     [RequireComponent(typeof(UIDocument))]
-    public class MainMenu : MonoBehaviour
+    public class MainMenu : Menu, IDependencyProvider
     {
+        [Provide] private MainMenu mainMenu => this;
         [Inject] private SceneLoader sceneLoader;
 
         [SerializeField] private StyleSheet stylesheet;
@@ -16,25 +17,37 @@ namespace Parogue_Heights
         private const string rootStr = "root";
         private const string titleStr = "title";
         private const string playButtonStr = "play_button";
+        private const string toolsButtonStr = "tools_button";
+        private const string controlsButtonStr = "controls_button";
         private const string quitButtonStr = "quit_button";
 
         #region UnityEvents
         private void Awake()
         {
-            var root = GetComponent<UIDocument>().rootVisualElement;
+            root = GetComponent<UIDocument>().rootVisualElement;
             root.styleSheets.Add(stylesheet);
             root.AddToClassList(rootStr);
-            BuildMenu(root);
+            BuildDocument();
         }
         #endregion
 
-        private void BuildMenu(VisualElement root)
+        protected override void BuildDocument()
         {
+            if (root == null)
+                return;
             var title = root.CreateChild<Label>(titleStr);
             title.text = "Parogue Heights";
             var playButton = root.CreateChild<Button>(playButtonStr);
             playButton.text = "Play";
             playButton.clickable.clicked += StartGame;
+
+            var toolsButton = root.CreateChild<Button>(toolsButtonStr);
+            toolsButton.text = "Tools";
+            toolsButton.clickable.clicked += () =>
+            {
+                Close();
+                Registry.Get<ToolsMenu>("Tools_Menu").Open();
+            };
             
             var quitButton = root.CreateChild<Button>(quitButtonStr);
             quitButton.text = "Quit";

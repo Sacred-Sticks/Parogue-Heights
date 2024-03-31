@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace Parogue_Heights
 {
-    public class MouseLockManagement : MonoBehaviour
+    public class CursorLockManager : MonoBehaviour
     {
         #region UnityEvents
         private void Start()

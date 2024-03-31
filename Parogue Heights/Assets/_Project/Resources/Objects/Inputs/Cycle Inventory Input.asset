@@ -44,4 +44,28 @@ MonoBehaviour:
       m_Groups: 
       m_Action: Input
       m_Flags: 8
+    - m_Name: QE
+      m_Id: fea3264f-c0cb-459e-becd-ad16952963e4
+      m_Path: 1DAxis
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Input
+      m_Flags: 4
+    - m_Name: negative
+      m_Id: 375fb37b-d86e-4db1-adcc-bb52451bdedf
+      m_Path: <Keyboard>/q
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Input
+      m_Flags: 8
+    - m_Name: positive
+      m_Id: f0144711-99e0-4446-bbae-403c89f8fa77
+      m_Path: <Keyboard>/e
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Input
+      m_Flags: 8
     m_Flags: 0
