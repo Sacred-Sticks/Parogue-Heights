@@ -226,8 +226,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: Input Manager
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 7085138638977603029, guid: 7de23eed8e36df540b6a93dbd29dd1d6, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
