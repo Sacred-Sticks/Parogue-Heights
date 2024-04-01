@@ -55,7 +55,7 @@ namespace Parogue_Heights
                 return;
             if (slots.Count == 0)
                 return;
-            if (slotsHUD.Count > formerSlotIndex)
+            if (slots.Count > formerSlotIndex)
                 slotsHUD[slots[formerSlotIndex]].Deactivate();
             slotsHUD[slots[newSlotIndex]].Activate();
         }

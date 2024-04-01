@@ -8,18 +8,24 @@ VisualElement {
 
 .unity-progress-bar__container {
     position: relative;
-    top: 90px;
+    top: 720px;
 }
 
 .unity-progress-bar__background {
-    border-radius: 4px;
+    border-radius: 40px;
     border-color: rgb(50, 25, 25);
     background-color: rgb(100, 0, 0);
-    min-height: 10px;
-    max-height: 10px;
+    min-height: 100px;
+    max-height: 100px;
 }
 
 .unity-progress-bar__progress {
-    border-radius: 2px;
-    background-color: rgb(200, 0, 0);
+    border-radius: 35px;
+    background-color: rgb(255, 0, 0);
+    min-height: 80px;
+    max-height: 80px;
+    margin-top: 10px;
+    position: relative;
+    left: 5px;
+    width: 90%;
 }

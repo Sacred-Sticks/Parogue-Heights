@@ -5,7 +5,7 @@ VisualElement
 
 :root 
 {
-	background-color: rgb(30, 30, 30);
+	background-color: rgb(20, 20, 20);
 	flex: 1;
 	justify-content: space-around;
 	align-items: center;
@@ -21,6 +21,9 @@ VisualElement
 	height: 100%;
 	width: 50%;
 	margin: 50px;
+	border-width: 10px;
+	border-color: orange;
+	background-color: rgb(30, 30, 30);
 }
 
 .control 
@@ -32,12 +35,23 @@ VisualElement
 
 .control Label
 {
-	color: red;
-	font-size: 50px;
+	color: rgb(200, 200, 200);
+	font-size: 60px;
 }
 
 .close_button
 {
-	font-size: 40px;
+	font-size: 60px;
 	margin: 50px;
+	width: 20%;
+	background-color: rgb(30, 30, 30);
+	border-color: orange;
+	border-width: 5px;
+	transition-duration: 0.125s;
+}
+
+.close_button:hover
+{
+	background-color: rgb(50, 50, 50);
+	border-radius: 35px;
 }

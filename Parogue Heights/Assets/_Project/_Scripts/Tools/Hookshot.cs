@@ -58,6 +58,8 @@ namespace Parogue_Heights
 
         public void OnActivateBegin()
         {
+            if (hookshotActive)
+                return;
             var cameraTransform = Camera.main.transform;
             var ray = new Ray(body.position, cameraTransform.forward);
             if (!Physics.SphereCast(ray, radius, out var hit, range, _platformMask.Mask))
@@ -68,6 +70,8 @@ namespace Parogue_Heights
 
         public void OnActivateEnd()
         {
+            if (!hookshotActive)
+                return;
             body.useGravity = true;
             hookshotActive = false;
             ITool.LowerUses(this);

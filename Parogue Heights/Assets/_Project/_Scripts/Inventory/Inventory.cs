@@ -55,7 +55,10 @@ namespace Parogue_Heights
         private void CycleInventory(int direction)
         {
             if (inventorySlots.Count == 0)
+            {
+                activeSlotIndex = 0;
                 return;
+            }
             int formerIndex = activeSlotIndex;
             activeSlotIndex += direction;
             activeSlotIndex = activeSlotIndex % inventorySlots.Count;

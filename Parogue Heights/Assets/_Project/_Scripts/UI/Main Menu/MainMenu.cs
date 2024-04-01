@@ -23,8 +23,6 @@ namespace Parogue_Heights
         private void Awake()
         {
             root = GetComponent<UIDocument>().rootVisualElement;
-            root.styleSheets.Add(styleSheet);
-            root.AddToClassList(rootStr);
             BuildDocument();
         }
         #endregion
@@ -33,6 +31,9 @@ namespace Parogue_Heights
         {
             if (root == null)
                 return;
+            root.styleSheets.Add(styleSheet);
+            root.AddToClassList(rootStr);
+
             var title = root.CreateChild<Label>(titleStr);
             title.text = "Parogue Heights";
             var playButton = root.CreateChild<Button>(playButtonStr);

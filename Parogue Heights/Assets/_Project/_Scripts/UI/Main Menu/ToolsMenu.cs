@@ -13,6 +13,9 @@ namespace Parogue_Heights
 
         // Constants
         private const string containerStr = "container";
+        private const string scrollerStr = "scroller";
+        private const string scrollerBackdropStr = "scroller_backdrop";
+        private const string scrollerButtonStr = "scroller_button";
         private const string closeButtonStr = "close_button";
         private const string toolContainerStr = "tool_container";
         private const string toolDataContainerStr = "tool_data_container";
@@ -46,11 +49,18 @@ namespace Parogue_Heights
             root.Clear();
             root.styleSheets.Add(styleSheet);
 
-            var container = root.CreateChild<ScrollView>(containerStr);
-            container.verticalScrollerVisibility = ScrollerVisibility.Hidden;
-            var content_container = container.Q("unity-content-container");
+            var scrollView = root.CreateChild<ScrollView>(containerStr);
+            scrollView.horizontalScrollerVisibility = ScrollerVisibility.Hidden;
+            var container = scrollView.Q("unity-content-container");
             foreach (var toolData in _toolData)
-                AddTool(toolData, content_container);
+                AddTool(toolData, container);
+
+            var scroller = scrollView.verticalScroller;
+            scroller.Q("unity-dragger").AddToClassList(scrollerStr);
+            scroller.Q("unity-tracker").AddToClassList(scrollerBackdropStr);
+            scroller.Q("unity-low-button").AddToClassList(scrollerButtonStr);
+            scroller.Q("unity-high-button").AddToClassList(scrollerButtonStr);
+
             var button = root.CreateChild<Button>(closeButtonStr);
             button.text = "Close";
             button.clickable.clicked += Close;

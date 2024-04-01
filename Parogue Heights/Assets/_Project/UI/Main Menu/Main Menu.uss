@@ -1,27 +1,59 @@
 VisualElement {}
 
+Button 
+{
+	background-color: rgb(25, 25, 25);
+	color: rgb(150, 150, 150);
+	border-width: 5px;
+	transition-duration: 0.125s;
+}
+
+Button:hover 
+{
+	background-color: rgb(50, 50, 50);
+	color: rgb(255, 255, 255);
+	border-radius: 40px;
+}
+
 .root {
 	flex: 1;
 	display: flex;
 	flex-direction: column;
 	padding: 50px;
 	align-items: center;
+	background-color: rgb(25, 25, 25);
 }
 
 .title {
-	font-size: 20px;
+	font-size: 160px;
 	-unity-font-style: bold;
 	color: #AFAFAF;
 }
 
 .play_button {
-	width: 30%;
+	width: 50%;
 	padding: 10px;
-	font-size: 50px
+	font-size: 100px;
+	margin: 50px;
+}
+
+.tools_button
+{
+	width: 35%;
+	font-size: 40px;
+	margin-top: 10px;
+}
+
+.controls_button
+{
+	width: 25%;
+	font-size: 40px;
+	margin-bottom: 10px;
 }
 
 .quit_button {
-	width: 15%;
+	width: 20%;
 	padding: 15px;
-	font-size: 25px;
+	font-size: 50px;
+	margin: 40px;
 }

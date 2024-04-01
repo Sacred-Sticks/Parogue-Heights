@@ -44,6 +44,8 @@ namespace Parogue_Heights
 
             root.CreateChild<Label>(headerStr).text = "Controls";
             var scrollView = root.CreateChild<ScrollView>(containerStr);
+            scrollView.horizontalScrollerVisibility = ScrollerVisibility.Hidden;
+
             var container = scrollView.Q("unity-content-container");
 
             foreach (Input input in inputs)

@@ -66,6 +66,8 @@ namespace Parogue_Heights
 
         public void OnActivateBegin()
         {
+            if (isPlacing)
+                return;
             var cameraTransform = Camera.main.transform;
             var ray = new Ray(cameraTransform.position, cameraTransform.forward);
             if (!Physics.Raycast(ray, out var hit, range, _platformMask.Mask))
@@ -78,7 +80,7 @@ namespace Parogue_Heights
 
         public void OnActivateEnd()
         {
-            if (hologram == null)
+            if (!isPlacing || hologram == null)
                 return;
             isPlacing = false;
             hologram.AddComponent<BouncePadPlatform>();

@@ -18,6 +18,8 @@ namespace Parogue_Heights
         private readonly Rigidbody body;
         private readonly float jetForce;
 
+        private bool active;
+        
         #region Tool
         private int uses;
         public int Uses
@@ -35,13 +37,18 @@ namespace Parogue_Heights
 
         public void OnActivateBegin()
         {
+            if (active)
+                return;
             body.AddForce(Vector3.up * jetForce, ForceMode.VelocityChange);
-            ITool.LowerUses(this);
+            active = true;
         }
 
         public void OnActivateEnd()
         {
-            
+            if (!active)
+                return;
+            ITool.LowerUses(this);
+            active = false;
         }
         #endregion
     }

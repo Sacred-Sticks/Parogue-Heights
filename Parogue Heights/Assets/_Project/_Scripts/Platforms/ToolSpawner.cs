@@ -20,10 +20,7 @@ namespace Parogue_Heights
             SpawnTool();
         }
 
-        private void OnDestroy()
-        {
-            token.DOPause();
-        }
+        private void OnDestroy() => token?.DOKill();
         #endregion
 
         private void SpawnTool()
@@ -39,7 +36,7 @@ namespace Parogue_Heights
 
         private void ProvideTool()
         {
-            token.DOPause();
+            token.DOKill();
             Destroy(token.gameObject);
             var tool = ToolFactory.CreateRandomTool();
             Inventory.Instance.CollectTool(tool);
