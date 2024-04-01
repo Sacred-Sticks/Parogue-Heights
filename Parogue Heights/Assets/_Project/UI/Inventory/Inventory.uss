@@ -8,20 +8,20 @@ VisualElement {}
 
 .container {
 	position: relative;
-	bottom: 10px;
-	height: 20px;
+	bottom: 80px;
+	height: 160px;
 	flex-direction: row;
 	justify-content: center;
 }
 
 .slot {
 	background-color: rgba(50, 50, 50, 0.5);
-	margin-left: 1px;
-	margin-right: 1px;
-	height: 15px;
-	width: 15px;
-	border-radius: 5px;
-	border-width: 1px;
+	margin-left: 8px;
+	margin-right: 8px;
+	height: 120px;
+	width: 120px;
+	border-radius: 40px;
+	border-width: 8px;
 	border-color: rgba(0, 0, 0, 0.5);
 }
 
@@ -31,8 +31,8 @@ VisualElement {}
 
 .count {
 	position: absolute;
-	top: 2px;
-	left: 6px;
+	top: 50px;
+	left: 70px;
 	color: #AFAFFF;
-	font-size: 5px;
+	font-size: 40px;
 }
