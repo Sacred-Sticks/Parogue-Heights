@@ -10,14 +10,10 @@ The Endless Ascent is a Unity Game where the player will control a character fro
   - Pulls the player directly toward the location they shot at
 - JetBoots
   - Player can propel themselves according to their personal upward direction
-- Swinging Grapple
-  - Swings the player from the target they fired towards at, keeping the initial distance they had when the fired the grapple
-- Springy Shoes
-  - Gives the player extra jump height, allowing them to reach higher locations
-- Push Launcher
+- Thrusters
+  - Launches the player towards the direction they are looking utilizing arm / leg based thrusters
+- Smashers
   - Pushes the player away from where they are currently facing with excessive force, launching them away
-- Glue Spray
-  - Player can activate a sprayer to make any surface walkable
 
 ## System Descriptions
 - Special Platforms
