@@ -515,7 +515,7 @@ MonoBehaviour:
   - name: Use Active Tool
     inputKey: Left Click
   - name: Cycle Active Tool
-    inputKey: Q-E
+    inputKey: Q-E or Scroll Wheel
 --- !u!1 &1807466688
 GameObject:
   m_ObjectHideFlags: 0

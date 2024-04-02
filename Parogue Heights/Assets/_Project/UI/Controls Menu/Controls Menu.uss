@@ -19,7 +19,7 @@ VisualElement
 	align-items: center;
 	justify-content: center;
 	height: 100%;
-	width: 50%;
+	width: 75%;
 	margin: 50px;
 	border-width: 10px;
 	border-color: orange;
