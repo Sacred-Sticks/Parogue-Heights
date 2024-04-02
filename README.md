@@ -4,10 +4,12 @@ The Endless Ascent is a Unity Game where the player will control a character fro
 
 ## Tools and Upgrades
 
-- Trampoline Platforms
+- Bouncepad Platforms
   - Players can bounce and jump on trampolines for extra height
 - Anti-Gravity Hookshot
   - Pulls the player directly toward the location they shot at
+- JetBoots
+  - Player can propel themselves according to their personal upward direction
 - Swinging Grapple
   - Swings the player from the target they fired towards at, keeping the initial distance they had when the fired the grapple
 - Springy Shoes
@@ -16,8 +18,6 @@ The Endless Ascent is a Unity Game where the player will control a character fro
   - Pushes the player away from where they are currently facing with excessive force, launching them away
 - Glue Spray
   - Player can activate a sprayer to make any surface walkable
-- Jetpack
-  - Player can propel themselves according to their personal upward direction
 
 ## System Descriptions
 - Special Platforms
