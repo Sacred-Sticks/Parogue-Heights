@@ -67,12 +67,9 @@ namespace Parogue_Heights
         protected void Jump()
         {
             if (!isGrounded)
-            {
-                NotifyObservers(Event.AirJump);
                 return;
-            }
             body.AddForce(jumpVelocity * Vector3.up, ForceMode.VelocityChange);
-            NotifyObservers(Event.Jump);
+            NotifyObservers(GroundedStatus.Jump);
         }
 
         protected void CheckGrounded()
@@ -80,7 +77,7 @@ namespace Parogue_Heights
             var ray = new Ray(transform.position + Vector3.up, -Vector3.up);
             bool previouslyGrounded = isGrounded;
             isGrounded = Physics.SphereCast(ray, groundRadius, groundDistance);
-            NotifyObservers(isGrounded ? Event.Grounded : Event.Airborne);
+            NotifyObservers(isGrounded ? GroundedStatus.Landing : GroundedStatus.Falling);
             if (!previouslyGrounded || isGrounded)
                 return;
             initialAirborneVelocity = Vector3.ProjectOnPlane(body.velocity, Vector3.up);
@@ -88,16 +85,14 @@ namespace Parogue_Heights
         }
 
         #region Notifications
-        public enum Event
+        public enum GroundedStatus
         {
             Jump,
-            Bounce,
-            AirJump,
-            Grounded,
-            Airborne,
+            Landing,
+            Falling,
         }
 
-        public struct MovementChange
+        public struct MovementChange : INotification
         {
             public Vector3 LocalDirection { get; }
 
