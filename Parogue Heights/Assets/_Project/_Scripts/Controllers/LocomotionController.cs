@@ -97,7 +97,7 @@ namespace Parogue_Heights
             Airborne,
         }
 
-        public struct MovementChange
+        public struct MovementChange : INotification
         {
             public Vector3 LocalDirection { get; }
 
