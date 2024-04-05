@@ -308,7 +308,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementSpeed: 5
-  jumpHeight: 3
+  jumpHeight: 3.125
   movementInput: {fileID: 11400000, guid: 9c6dbb0ddd1bb814aa8f8b492e21dded, type: 2}
   jumpInput: {fileID: 11400000, guid: 26bf7e812f9d93349b0c6589c9e5badd, type: 2}
 --- !u!1 &6765702911741409624
@@ -442,6 +442,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 495398, guid: 1c1e3b524b25b1f4394053590b1c723e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9513408, guid: 1c1e3b524b25b1f4394053590b1c723e, type: 3}
+      propertyPath: m_WarningMessage
+      value: "\nBinding warning: Some generic clip(s) animate transforms that are
+        already bound by a Humanoid avatar. These transforms can only be changed
+        by Humanoid clips.\n\tTransform 'Hips'\n\tFrom animation clip 'Falling To
+        Landing'"
+      objectReference: {fileID: 0}
+    - target: {fileID: 9513408, guid: 1c1e3b524b25b1f4394053590b1c723e, type: 3}
+      propertyPath: m_ApplyRootMotion
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
