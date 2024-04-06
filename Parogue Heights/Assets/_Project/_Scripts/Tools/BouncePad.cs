@@ -40,17 +40,67 @@ namespace Parogue_Heights
                     await Task.Delay(TimeSpan.FromSeconds(Time.deltaTime));
                     continue;
                 }
+                if (!CheckBorders(hit.point, -hit.normal))
+                {
+                    await Task.Delay(TimeSpan.FromSeconds(Time.deltaTime));
+                    continue;
+                }
                 hologram.transform.position = hit.point;
                 hologram.transform.rotation = Quaternion.FromToRotation(Vector3.up, hit.normal);
                 await Task.Delay(TimeSpan.FromSeconds(Time.deltaTime));
             }
         }
 
+        /// <summary>
+        /// Check if the bouncepad is entirely on a platform
+        /// </summary>
+        /// <param name="hitPoint"></param>
+        /// <returns>True if the full platform is above a floor tile, else false</returns>
+        private bool CheckBorders(Vector3 hitPoint, Vector3 direction)
+        {
+            const float raycastRange = 0.1f;
+            const float distance = 0.875f;
+            var origin = hitPoint - direction * raycastRange / 4;
+
+            var right = Vector3.Cross(direction, direction + Vector3.one).normalized;
+            var forward = Vector3.Cross(direction, right);
+
+            Vector3 raycastOrigin;
+            raycastOrigin = origin + right * distance;
+            if (!Physics.Raycast(raycastOrigin, direction, raycastRange, _platformMask.Mask))
+                return false;
+            raycastOrigin = origin - right * distance;
+            if (!Physics.Raycast(raycastOrigin, direction, raycastRange, _platformMask.Mask))
+                return false;
+            raycastOrigin = origin + forward * distance;
+            if (!Physics.Raycast(raycastOrigin, direction, raycastRange, _platformMask.Mask))
+                return false;
+            raycastOrigin = origin - forward * distance;
+            if (!Physics.Raycast(raycastOrigin, direction, raycastRange, _platformMask.Mask))
+                return false;
+
+            float cornerDistance = Mathf.Sin(45) * distance;
+            raycastOrigin = origin + right * cornerDistance + forward * cornerDistance;
+            if (!Physics.Raycast(raycastOrigin, direction, raycastRange, _platformMask.Mask))
+                return false;
+            raycastOrigin = origin - right * cornerDistance + forward * cornerDistance;
+            if (!Physics.Raycast(raycastOrigin, direction, raycastRange, _platformMask.Mask))
+                return false;
+            raycastOrigin = origin + right * cornerDistance - forward * cornerDistance;
+            if (!Physics.Raycast(raycastOrigin, direction, raycastRange, _platformMask.Mask))
+                return false;
+            raycastOrigin = origin - right * cornerDistance - forward * cornerDistance;
+            if (!Physics.Raycast(raycastOrigin, direction, raycastRange, _platformMask.Mask))
+                return false;
+
+            return true;
+        }
+
         #region Tool
         private int uses;
-        public int Uses 
+        public int Uses
         {
-            get => uses; 
+            get => uses;
             set
             {
                 uses = value;
@@ -73,6 +123,8 @@ namespace Parogue_Heights
             if (!Physics.Raycast(ray, out var hit, range, _platformMask.Mask))
                 return;
             if (PlatformManager.IsWithinRadius(hit.point))
+                return;
+            if (!CheckBorders(hit.point, -hit.normal))
                 return;
             hologram = UnityEngine.Object.Instantiate(_trampolinePrefab, hit.point, Quaternion.FromToRotation(Vector3.up, hit.normal));
             HologramFollowCenter(cameraTransform);

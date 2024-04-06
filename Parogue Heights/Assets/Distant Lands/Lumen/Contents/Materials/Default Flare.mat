@@ -11,8 +11,10 @@ Material:
   m_Shader: {fileID: 4800000, guid: c763699f261e8154e9e03d87b42b912c, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
-  m_ValidKeywords: []
+  m_ValidKeywords:
+  - _RECEIVE_SHADOWS_OFF
   m_InvalidKeywords:
+  - _RECEIVESHADOWS_OFF
   - _USEUNIFORMVARIATION_ON
   m_LightmapFlags: 0
   m_EnableInstancingVariants: 1
@@ -101,7 +103,7 @@ Material:
     - _Parallax: 0.02
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _ReceiveShadows: 1
+    - _ReceiveShadows: 0
     - _RenderOffset: 0
     - _RenderSpace: 0
     - _SmoothnessTextureChannel: 0

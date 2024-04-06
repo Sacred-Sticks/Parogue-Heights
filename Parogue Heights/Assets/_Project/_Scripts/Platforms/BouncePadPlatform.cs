@@ -10,8 +10,16 @@ namespace Parogue_Heights
         private void Start()
         {
             Registry.Register<IPlatform>(transform.position, this);
+            EnableParticles();
         }
         #endregion
+
+        private void EnableParticles()
+        {
+            var effectCount = transform.GetChild(0).childCount;
+            for (var i = 0; i < effectCount; i++)
+                transform.GetChild(0).GetChild(i).gameObject.SetActive(true);
+        }
 
         #region Platform
         public GameObject GameObject => gameObject;
