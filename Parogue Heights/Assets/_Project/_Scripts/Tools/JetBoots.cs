@@ -1,6 +1,4 @@
-﻿using System;
-using System.Threading.Tasks;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Parogue_Heights
 {
@@ -10,6 +8,11 @@ namespace Parogue_Heights
         {
             Uses = initialUses;
             body = Registry.Get<Rigidbody>(RegistryStrings.PlayerRigidbody);
+            particleMediators = new[]
+            {
+                Registry.Get<ParticlesMediator>(RegistryStrings.LeftJetBoot),
+                Registry.Get<ParticlesMediator>(RegistryStrings.RightJetBoot),
+            };
             jetForce = Mathf.Sqrt(Mathf.Abs(jetHeight * Physics.gravity.y * 2));
         }
 
@@ -17,6 +20,7 @@ namespace Parogue_Heights
         private const float jetHeight = 1f;
         private readonly Rigidbody body;
         private readonly float jetForce;
+        private readonly ParticlesMediator[] particleMediators;
 
         private bool active;
         
@@ -40,6 +44,8 @@ namespace Parogue_Heights
             if (active)
                 return;
             body.AddForce(Vector3.up * jetForce, ForceMode.VelocityChange);
+            foreach (var particleMediator in particleMediators)
+                particleMediator.Play();
             active = true;
         }
 

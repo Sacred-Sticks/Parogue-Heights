@@ -11,6 +11,11 @@ namespace Parogue_Heights
             Uses = initialUses;
             body = Registry.Get<Rigidbody>(RegistryStrings.PlayerRigidbody);
             _platformMask = Resources.Load<LayerMaskData>(ResourcePaths.PlatformMask);
+            particleMediators = new[]
+            {
+                Registry.Get<ParticlesMediator>(RegistryStrings.LeftHookshot),
+                Registry.Get<ParticlesMediator>(RegistryStrings.RightHookshot),
+            };
         }
 
         private bool hookshotActive;
@@ -23,6 +28,7 @@ namespace Parogue_Heights
         private const float height = 2;
         private readonly Rigidbody body;
         private readonly LayerMaskData _platformMask;
+        private readonly ParticlesMediator[] particleMediators;
 
         private async void MoveInDirection(Vector3 goalPosition)
         {
@@ -66,6 +72,8 @@ namespace Parogue_Heights
                 return;
             body.useGravity = false;
             MoveInDirection(hit.point);
+            foreach (var particleMediator in particleMediators)
+                particleMediator.Play();
         }
 
         public void OnActivateEnd()
@@ -75,6 +83,8 @@ namespace Parogue_Heights
             body.useGravity = true;
             hookshotActive = false;
             ITool.LowerUses(this);
+            foreach (var particleMediator in particleMediators)
+                particleMediator.Stop();
         }
         #endregion
     }

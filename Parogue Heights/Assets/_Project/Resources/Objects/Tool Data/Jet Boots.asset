@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   toolType: 2
   toolDescription: Give yourself some extra jumps with Jet Boots!
-  toolSprite: {fileID: 2800000, guid: dfc0b875ab963fc4eb2aa11bd8dbc41b, type: 3}
+  toolSprite: {fileID: 2800000, guid: 691681f2534c14246aae2d615230efa5, type: 3}
