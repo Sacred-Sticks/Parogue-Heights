@@ -9,9 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a684b23140c90da45b3dbec8154e5721, type: 3}
-  m_Name: Jet Boots
+  m_Script: {fileID: 11500000, guid: 74362cc290bc57c4f9bb02986762e1a9, type: 3}
+  m_Name: Jump
   m_EditorClassIdentifier: 
   toolType: 2
-  toolDescription: Give yourself some extra jumps with Jet Boots!
+  toolDescription: Cast this spell to gain speed upward with a propulsion!
   toolSprite: {fileID: 2800000, guid: 691681f2534c14246aae2d615230efa5, type: 3}
+  inventoryCountColor: {r: 0.97483313, g: 1, b: 0.4198113, a: 1}
+  inventoryBackdropColor: {r: 0, g: 0.063590445, b: 0.39215687, a: 0.19607843}

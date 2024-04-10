@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Parogue_Heights
 {
-    public sealed class BouncePad : ITool
+    public sealed class BouncePad : ISpell
     {
         public BouncePad()
         {
@@ -137,7 +137,7 @@ namespace Parogue_Heights
             isPlacing = false;
             hologram.AddComponent<BouncePadPlatform>();
             hologram = null;
-            ITool.LowerUses(this);
+            ISpell.LowerUses(this);
         }
         #endregion
     }

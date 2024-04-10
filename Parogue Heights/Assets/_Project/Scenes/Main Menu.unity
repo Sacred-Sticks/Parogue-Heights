@@ -303,10 +303,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   styleSheet: {fileID: 7433441132597879392, guid: ad678fc59e86f594981ff6deaaf041ee,
     type: 3}
-  _toolData:
-  - {fileID: 11400000, guid: a7258172b73d57443b41622d6917652c, type: 2}
-  - {fileID: 11400000, guid: 3332e6ddc7ebf1741a495ea79f17e514, type: 2}
-  - {fileID: 11400000, guid: e8fcc4a8b5ab6934d98ad243426c9d71, type: 2}
+  spells: {fileID: 11400000, guid: 1df58986212bbd64f86c3268587f7d3b, type: 2}
 --- !u!114 &1019568449
 MonoBehaviour:
   m_ObjectHideFlags: 0

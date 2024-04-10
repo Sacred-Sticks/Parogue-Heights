@@ -1,4 +1,5 @@
-﻿using UnityEngine.UIElements;
+﻿using UnityEngine;
+using UnityEngine.UIElements;
 
 namespace Parogue_Heights
 {
@@ -11,11 +12,12 @@ namespace Parogue_Heights
         private const string countStr = "count";
         private const string activeStr = "active";
 
-        public SlotElement(VisualElement container, InventorySlot slot)
+        public SlotElement(VisualElement container, InventorySlot slot, SpellData data)
         {
             slotElement = container.CreateChild<VisualElement>(slotStr);
-            slotElement.style.backgroundImage = new StyleBackground(InventoryHUD.toolSprites[slot.ToolType]);
+            slotElement.style.backgroundImage = new StyleBackground(data.ToolSprite);
             count = slotElement.CreateChild<Label>(countStr);
+            count.style.color = data.InventoryCountColor;
             count.text = slot.Count.ToString();
         }
 

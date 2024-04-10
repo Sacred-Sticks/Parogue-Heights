@@ -26,13 +26,12 @@ VisualElement {}
 }
 
 .slot.active {
-	background-color: rgba(25, 25, 100, 0.5) !important;
+	background-color: rgba(125, 125, 125, 0.25) !important;
 }
 
 .count {
 	position: absolute;
 	top: 50px;
 	left: 70px;
-	color: #AFAFFF;
 	font-size: 40px;
 }

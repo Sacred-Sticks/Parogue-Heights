@@ -74,7 +74,7 @@ namespace Parogue_Heights
             inventoryHUD.RemoveSlot(slot);
         }
 
-        public void CollectTool(ITool tool)
+        public void CollectTool(ISpell tool)
         {
             foreach (var inventorySlot in inventorySlots)
             {
@@ -94,6 +94,6 @@ namespace Parogue_Heights
     public interface IInventory
     {
         public void RemoveSlot(InventorySlot slot);
-        public void CollectTool(ITool tool);
+        public void CollectTool(ISpell tool);
     }
 }

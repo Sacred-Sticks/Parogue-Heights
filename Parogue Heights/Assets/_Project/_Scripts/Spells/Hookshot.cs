@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Parogue_Heights
 {
-    public sealed class Hookshot : ITool
+    public sealed class Hookshot : ISpell
     {
         public Hookshot()
         {
@@ -82,7 +82,7 @@ namespace Parogue_Heights
                 return;
             body.useGravity = true;
             hookshotActive = false;
-            ITool.LowerUses(this);
+            ISpell.LowerUses(this);
             foreach (var particleMediator in particleMediators)
                 particleMediator.Stop();
         }

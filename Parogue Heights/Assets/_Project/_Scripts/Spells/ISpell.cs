@@ -1,30 +1,30 @@
 ﻿namespace Parogue_Heights
 {
-    public interface ITool
+    public interface ISpell
     {
-        public static ToolType GetToolType(ITool tool)
+        public static SpellType GetToolType(ISpell tool)
         {
             return tool switch
             {
-                BouncePad _ => ToolType.BouncePad,
-                Hookshot _ => ToolType.Hookshot,
-                JetBoots _ => ToolType.JetBoots,
+                BouncePad _ => SpellType.Bounce,
+                Hookshot _ => SpellType.Hookshot,
+                JetBoots _ => SpellType.Jump,
                 _ => default,
             };
         }
 
-        public static void LowerUses(ITool tool)
+        public static void LowerUses(ISpell tool)
         {
             tool.Uses--;
             if (tool.Uses <= 0)
                 Inventory.Instance.RemoveSlot(tool.InventorySlot);
         }
 
-        public enum ToolType
+        public enum SpellType
         {
-            BouncePad,
+            Bounce,
             Hookshot,
-            JetBoots,
+            Jump,
         }
 
         public int Uses { get; set; }

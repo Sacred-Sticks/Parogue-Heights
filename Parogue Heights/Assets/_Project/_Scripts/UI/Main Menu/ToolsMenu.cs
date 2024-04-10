@@ -8,8 +8,8 @@ namespace Parogue_Heights
     public class ToolsMenu : Menu
     {
         [Inject] private MainMenu mainMenu;
-        
-        [SerializeField, EnumData(typeof(ITool.ToolType))] private ToolData[] _toolData;
+
+        [SerializeField] private Spells spells;
 
         // Constants
         private const string containerStr = "container";
@@ -52,8 +52,8 @@ namespace Parogue_Heights
             var scrollView = root.CreateChild<ScrollView>(containerStr);
             scrollView.horizontalScrollerVisibility = ScrollerVisibility.Hidden;
             var container = scrollView.Q("unity-content-container");
-            foreach (var toolData in _toolData)
-                AddTool(toolData, container);
+            foreach (var spell in spells.All())
+                AddTool(spell, container);
 
             var scroller = scrollView.verticalScroller;
             scroller.Q("unity-dragger").AddToClassList(scrollerStr);
@@ -66,7 +66,7 @@ namespace Parogue_Heights
             button.clickable.clicked += Close;
         }
 
-        private void AddTool(ToolData toolData, VisualElement container)
+        private void AddTool(SpellData toolData, VisualElement container)
         {
             var toolContainer = container.CreateChild<VisualElement>(toolContainerStr);
             var image = toolContainer.CreateChild<VisualElement>(toolImageStr);

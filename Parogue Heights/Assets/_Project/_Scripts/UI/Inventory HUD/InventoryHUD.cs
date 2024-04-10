@@ -13,8 +13,7 @@ namespace Parogue_Heights
 
         [SerializeField] private StyleSheet styleSheet;
         [Space]
-        [SerializeField, EnumData(typeof(ITool.ToolType))] private Texture2D[] _toolSprites;
-        [SerializeField, EnumData(typeof(ITool.ToolType))] private ToolData[] _toolPopupData;
+        [SerializeField] private Spells spells;
 
         // Constants
         private VisualElement container;
@@ -23,14 +22,11 @@ namespace Parogue_Heights
         private VisualElement root;
         private readonly List<InventorySlot> slots = new List<InventorySlot>();
         private static readonly Dictionary<InventorySlot, SlotElement> slotsHUD = new Dictionary<InventorySlot, SlotElement>();
-        public static readonly Dictionary<ITool.ToolType, Texture2D> toolSprites = new Dictionary<ITool.ToolType, Texture2D>();
         
         #region UnityEvents
         private void Awake()
         {
             root = GetComponent<UIDocument>().rootVisualElement;
-            toolSprites.Clear();
-            toolSprites.LoadDictionary(_toolSprites);
         }
 
         private void Start()
@@ -62,7 +58,7 @@ namespace Parogue_Heights
 
         public void AddSlot(InventorySlot slot)
         {
-            var slotElement = new SlotElement(container, slot);
+            var slotElement = new SlotElement(container, slot, spells.Get(slot.ToolType));
             slots.Add(slot);
             slotsHUD.Add(slot, slotElement);
             if (slots.Count == 1)

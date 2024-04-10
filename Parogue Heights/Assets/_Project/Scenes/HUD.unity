@@ -215,14 +215,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   styleSheet: {fileID: 7433441132597879392, guid: 0901f1632cc3c714285debf998db36cf,
     type: 3}
-  _toolSprites:
-  - {fileID: 2800000, guid: 9cf00e6c134d48341b19938f9ead9f49, type: 3}
-  - {fileID: 2800000, guid: bbf7214403a0ccd428854ed61bb2933d, type: 3}
-  - {fileID: 2800000, guid: 691681f2534c14246aae2d615230efa5, type: 3}
-  _toolPopupData:
-  - {fileID: 11400000, guid: a7258172b73d57443b41622d6917652c, type: 2}
-  - {fileID: 11400000, guid: 3332e6ddc7ebf1741a495ea79f17e514, type: 2}
-  - {fileID: 11400000, guid: e8fcc4a8b5ab6934d98ad243426c9d71, type: 2}
+  spells: {fileID: 11400000, guid: 1df58986212bbd64f86c3268587f7d3b, type: 2}
 --- !u!114 &1821445214
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -9,9 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a684b23140c90da45b3dbec8154e5721, type: 3}
-  m_Name: Bounce Pad
+  m_Script: {fileID: 11500000, guid: 74362cc290bc57c4f9bb02986762e1a9, type: 3}
+  m_Name: Bounce
   m_EditorClassIdentifier: 
   toolType: 0
-  toolDescription: Place a pad that can bounce you away from it!
+  toolDescription: Cast a rune on a surface that rejects contact!
   toolSprite: {fileID: 2800000, guid: 9cf00e6c134d48341b19938f9ead9f49, type: 3}
+  inventoryCountColor: {r: 0.6862745, g: 0.6862745, b: 1, a: 1}
+  inventoryBackdropColor: {r: 0.39215687, g: 0.39215687, b: 0, a: 0}

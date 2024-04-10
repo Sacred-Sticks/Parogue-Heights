@@ -12,10 +12,10 @@ namespace Parogue_Heights
             typeof(JetBoots),
         };
 
-        public static ITool CreateRandomTool()
+        public static ISpell CreateRandomTool()
         {
             int index = UnityEngine.Random.Range(0, _allTypes.Length);
-            return _allTypes[index].GetConstructor(Type.EmptyTypes).Invoke(null) as ITool;
+            return _allTypes[index].GetConstructor(Type.EmptyTypes).Invoke(null) as ISpell;
         }
     }
 }

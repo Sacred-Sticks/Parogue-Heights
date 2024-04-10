@@ -2,7 +2,7 @@
 
 namespace Parogue_Heights
 {
-    public sealed class JetBoots : ITool
+    public sealed class JetBoots : ISpell
     {
         public JetBoots()
         {
@@ -53,7 +53,7 @@ namespace Parogue_Heights
         {
             if (!active)
                 return;
-            ITool.LowerUses(this);
+            ISpell.LowerUses(this);
             active = false;
         }
         #endregion
