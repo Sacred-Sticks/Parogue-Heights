@@ -2,9 +2,9 @@
 
 namespace Parogue_Heights
 {
-    public sealed class JetBoots : ISpell
+    public sealed class JumpSpell : ISpell
     {
-        public JetBoots()
+        public JumpSpell()
         {
             Uses = initialUses;
             body = Registry.Get<Rigidbody>(RegistryStrings.PlayerRigidbody);

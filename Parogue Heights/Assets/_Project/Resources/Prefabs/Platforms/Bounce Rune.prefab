@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1461798211262849948}
   - component: {fileID: 2737503105147413184}
   m_Layer: 0
-  m_Name: Bounce Pad
+  m_Name: Bounce Rune
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

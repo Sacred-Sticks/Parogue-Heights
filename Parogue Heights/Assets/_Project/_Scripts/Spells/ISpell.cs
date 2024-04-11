@@ -6,9 +6,9 @@
         {
             return tool switch
             {
-                BouncePad _ => SpellType.Bounce,
-                Hookshot _ => SpellType.Hookshot,
-                JetBoots _ => SpellType.Jump,
+                BounceSpell _ => SpellType.Bounce,
+                HookshotSpell _ => SpellType.Hookshot,
+                JumpSpell _ => SpellType.Jump,
                 _ => default,
             };
         }
