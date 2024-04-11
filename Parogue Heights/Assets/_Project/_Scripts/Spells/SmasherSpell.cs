@@ -2,28 +2,28 @@
 
 namespace Parogue_Heights
 {
-    public sealed class JumpSpell : ISpell
+    public sealed class SmasherSpell : ISpell
     {
-        public JumpSpell()
+        private const float thrusterForce = 10f;
+        private const int initialUses = 4;
+        private int uses;
+        private readonly Rigidbody body;
+        private readonly ParticlesMediator[] particleMediators;
+        private readonly Transform cameraTransform;
+
+        public SmasherSpell()
         {
             Uses = initialUses;
             body = Registry.Get<Rigidbody>(RegistryStrings.PlayerRigidbody);
             particleMediators = new[]
             {
-                Registry.Get<ParticlesMediator>(RegistryStrings.LeftJetBoot),
-                Registry.Get<ParticlesMediator>(RegistryStrings.RightJetBoot),
+                Registry.Get<ParticlesMediator>(RegistryStrings.LeftSmasher),
+                Registry.Get<ParticlesMediator>(RegistryStrings.RightSmasher),
             };
-            jetForce = Mathf.Sqrt(Mathf.Abs(jetHeight * Physics.gravity.y * 2));
+            cameraTransform = Camera.main.transform;
         }
 
-        private const int initialUses = 10;
-        private const float jetHeight = 1f;
-        private readonly Rigidbody body;
-        private readonly float jetForce;
-        private readonly ParticlesMediator[] particleMediators;
-        
         #region Tool
-        private int uses;
         public int Uses
         {
             get => uses;
@@ -39,10 +39,16 @@ namespace Parogue_Heights
 
         public void OnActivateBegin()
         {
-            body.AddForce(Vector3.up * jetForce, ForceMode.VelocityChange);
+            body.AddForce(-cameraTransform.forward * thrusterForce, ForceMode.VelocityChange);
             foreach (var particleMediator in particleMediators)
                 particleMediator.Play();
             ISpell.LowerUses(this);
+        }
+
+        public void OnActivateEnd()
+        {
+            foreach (var particleMediator in particleMediators)
+                particleMediator.Stop();
         }
         #endregion
     }

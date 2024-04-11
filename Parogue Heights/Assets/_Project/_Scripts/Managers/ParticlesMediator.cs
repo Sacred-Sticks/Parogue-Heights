@@ -11,6 +11,8 @@ namespace Parogue_Heights
         {
             Hookshot,
             JetBoots,
+            Thrusters,
+            Smashers,
         }
         private enum Side
         {
@@ -46,12 +48,16 @@ namespace Parogue_Heights
                 {
                     ParticleType.Hookshot => RegistryStrings.LeftHookshot,
                     ParticleType.JetBoots => RegistryStrings.LeftJetBoot,
+                    ParticleType.Thrusters => RegistryStrings.LeftThruster,
+                    ParticleType.Smashers => RegistryStrings.LeftSmasher,
                     _ => string.Empty,
                 },
                 Side.Right => particleType switch
                 {
                     ParticleType.Hookshot => RegistryStrings.RightHookshot,
                     ParticleType.JetBoots => RegistryStrings.RightJetBoot,
+                    ParticleType.Thrusters => RegistryStrings.RightThruster,
+                    ParticleType.Smashers => RegistryStrings.RightSmasher,
                     _ => string.Empty,
                 },
                 _ => string.Empty,

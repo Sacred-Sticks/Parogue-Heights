@@ -4,6 +4,7 @@ using UnityEngine;
 
 namespace Parogue_Heights
 {
+
     public sealed class BounceSpell : ISpell
     {
         public BounceSpell()
