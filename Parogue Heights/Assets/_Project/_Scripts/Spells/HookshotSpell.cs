@@ -4,9 +4,9 @@ using UnityEngine;
 
 namespace Parogue_Heights
 {
-    public sealed class Hookshot : ISpell
+    public sealed class HookshotSpell : ISpell
     {
-        public Hookshot()
+        public HookshotSpell()
         {
             Uses = initialUses;
             body = Registry.Get<Rigidbody>(RegistryStrings.PlayerRigidbody);

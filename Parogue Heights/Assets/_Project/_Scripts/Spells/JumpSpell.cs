@@ -2,9 +2,9 @@
 
 namespace Parogue_Heights
 {
-    public sealed class JetBoots : ISpell
+    public sealed class JumpSpell : ISpell
     {
-        public JetBoots()
+        public JumpSpell()
         {
             Uses = initialUses;
             body = Registry.Get<Rigidbody>(RegistryStrings.PlayerRigidbody);
@@ -21,8 +21,6 @@ namespace Parogue_Heights
         private readonly Rigidbody body;
         private readonly float jetForce;
         private readonly ParticlesMediator[] particleMediators;
-
-        private bool active;
         
         #region Tool
         private int uses;
@@ -41,20 +39,10 @@ namespace Parogue_Heights
 
         public void OnActivateBegin()
         {
-            if (active)
-                return;
             body.AddForce(Vector3.up * jetForce, ForceMode.VelocityChange);
             foreach (var particleMediator in particleMediators)
                 particleMediator.Play();
-            active = true;
-        }
-
-        public void OnActivateEnd()
-        {
-            if (!active)
-                return;
             ISpell.LowerUses(this);
-            active = false;
         }
         #endregion
     }

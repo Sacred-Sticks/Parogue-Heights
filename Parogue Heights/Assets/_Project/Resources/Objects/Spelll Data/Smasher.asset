@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74362cc290bc57c4f9bb02986762e1a9, type: 3}
+  m_Name: Smasher
+  m_EditorClassIdentifier: 
+  toolType: 4
+  toolDescription: Cast a spell to pull yourself in a desired direction!
+  toolSprite: {fileID: 2800000, guid: 1c81396f141718b4dbd2f5f2646bd104, type: 3}
+  inventoryCountColor: {r: 1, g: 0.45336086, b: 0.4009434, a: 1}

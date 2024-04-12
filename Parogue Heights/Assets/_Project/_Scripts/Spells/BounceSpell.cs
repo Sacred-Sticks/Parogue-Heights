@@ -4,12 +4,13 @@ using UnityEngine;
 
 namespace Parogue_Heights
 {
-    public sealed class BouncePad : ISpell
+
+    public sealed class BounceSpell : ISpell
     {
-        public BouncePad()
+        public BounceSpell()
         {
             Uses = InitialUses;
-            _trampolinePrefab = Resources.Load<GameObject>(ResourcePaths.BouncePad);
+            _trampolinePrefab = Resources.Load<GameObject>(ResourcePaths.BounceRune);
             _platformMask = Resources.Load<LayerMaskData>(ResourcePaths.PlatformMask);
         }
 
@@ -135,7 +136,7 @@ namespace Parogue_Heights
             if (!isPlacing || hologram == null)
                 return;
             isPlacing = false;
-            hologram.AddComponent<BouncePadPlatform>();
+            hologram.AddComponent<BounceRune>();
             hologram = null;
             ISpell.LowerUses(this);
         }

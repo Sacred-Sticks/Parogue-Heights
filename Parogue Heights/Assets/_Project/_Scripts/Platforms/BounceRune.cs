@@ -2,9 +2,9 @@
 
 namespace Parogue_Heights
 {
-    public class BouncePadPlatform : MonoBehaviour, IPlatform
+    public class BounceRune : MonoBehaviour, IPlatform
     {
-        public static float bounceForce { private get; set; } = 15f;
+        private const float bounceForce = 15f;
 
         #region UnityEvents
         private void Start()

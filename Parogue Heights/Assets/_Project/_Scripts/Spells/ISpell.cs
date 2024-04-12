@@ -6,18 +6,20 @@
         {
             return tool switch
             {
-                BouncePad _ => SpellType.Bounce,
-                Hookshot _ => SpellType.Hookshot,
-                JetBoots _ => SpellType.Jump,
+                BounceSpell _ => SpellType.Bounce,
+                HookshotSpell _ => SpellType.Hookshot,
+                JumpSpell _ => SpellType.Jump,
+                ThrusterSpell => SpellType.Thruster,
+                SmasherSpell => SpellType.Smasher,
                 _ => default,
             };
         }
 
-        public static void LowerUses(ISpell tool)
+        public static void LowerUses(ISpell spell)
         {
-            tool.Uses--;
-            if (tool.Uses <= 0)
-                Inventory.Instance.RemoveSlot(tool.InventorySlot);
+            spell.Uses--;
+            if (spell.Uses <= 0)
+                Inventory.Instance.RemoveSlot(spell.InventorySlot);
         }
 
         public enum SpellType
@@ -25,6 +27,8 @@
             Bounce,
             Hookshot,
             Jump,
+            Thruster,
+            Smasher,
         }
 
         public int Uses { get; set; }
@@ -32,6 +36,9 @@
 
         public void GainUses();
         public void OnActivateBegin();
-        public void OnActivateEnd();
+        public void OnActivateEnd()
+        {
+            // Noop
+        }
     }
 }

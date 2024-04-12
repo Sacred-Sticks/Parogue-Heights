@@ -7,9 +7,11 @@ namespace Parogue_Heights
     {
         public static Type[] _allTypes = new Type[]
         {
-            typeof(BouncePad),
-            typeof(Hookshot),
-            typeof(JetBoots),
+            typeof(BounceSpell),
+            typeof(HookshotSpell),
+            typeof(JumpSpell),
+            typeof(ThrusterSpell),
+            typeof(SmasherSpell),
         };
 
         public static ISpell CreateRandomTool()
