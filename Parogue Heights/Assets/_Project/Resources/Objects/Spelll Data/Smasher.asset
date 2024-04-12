@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   toolType: 4
   toolDescription: Cast a spell to pull yourself in a desired direction!
-  toolSprite: {fileID: 2800000, guid: 1c81396f141718b4dbd2f5f2646bd104, type: 3}
+  toolSprite: {fileID: 2800000, guid: dec7dc9f00cbf904cbd478fefb7d704d, type: 3}
   inventoryCountColor: {r: 1, g: 0.45336086, b: 0.4009434, a: 1}
