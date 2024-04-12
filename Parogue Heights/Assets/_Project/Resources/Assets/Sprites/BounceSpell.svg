@@ -10,8 +10,8 @@
    sodipodi:docname="BounceSpell.svg"
    inkscape:version="1.3.2 (091e20e, 2023-11-25, custom)"
    inkscape:export-filename="BounceSpell.png"
-   inkscape:export-xdpi="160.31"
-   inkscape:export-ydpi="160.31"
+   inkscape:export-xdpi="158.84146"
+   inkscape:export-ydpi="158.84146"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
@@ -27,15 +27,15 @@
      inkscape:deskcolor="#505050"
      inkscape:document-units="mm"
      inkscape:zoom="1.0847363"
-     inkscape:cx="340.17484"
-     inkscape:cy="585.85667"
+     inkscape:cx="340.63578"
+     inkscape:cy="584.93479"
      inkscape:window-width="1920"
      inkscape:window-height="1057"
      inkscape:window-x="2552"
      inkscape:window-y="-8"
      inkscape:window-maximized="1"
      inkscape:current-layer="g581"
-     inkscape:export-bgcolor="#ffffff50" />
+     inkscape:export-bgcolor="#ffffff00" />
   <defs
      id="defs1">
     <inkscape:path-effect
@@ -483,7 +483,7 @@
      style="display:inline"
      inkscape:groupmode="layer">
     <circle
-       style="fill:#95c2df;fill-opacity:0.1541502;stroke:#147fb8;stroke-width:1.5;stroke-dasharray:none;stroke-opacity:1"
+       style="fill:#0c1c28;fill-opacity:0.40000001;stroke:#147fb8;stroke-width:3;stroke-dasharray:none;stroke-opacity:1"
        id="circle580"
        transform="scale(-1)"
        inkscape:label="Outer Ring"
