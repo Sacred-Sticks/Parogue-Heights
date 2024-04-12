@@ -9825,7 +9825,7 @@ GameObject:
   - component: {fileID: 198064705231385314}
   - component: {fileID: 199591257686416832}
   m_Layer: 0
-  m_Name: Jet Boots
+  m_Name: Jump
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

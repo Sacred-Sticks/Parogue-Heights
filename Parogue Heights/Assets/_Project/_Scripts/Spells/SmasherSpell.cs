@@ -42,13 +42,13 @@ namespace Parogue_Heights
             body.AddForce(-cameraTransform.forward * thrusterForce, ForceMode.VelocityChange);
             foreach (var particleMediator in particleMediators)
                 particleMediator.Play();
-            ISpell.LowerUses(this);
         }
 
         public void OnActivateEnd()
         {
             foreach (var particleMediator in particleMediators)
                 particleMediator.Stop();
+            ISpell.LowerUses(this);
         }
         #endregion
     }
