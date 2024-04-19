@@ -62,6 +62,7 @@ namespace Parogue_Heights
             int formerIndex = activeSlotIndex;
             activeSlotIndex += direction;
             activeSlotIndex = activeSlotIndex % inventorySlots.Count;
+            inventorySlots[formerIndex].Tool.OnActivateEnd();
             if (activeSlotIndex < 0)
                 activeSlotIndex = inventorySlots.Count - 1;
             inventoryHUD.ActivateSlot(activeSlotIndex, formerIndex);
