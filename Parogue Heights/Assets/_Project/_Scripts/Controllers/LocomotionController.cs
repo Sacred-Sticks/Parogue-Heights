@@ -17,6 +17,7 @@ namespace Parogue_Heights
         private const float groundDistance = 1f;
         private const float airborneMovementMultiplier = 40f;
         private float groundRadius;
+        private Transform cameraTransform;
 
         #region UnityEvents
         private void Awake()
@@ -29,13 +30,15 @@ namespace Parogue_Heights
             jumpVelocity = Mathf.Sqrt(Mathf.Abs(jumpHeight * Physics.gravity.y * 2));
             var capsule = transform.root.GetComponentInChildren<CapsuleCollider>();
             groundRadius = capsule.radius * radiusMultiplier;
+            cameraTransform = Camera.main.transform;
         }
         #endregion
 
         protected void MoveTowards(Vector3 direction)
         {
-            direction = Vector3.ProjectOnPlane(direction, Vector3.up);
-            NotifyObservers(new MovementChange(transform.InverseTransformDirection(direction)));
+            direction = cameraTransform.TransformDirection(direction);
+            direction = Vector3.ProjectOnPlane(direction, Vector3.up).normalized;
+            NotifyObservers(new MovementChange(direction));
             if (!isGrounded)
             {
                 AirborneMoveTowards(direction);
@@ -88,11 +91,11 @@ namespace Parogue_Heights
 
         public struct MovementChange : INotification
         {
-            public Vector3 LocalDirection { get; }
+            public Vector3 Direction { get; }
 
             public MovementChange(Vector3 localDirection)
             {
-                LocalDirection = localDirection.normalized;
+                Direction = localDirection.normalized;
             }
         }
         #endregion

@@ -46,7 +46,7 @@ namespace Parogue_Heights
         private void FixedUpdate()
         {
             CheckGrounded();
-            MoveTowards(transform.root.TransformDirection(rawMovementInput));
+            MoveTowards(rawMovementInput);
         }
         #endregion
     }
