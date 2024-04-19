@@ -18,6 +18,7 @@ namespace Parogue_Heights
         private const float accelerationRate = 0.1f;
         private const float radiusMultiplier = 0.5f;
         private const float groundDistance = 1f;
+        private const float airborneMovementMultiplier = 40f;
         private float groundRadius;
 
         #region UnityEvents
@@ -54,14 +55,15 @@ namespace Parogue_Heights
         {
             if (direction == Vector3.zero)
                 return;
-            if (Vector3.Dot(direction, initialAirborneVelocity) > 0)
+            var currentVelocity = Vector3.ProjectOnPlane(body.velocity, Vector3.up);
+            bool velocityExceeds = currentVelocity.sqrMagnitude > movementSpeed * movementSpeed;
+            bool isGainingSpeed = Vector3.Dot(direction, currentVelocity) > 0;
+
+            if (isGainingSpeed && velocityExceeds)
                 return;
-            if (airborneVelocity.sqrMagnitude > movementSpeed * movementSpeed)
-                return;
-            var desiredVelocity = direction * movementSpeed;
-            var deltaVelocity = (desiredVelocity - airborneVelocity) * accelerationRate;
-            airborneVelocity += deltaVelocity;
-            body.AddForce(deltaVelocity, ForceMode.VelocityChange);
+
+            var desiredForce = direction.normalized * airborneMovementMultiplier;
+            body.AddForce(desiredForce, ForceMode.Force);
         }
 
         protected void Jump()
