@@ -7,11 +7,11 @@ namespace Parogue_Heights
 {
     public class PlayerAnimator : MonoBehaviour, IObserver<MovementChange>, IObserver<GroundedStatus>
     {
+        [SerializeField] private Transform playerModel;
         private GroundedStatus currentState = GroundedStatus.Landing;
 
         private Animator _animator;
-        private readonly int _velocityX = Animator.StringToHash("X Velocity");
-        private readonly int _velocityZ = Animator.StringToHash("Z Velocity");
+        private readonly int _speed = Animator.StringToHash("Speed");
         private readonly int jump = Animator.StringToHash("Jump");
         private readonly int falling = Animator.StringToHash("Falling");
         private readonly int landing = Animator.StringToHash("Landing");
@@ -24,9 +24,9 @@ namespace Parogue_Heights
 
         public void OnNotify(MovementChange argument)
         {
-            var direction = argument.LocalDirection;
-            _animator.SetFloat(_velocityX, direction.x);
-            _animator.SetFloat(_velocityZ, direction.z);
+            playerModel.LookAt(playerModel.position + argument.Direction);
+            var speed = argument.Direction.normalized.magnitude;
+            _animator.SetFloat(_speed, speed);
         }
 
         public void OnNotify(GroundedStatus argument)
