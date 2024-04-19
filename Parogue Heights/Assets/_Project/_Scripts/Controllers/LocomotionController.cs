@@ -5,10 +5,12 @@ namespace Parogue_Heights
 {
     public abstract class LocomotionController : Observable
     {
-        [SerializeField] private float movementSpeed;
+        [SerializeField] protected float walkingSpeed;
+        [SerializeField] protected float sprintSpeed;
         [SerializeField] private float jumpHeight;
 
         protected bool isGrounded;
+        protected float movementSpeed;
 
         // Cached References & Constant Values
         protected Rigidbody body;
@@ -31,6 +33,7 @@ namespace Parogue_Heights
             var capsule = transform.root.GetComponentInChildren<CapsuleCollider>();
             groundRadius = capsule.radius * radiusMultiplier;
             cameraTransform = Camera.main.transform;
+            movementSpeed = walkingSpeed;
         }
         #endregion
 
@@ -56,7 +59,7 @@ namespace Parogue_Heights
             if (direction == Vector3.zero)
                 return;
             var currentVelocity = Vector3.ProjectOnPlane(body.velocity, Vector3.up);
-            bool velocityExceeds = currentVelocity.sqrMagnitude > movementSpeed * movementSpeed;
+            bool velocityExceeds = currentVelocity.sqrMagnitude > walkingSpeed * walkingSpeed;
             bool isGainingSpeed = Vector3.Dot(direction, currentVelocity) > 0;
 
             if (isGainingSpeed && velocityExceeds)
