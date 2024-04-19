@@ -313,7 +313,7 @@ MonoBehaviour:
   jumpHeight: 3.125
   movementInput: {fileID: 11400000, guid: 9c6dbb0ddd1bb814aa8f8b492e21dded, type: 2}
   sprintInput: {fileID: 11400000, guid: 537ccb2ab9d4bfd4ba293f3567b7f668, type: 2}
-  groundPoundInput: {fileID: 11400000, guid: c70ce91a1151ddc4aab5de6ce2aa4f66, type: 2}
+  groundRushInput: {fileID: 11400000, guid: c70ce91a1151ddc4aab5de6ce2aa4f66, type: 2}
   jumpInput: {fileID: 11400000, guid: 26bf7e812f9d93349b0c6589c9e5badd, type: 2}
 --- !u!1 &6765702911741409624
 GameObject:
