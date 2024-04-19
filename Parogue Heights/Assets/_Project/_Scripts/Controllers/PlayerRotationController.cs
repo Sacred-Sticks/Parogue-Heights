@@ -1,16 +1,18 @@
 ﻿using Kickstarter.Inputs;
+using Kickstarter.Observer;
 using UnityEngine;
-using UnityEngine.Windows;
 
 namespace Dodge_Bots
 {
-    public class PlayerRotationController : RotationController, IInputReceiver
+    public class PlayerRotationController : Observable, IInputReceiver
     {
+        [SerializeField] protected float rotationSpeed;
         [SerializeField] private float cameraSpeed;
         [SerializeField] private Vector2Input rotationInput;
         [SerializeField] private float verticalRange;
+        [SerializeField] private Transform cameraFollow;
 
-        Vector2 rawInput;
+        private Vector2 rawInput;
         
         #region InputHandler
         public void RegisterInputs(Player.PlayerIdentifier playerIdentifier)
@@ -38,12 +40,19 @@ namespace Dodge_Bots
 
         private void RotateCamera(float direction)
         {
-            var rotation = transform.rotation.eulerAngles;
+            var rotation = cameraFollow.rotation.eulerAngles;
             rotation.x -= direction * cameraSpeed;
             if (rotation.x < 180 && rotation.x > verticalRange)
                 rotation.x = verticalRange;
             if (rotation.x > 180 && rotation.x < 360 - verticalRange)
                 rotation.x = 360 - verticalRange;
+            cameraFollow.rotation = Quaternion.Euler(rotation);
+        }
+
+        private void RotateTowards(float direction)
+        {
+            var rotation = transform.rotation.eulerAngles;
+            rotation.y += direction * rotationSpeed;
             transform.rotation = Quaternion.Euler(rotation);
         }
     }
