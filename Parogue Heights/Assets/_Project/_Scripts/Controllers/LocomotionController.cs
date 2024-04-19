@@ -9,13 +9,10 @@ namespace Parogue_Heights
         [SerializeField] private float jumpHeight;
 
         protected bool isGrounded;
-        private Vector3 airborneVelocity;
-        private Vector3 initialAirborneVelocity;
 
         // Cached References & Constant Values
         protected Rigidbody body;
         private float jumpVelocity;
-        private const float accelerationRate = 0.1f;
         private const float radiusMultiplier = 0.5f;
         private const float groundDistance = 1f;
         private const float airborneMovementMultiplier = 40f;
@@ -77,13 +74,8 @@ namespace Parogue_Heights
         protected void CheckGrounded()
         {
             var ray = new Ray(transform.position + Vector3.up, -Vector3.up);
-            bool previouslyGrounded = isGrounded;
             isGrounded = Physics.SphereCast(ray, groundRadius, groundDistance);
             NotifyObservers(isGrounded ? GroundedStatus.Landing : GroundedStatus.Falling);
-            if (!previouslyGrounded || isGrounded)
-                return;
-            initialAirborneVelocity = Vector3.ProjectOnPlane(body.velocity, Vector3.up);
-            airborneVelocity = Vector3.zero;
         }
 
         #region Notifications
