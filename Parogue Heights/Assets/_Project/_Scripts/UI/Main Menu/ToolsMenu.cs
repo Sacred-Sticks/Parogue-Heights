@@ -71,8 +71,14 @@ namespace Parogue_Heights
             var toolContainer = container.CreateChild<VisualElement>(toolContainerStr);
             var image = toolContainer.CreateChild<VisualElement>(toolImageStr);
             image.style.backgroundImage = new StyleBackground(toolData.ToolSprite);
+            image.style.borderRightColor = toolData.LabelColor;
+            image.style.borderBottomColor = toolData.LabelColor;
+            image.style.borderTopColor = toolData.LabelColor;
+            image.style.borderLeftColor = toolData.LabelColor;
             var toolDataElement = toolContainer.CreateChild<VisualElement>(toolDataContainerStr);
-            toolDataElement.CreateChild<Label>(toolNameStr).text = toolData.ToolType.ToString();
+            var toolName = toolDataElement.CreateChild<Label>(toolNameStr);
+            toolName.style.color = toolData.LabelColor;
+            toolName.text = toolData.ToolType.ToString();
             toolDataElement.CreateChild<Label>(toolDescriptionStr).text = toolData.ToolDescription;
         }
 

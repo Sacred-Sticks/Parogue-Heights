@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Parogue_Heights
 {
@@ -8,11 +9,12 @@ namespace Parogue_Heights
         [SerializeField] private ISpell.SpellType toolType;
         [SerializeField] private string toolDescription;
         [SerializeField] private Texture2D toolSprite;
-        [SerializeField] private Color inventoryCountColor;
+        [FormerlySerializedAs("inventoryCountColor")]
+        [SerializeField] private Color labelColor;
 
         public ISpell.SpellType ToolType => toolType;
         public string ToolDescription => toolDescription;
         public Texture2D ToolSprite => toolSprite;
-        public Color InventoryCountColor => inventoryCountColor;
+        public Color LabelColor => labelColor;
     }
 }
