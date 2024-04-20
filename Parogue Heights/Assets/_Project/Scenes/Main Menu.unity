@@ -504,15 +504,17 @@ MonoBehaviour:
     type: 3}
   inputs:
   - name: Movement
-    inputKey: WASD
+    inputKey: W-A-S-D
   - name: Jump
     inputKey: Spacebar
   - name: Look
     inputKey: Mouse
-  - name: Use Active Tool
+  - name: Use Active Spell
     inputKey: Left Click
-  - name: Cycle Active Tool
+  - name: Cycle Active Spell
     inputKey: Q-E or Scroll Wheel
+  - name: Quit To Menu
+    inputKey: Z or Escape
 --- !u!1 &1807466688
 GameObject:
   m_ObjectHideFlags: 0
