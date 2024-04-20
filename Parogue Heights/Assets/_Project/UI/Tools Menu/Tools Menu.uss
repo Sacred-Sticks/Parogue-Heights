@@ -42,6 +42,22 @@ VisualElement
 	margin: 1%;
 }
 
+Button 
+{
+	background-color: rgb(25, 25, 25);
+	color: rgb(150, 150, 150);
+	border-width: 5px;
+	border-radius: 15px;
+	transition-duration: 0.125s;
+}
+
+Button:hover 
+{
+	background-color: rgb(50, 50, 50);
+	color: rgb(255, 255, 255);
+	border-radius: 30px;
+}
+
 .tool_container 
 {
 	flex-direction: row;

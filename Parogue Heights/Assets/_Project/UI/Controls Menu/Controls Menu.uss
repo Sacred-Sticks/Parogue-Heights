@@ -44,14 +44,20 @@ VisualElement
 	font-size: 60px;
 	margin: 50px;
 	width: 20%;
-	background-color: rgb(30, 30, 30);
-	border-color: orange;
+}
+
+Button 
+{
+	background-color: rgb(25, 25, 25);
+	color: rgb(150, 150, 150);
 	border-width: 5px;
+	border-radius: 25px;
 	transition-duration: 0.125s;
 }
 
-.close_button:hover
+Button:hover 
 {
 	background-color: rgb(50, 50, 50);
-	border-radius: 35px;
+	color: rgb(255, 255, 255);
+	border-radius: 50px;
 }
