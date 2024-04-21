@@ -50,7 +50,7 @@ namespace Parogue_Heights
             peacefulButton.clickable.clicked += () => sceneLoader.LoadSceneGroup("Peaceful Mode");
 
             var toolsButton = root.CreateChild<Button>(toolsButtonStr);
-            toolsButton.text = "Tools";
+            toolsButton.text = "Spells";
             toolsButton.clickable.clicked += () =>
             {
                 Close();

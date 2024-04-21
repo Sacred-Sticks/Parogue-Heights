@@ -16,6 +16,9 @@ namespace Parogue_Heights
         private const string containerStr = "container";
         private const string closeButtonStr = "close_button";
         private const string controlStr = "control";
+        private const string scrollerStr = "scroller";
+        private const string scrollerBackdropStr = "scroller_backdrop";
+        private const string scrollerButtonStr = "scroller_button";
 
         #region UnityEvents
         private void Start()
@@ -46,6 +49,11 @@ namespace Parogue_Heights
 
             root.CreateChild<Label>(headerStr).text = "Controls";
             var scrollView = root.CreateChild<ScrollView>(containerStr);
+            var scroller = scrollView.verticalScroller;
+            scroller.Q("unity-dragger").AddToClassList(scrollerStr);
+            scroller.Q("unity-tracker").AddToClassList(scrollerBackdropStr);
+            scroller.Q("unity-low-button").AddToClassList(scrollerButtonStr);
+            scroller.Q("unity-high-button").AddToClassList(scrollerButtonStr);
             scrollView.horizontalScrollerVisibility = ScrollerVisibility.Hidden;
 
             var container = scrollView.Q("unity-content-container");

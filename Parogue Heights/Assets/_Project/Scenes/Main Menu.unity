@@ -268,7 +268,7 @@ GameObject:
   - component: {fileID: 1019568449}
   - component: {fileID: 1019568448}
   m_Layer: 0
-  m_Name: Tools Menu
+  m_Name: Spells Menu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -298,7 +298,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1019568446}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fd968fb8f1765ff4e83375931c919714, type: 3}
+  m_Script: {fileID: 11500000, guid: 7111a7e7c8bc99c47a9021963af153af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   styleSheet: {fileID: 7433441132597879392, guid: ad678fc59e86f594981ff6deaaf041ee,
@@ -321,7 +321,7 @@ MonoBehaviour:
   m_ParentUI: {fileID: 0}
   sourceAsset: {fileID: 9197481963319205126, guid: 95947dae74d2beb4a99928491c681c1f,
     type: 3}
-  m_SortingOrder: 1
+  m_SortingOrder: 0
 --- !u!1 &1298708062
 GameObject:
   m_ObjectHideFlags: 0
@@ -506,6 +506,10 @@ MonoBehaviour:
   inputs:
   - name: Movement
     inputKey: W-A-S-D
+  - name: Use Sprint
+    inputKey: Left Shift
+  - name: Slam into Ground
+    inputKey: Left Control
   - name: Jump
     inputKey: Spacebar
   - name: Look

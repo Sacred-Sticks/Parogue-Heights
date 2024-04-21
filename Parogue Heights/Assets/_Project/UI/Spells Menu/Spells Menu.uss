@@ -1,11 +1,23 @@
 VisualElement 
 {
+	
+}
 
+:root 
+{
+	justify-content: center;
 }
 
 .global_container
 {
+	align-self: center;
+	min-height: 90%;
+	max-height: 90%;
+	width: 95%;
 	background-color: rgba(30, 30, 30, 0.95);
+	border-width: 3px;
+	border-color: rgba(200, 200, 200, 0.9);
+	border-radius: 10px;
 	flex: 1;
 }
 

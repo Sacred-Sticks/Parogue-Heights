@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74362cc290bc57c4f9bb02986762e1a9, type: 3}
   m_Name: Bounce
   m_EditorClassIdentifier: 
-  toolType: 0
+  toolType: 3
   toolDescription: Cast this rune on a surface to bounce away from it!
   toolSprite: {fileID: 2800000, guid: 9cf00e6c134d48341b19938f9ead9f49, type: 3}
   labelColor: {r: 0.41960788, g: 0.7278341, b: 1, a: 1}
