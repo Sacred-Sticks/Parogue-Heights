@@ -24,10 +24,10 @@
 
         public enum SpellType
         {
-            Bounce,
             Hookshot,
             Jump,
             Thruster,
+            Bounce,
             Smasher,
         }
 

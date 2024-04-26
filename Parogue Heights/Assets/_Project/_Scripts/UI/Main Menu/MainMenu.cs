@@ -11,6 +11,8 @@ namespace Parogue_Heights
         [Provide] private MainMenu mainMenu => this;
         [Inject] private SceneLoader sceneLoader;
 
+        [SerializeField] private Texture2D background;
+
         private string gameplayStr = "Gameplay";
         private const string rootStr = "root";
         private const string titleStr = "title";
@@ -34,6 +36,7 @@ namespace Parogue_Heights
                 return;
             root.styleSheets.Add(styleSheet);
             root.AddToClassList(rootStr);
+            root.style.backgroundImage = new StyleBackground(background);
 
             var title = root.CreateChild<Label>(titleStr);
             title.text = "Parogue Heights";
@@ -47,11 +50,11 @@ namespace Parogue_Heights
             peacefulButton.clickable.clicked += () => sceneLoader.LoadSceneGroup("Peaceful Mode");
 
             var toolsButton = root.CreateChild<Button>(toolsButtonStr);
-            toolsButton.text = "Tools";
+            toolsButton.text = "Spells";
             toolsButton.clickable.clicked += () =>
             {
                 Close();
-                Registry.Get<ToolsMenu>("Tools_Menu").Open();
+                Registry.Get<SpellsMenu>("Tools_Menu").Open();
             };
 
             var controlsButton = root.CreateChild<Button>(controlsButtonStr);
