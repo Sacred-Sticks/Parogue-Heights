@@ -10,7 +10,7 @@
                 HookshotSpell _ => SpellType.Hookshot,
                 JumpSpell _ => SpellType.Jump,
                 ThrusterSpell => SpellType.Thruster,
-                SmasherSpell => SpellType.Smasher,
+                SmasherSpell => SpellType.Rebound,
                 _ => default,
             };
         }
@@ -28,7 +28,7 @@
             Jump,
             Thruster,
             Bounce,
-            Smasher,
+            Rebound,
         }
 
         public int Uses { get; set; }
