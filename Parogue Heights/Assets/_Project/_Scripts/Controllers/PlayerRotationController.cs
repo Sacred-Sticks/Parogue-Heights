@@ -16,9 +16,9 @@ namespace Parogue_Heights
             {
                 vCam = value;
 
-                highRig = new RigSettings(2, VCam.LookAt.transform.localPosition + Vector3.up * 0.5f);
-                midRig = new RigSettings(3, VCam.LookAt.transform.localPosition);
-                lowRig = new RigSettings(1, VCam.LookAt.transform.localPosition - Vector3.up * 1.0f);
+                highRig = new RigSettings(3.0f, VCam.LookAt.transform.localPosition + Vector3.up * 0.25f);
+                midRig = new RigSettings(4.0f, VCam.LookAt.transform.localPosition);
+                lowRig = new RigSettings(2.5f, VCam.LookAt.transform.localPosition - Vector3.up * 0.5f);
             }
         }
         [Inject] private Cinemachine3rdPersonFollow vCamFollow;

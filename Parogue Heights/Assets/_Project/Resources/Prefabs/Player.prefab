@@ -289,7 +289,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5195345359650140113}
   m_Layer: 0
-  m_Name: Camera LookAt
+  m_Name: Mid Camera LookAt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -304,7 +304,7 @@ Transform:
   m_GameObject: {fileID: 4692641655857581023}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0.125}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -409,7 +409,7 @@ MonoBehaviour:
   rotationSpeed: 0.25
   cameraSpeed: 0.5
   rotationInput: {fileID: 11400000, guid: b39ed4aa455b663449fde9e14a1059fe, type: 2}
-  verticalRange: 70
+  verticalRange: 60
   cameraFollow: {fileID: 7224811961306523781}
 --- !u!1 &7762198899256241362
 GameObject:
@@ -436,7 +436,7 @@ Transform:
   m_GameObject: {fileID: 7762198899256241362}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
