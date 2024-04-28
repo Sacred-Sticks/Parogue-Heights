@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 74362cc290bc57c4f9bb02986762e1a9, type: 3}
-  m_Name: Smasher
+  m_Name: Rebound
   m_EditorClassIdentifier: 
   toolType: 4
   toolDescription: Cast this spell to push yourself away from a direction!
