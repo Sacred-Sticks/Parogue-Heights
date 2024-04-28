@@ -172,12 +172,11 @@ MonoBehaviour:
     - {fileID: 6998518171175410163, guid: 426827854bf64074bbdee2393a5f3975, type: 3}
     - {fileID: 6998518171175410163, guid: 0de7539cfc26eed4a900977585ff298f, type: 3}
     - {fileID: 6998518171175410163, guid: dfa075bea17c6414db7462a91a5e1e0c, type: 3}
+    - {fileID: 6998518171175410163, guid: bc4f047a232cbb143b983ee8142646d6, type: 3}
     _layerHeight: 6
   - _layerVariants:
     - {fileID: 6998518171175410163, guid: e83574db815819c44b18a9106eb36b7d, type: 3}
     - {fileID: 6998518171175410163, guid: 7377056ca80903743a9aae94bee31bca, type: 3}
-    - {fileID: 6998518171175410163, guid: 9c213890d5045db4daa8fb58a2e25e80, type: 3}
-    - {fileID: 6998518171175410163, guid: c56456fc5686d36478febf24e153f377, type: 3}
     - {fileID: 6998518171175410163, guid: cef1666352a034147a465be50099c408, type: 3}
     - {fileID: 6998518171175410163, guid: 07888f30696d8e2469c828fdeebd4714, type: 3}
     - {fileID: 6998518171175410163, guid: d8198f883c5aa1e4486b7c63fd38f083, type: 3}
@@ -185,9 +184,16 @@ MonoBehaviour:
   - _layerVariants:
     - {fileID: 6998518171175410163, guid: 11a4c816af24eab4fb488b966bdfe116, type: 3}
     - {fileID: 6998518171175410163, guid: 021e5b3e3c8b5e742946459eebded2cb, type: 3}
+    - {fileID: 6998518171175410163, guid: 32d05c1c5490a0545bac4663a9b24f79, type: 3}
+    - {fileID: 6998518171175410163, guid: b74d5243fed0e404ab0f60545068d8f6, type: 3}
+    - {fileID: 6998518171175410163, guid: db144ef5ecf35c34a8a47d32130668b4, type: 3}
     _layerHeight: 15
   - _layerVariants:
     - {fileID: 6998518171175410163, guid: 3c809b445ffe8444b993e2807835540d, type: 3}
+    - {fileID: 6998518171175410163, guid: 051ff61fe41339d4db25f0250eae4786, type: 3}
+    - {fileID: 6998518171175410163, guid: e765c646154b2724ca896d4b2c31276f, type: 3}
+    - {fileID: 6998518171175410163, guid: 41957727120e97e479d6716481acc966, type: 3}
+    - {fileID: 6998518171175410163, guid: cac48646b1fead34a85e378037f908ba, type: 3}
     _layerHeight: 21
 --- !u!1 &968433419
 GameObject:
