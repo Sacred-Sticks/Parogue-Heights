@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74362cc290bc57c4f9bb02986762e1a9, type: 3}
   m_Name: Hookshot
   m_EditorClassIdentifier: 
-  toolType: 1
-  toolDescription: Cast this spell to pull yourself in a desired direction!
+  toolType: 0
+  toolDescription: Cast this spell to disable gravity and pull yourself in a direction!
   toolSprite: {fileID: 2800000, guid: bbf7214403a0ccd428854ed61bb2933d, type: 3}
-  inventoryCountColor: {r: 1, g: 0.45336086, b: 0.4009434, a: 1}
+  labelColor: {r: 1, g: 0.45336086, b: 0.4009434, a: 1}

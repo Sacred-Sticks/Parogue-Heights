@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74362cc290bc57c4f9bb02986762e1a9, type: 3}
   m_Name: Thruster
   m_EditorClassIdentifier: 
-  toolType: 3
-  toolDescription: Cast this spell to pull yourself in a desired direction!
+  toolType: 2
+  toolDescription: Cast this spell to pull yourself in a direction!
   toolSprite: {fileID: 2800000, guid: 94b9045b61baf484dbf53ea289f3c101, type: 3}
-  inventoryCountColor: {r: 0.21605268, g: 0.9622642, b: 0.21333215, a: 1}
+  labelColor: {r: 0.21605268, g: 0.9622642, b: 0.21333215, a: 1}

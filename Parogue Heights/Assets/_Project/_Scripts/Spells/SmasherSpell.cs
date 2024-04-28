@@ -10,6 +10,7 @@ namespace Parogue_Heights
         private readonly Rigidbody body;
         private readonly ParticlesMediator[] particleMediators;
         private readonly Transform cameraTransform;
+        private bool active;
 
         public SmasherSpell()
         {
@@ -39,16 +40,22 @@ namespace Parogue_Heights
 
         public void OnActivateBegin()
         {
+            if (active)
+                return;
             body.AddForce(-cameraTransform.forward * thrusterForce, ForceMode.VelocityChange);
             foreach (var particleMediator in particleMediators)
                 particleMediator.Play();
+            active = true;
         }
 
         public void OnActivateEnd()
         {
+            if (!active)
+                return;
             foreach (var particleMediator in particleMediators)
                 particleMediator.Stop();
             ISpell.LowerUses(this);
+            active = false;
         }
         #endregion
     }

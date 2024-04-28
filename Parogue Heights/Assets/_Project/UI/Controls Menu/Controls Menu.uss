@@ -5,10 +5,16 @@ VisualElement
 
 :root 
 {
-	background-color: rgb(20, 20, 20);
 	flex: 1;
-	justify-content: space-around;
 	align-items: center;
+}
+
+.header
+{
+	font-size: 100px;
+	color: rgb(225, 225, 225);
+	margin-top: 50px;
+	margin-bottom: 25px;
 }
 
 .container 
@@ -21,9 +27,11 @@ VisualElement
 	height: 100%;
 	width: 75%;
 	margin: 50px;
-	border-width: 10px;
-	border-color: orange;
-	background-color: rgb(30, 30, 30);
+	border-width: 3px;
+	border-color: rgba(255, 255, 255, 0);
+	border-radius: 10px;
+	border-color: #AAAAAA;
+	background-color: rgba(30, 30, 30, 0.95);
 }
 
 .control 
@@ -31,6 +39,8 @@ VisualElement
 	width: 100%;
 	flex-direction: row;
 	justify-content: space-between;
+	border-color: #404040;
+	border-bottom-width: 5px;
 }
 
 .control Label
@@ -44,14 +54,37 @@ VisualElement
 	font-size: 60px;
 	margin: 50px;
 	width: 20%;
-	background-color: rgb(30, 30, 30);
-	border-color: orange;
+}
+
+.scroller
+{
+	background-color: rgba(150, 150, 150, .95);
+	border-radius: 10px;
+}
+
+.scroller_backdrop 
+{
+	background-color: rgba(15, 15, 15, 0.95);
+}
+
+.scroller_button
+{
+	background-color: rgba(10, 10, 10, 0.95);
+	border-radius: 2px;
+}
+
+Button 
+{
+	background-color: rgb(25, 25, 25);
+	color: rgb(150, 150, 150);
 	border-width: 5px;
+	border-radius: 25px;
 	transition-duration: 0.125s;
 }
 
-.close_button:hover
+Button:hover 
 {
 	background-color: rgb(50, 50, 50);
-	border-radius: 35px;
+	color: rgb(255, 255, 255);
+	border-radius: 50px;
 }

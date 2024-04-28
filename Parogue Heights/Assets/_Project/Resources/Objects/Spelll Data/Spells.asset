@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Spells
   m_EditorClassIdentifier: 
   spells:
-  - {fileID: 11400000, guid: 73f59ad60c8b8bf448538f946640342b, type: 2}
   - {fileID: 11400000, guid: e0e27412ad8e4e64a974586c059a7693, type: 2}
   - {fileID: 11400000, guid: 9d5a7a1743ac38440ac021ab79498ced, type: 2}
   - {fileID: 11400000, guid: ac707668e37bac64ea41e4bae0714064, type: 2}
+  - {fileID: 11400000, guid: 73f59ad60c8b8bf448538f946640342b, type: 2}
   - {fileID: 11400000, guid: aba7b16371b59404b90f4fc98a5de7cc, type: 2}

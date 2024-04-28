@@ -137,6 +137,9 @@ namespace Parogue_Heights
                 return;
             isPlacing = false;
             hologram.AddComponent<BounceRune>();
+            var collider = hologram.AddComponent<BoxCollider>();
+            collider.size = new Vector3(1.75f, 0.05f, 1.75f);
+            collider.center = new Vector3(0, 0.025f, 0);
             hologram = null;
             ISpell.LowerUses(this);
         }
