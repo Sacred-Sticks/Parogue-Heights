@@ -10,7 +10,7 @@
                 HookshotSpell _ => SpellType.Hookshot,
                 JumpSpell _ => SpellType.Jump,
                 ThrusterSpell => SpellType.Thruster,
-                SmasherSpell => SpellType.Smasher,
+                SmasherSpell => SpellType.Rebound,
                 _ => default,
             };
         }
@@ -24,11 +24,11 @@
 
         public enum SpellType
         {
-            Bounce,
             Hookshot,
             Jump,
             Thruster,
-            Smasher,
+            Bounce,
+            Rebound,
         }
 
         public int Uses { get; set; }

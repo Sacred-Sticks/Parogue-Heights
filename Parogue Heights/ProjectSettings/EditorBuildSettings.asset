@@ -12,6 +12,12 @@ EditorBuildSettings:
     path: Assets/_Project/Scenes/Level Generator.unity
     guid: afa574623e2c85c4eb6892a3c12b8f8a
   - enabled: 1
+    path: Assets/_Project/Scenes/Rising Acid.unity
+    guid: 5c066aa620908f444a7f6879f8374be8
+  - enabled: 1
+    path: Assets/_Project/Scenes/Static Acid.unity
+    guid: 45498f78981f47c4ab2a015fa451eb33
+  - enabled: 1
     path: Assets/_Project/Scenes/HUD.unity
     guid: 09caab211672cb449a667fee2cc43dfa
   - enabled: 1

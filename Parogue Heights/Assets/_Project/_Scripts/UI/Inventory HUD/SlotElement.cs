@@ -17,7 +17,7 @@ namespace Parogue_Heights
             slotElement = container.CreateChild<VisualElement>(slotStr);
             slotElement.style.backgroundImage = new StyleBackground(data.ToolSprite);
             count = slotElement.CreateChild<Label>(countStr);
-            count.style.color = data.InventoryCountColor;
+            count.style.color = data.LabelColor;
             count.text = slot.Count.ToString();
         }
 

@@ -10,11 +10,13 @@ namespace Parogue_Heights
         [Provide] private ILoseCondition loseCondition => this;
         [Inject] private SceneLoader sceneLoader;
 
+        [SerializeField] private bool risingAcid = true;
+
         private string sceneGroupName = "Main Menu";
 
         private const float initialSpeed = 0f;
-        private const float speedMultiplier = 0.5f;
-        private readonly Func<float, float> formula = (x) => Mathf.Sqrt(x / 60) / speedMultiplier + initialSpeed;
+        private const float speedMultiplier = 1f;
+        private readonly Func<float, float> formula = (x) => Mathf.Sqrt(x / 60) * speedMultiplier + initialSpeed;
 
         private float time;
         private float speed;
@@ -22,11 +24,18 @@ namespace Parogue_Heights
         #region UnityEvents
         private void Update()
         {
+            if (!risingAcid)
+                return;
+            RaiseAcid();
+        }
+        #endregion
+
+        private void RaiseAcid()
+        {
             time += Time.deltaTime;
             speed = formula(time);
             transform.position += Vector3.up * (speed * Time.deltaTime);
         }
-        #endregion
 
         #region LoseCondition
         public GameObject GameObject => gameObject;

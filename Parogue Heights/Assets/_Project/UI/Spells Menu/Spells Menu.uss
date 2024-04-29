@@ -1,0 +1,109 @@
+VisualElement 
+{
+	
+}
+
+:root 
+{
+	justify-content: center;
+}
+
+.global_container
+{
+	align-self: center;
+	min-height: 90%;
+	max-height: 90%;
+	width: 95%;
+	background-color: rgba(30, 30, 30, 0.95);
+	border-width: 3px;
+	border-color: rgba(200, 200, 200, 0.9);
+	border-radius: 10px;
+	flex: 1;
+}
+
+.container
+{
+	flex-direction: row;
+	border-color: rgba(50, 50, 50, 0.99);
+	border-width: 5px;
+	border-radius: 5px;
+}
+
+.scroller
+{
+	background-color: rgba(150, 150, 150, .95);
+	border-radius: 10px;
+}
+
+.scroller_backdrop 
+{
+	background-color: rgba(15, 15, 15, 0.95);
+}
+
+.scroller_button
+{
+	background-color: rgba(10, 10, 10, 0.95);
+	border-radius: 2px;
+}
+
+.close_button
+{
+	font-size: 20px;
+	width: 20%;
+	align-self: center;
+	margin: 1%;
+}
+
+Button 
+{
+	background-color: rgba(25, 25, 25, 0.95);
+	color: rgb(150, 150, 150);
+	border-width: 5px;
+	border-radius: 15px;
+	transition-duration: 0.125s;
+}
+
+Button:hover 
+{
+	background-color: rgb(50, 50, 50);
+	color: rgb(255, 255, 255);
+	border-radius: 30px;
+}
+
+.tool_container 
+{
+	flex-direction: row;
+	height: 500px;
+	width: 100%;
+	border-width: 3px;
+	border-color: rgba(30, 30, 30, 0.9);
+}
+
+.tool_data_container
+{
+	padding: 10px;
+	flex: 1;
+}
+
+.tool_name
+{
+	font-size: 80px;
+}
+
+.tool_description
+{
+	font-size: 40px;
+	color: rgb(200, 200, 200);
+}
+
+.tool_image 
+{
+	margin: 25px;
+	background-color: rgb(30, 30, 30);
+	border-width: 5px;
+	border-color: orange;
+	border-radius: 25px;
+	width: 450px;
+	height: 450px;
+	align-self: center;
+}

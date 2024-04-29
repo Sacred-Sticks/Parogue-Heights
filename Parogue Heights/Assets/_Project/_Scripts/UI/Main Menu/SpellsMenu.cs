@@ -5,10 +5,11 @@ using UnityEngine.UIElements;
 namespace Parogue_Heights
 {
     [RequireComponent(typeof(UIDocument))]
-    public class ToolsMenu : Menu
+    public class SpellsMenu : Menu
     {
         [Inject] private MainMenu mainMenu;
 
+        [SerializeField] private Texture2D background;
         [SerializeField] private Spells spells;
 
         // Constants
@@ -48,10 +49,14 @@ namespace Parogue_Heights
                 return;
             root.Clear();
             root.styleSheets.Add(styleSheet);
+            root.style.backgroundImage = new StyleBackground(background);
 
-            var scrollView = root.CreateChild<ScrollView>(containerStr);
+            var globalContainer = root.CreateChild<VisualElement>("global_container");
+
+            var scrollView = globalContainer.CreateChild<ScrollView>(containerStr);
             scrollView.horizontalScrollerVisibility = ScrollerVisibility.Hidden;
             var container = scrollView.Q("unity-content-container");
+            container.AddToClassList("content_container");
             foreach (var spell in spells.All())
                 AddTool(spell, container);
 
@@ -61,7 +66,7 @@ namespace Parogue_Heights
             scroller.Q("unity-low-button").AddToClassList(scrollerButtonStr);
             scroller.Q("unity-high-button").AddToClassList(scrollerButtonStr);
 
-            var button = root.CreateChild<Button>(closeButtonStr);
+            var button = globalContainer.CreateChild<Button>(closeButtonStr);
             button.text = "Close";
             button.clickable.clicked += Close;
         }
@@ -71,8 +76,14 @@ namespace Parogue_Heights
             var toolContainer = container.CreateChild<VisualElement>(toolContainerStr);
             var image = toolContainer.CreateChild<VisualElement>(toolImageStr);
             image.style.backgroundImage = new StyleBackground(toolData.ToolSprite);
+            image.style.borderRightColor = toolData.LabelColor;
+            image.style.borderBottomColor = toolData.LabelColor;
+            image.style.borderTopColor = toolData.LabelColor;
+            image.style.borderLeftColor = toolData.LabelColor;
             var toolDataElement = toolContainer.CreateChild<VisualElement>(toolDataContainerStr);
-            toolDataElement.CreateChild<Label>(toolNameStr).text = toolData.ToolType.ToString();
+            var toolName = toolDataElement.CreateChild<Label>(toolNameStr);
+            toolName.style.color = toolData.LabelColor;
+            toolName.text = toolData.ToolType.ToString();
             toolDataElement.CreateChild<Label>(toolDescriptionStr).text = toolData.ToolDescription;
         }
 
