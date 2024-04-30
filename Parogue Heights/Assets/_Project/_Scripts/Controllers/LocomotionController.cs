@@ -22,7 +22,7 @@ namespace Parogue_Heights
         private Transform cameraTransform;
 
         #region UnityEvents
-        private void Awake()
+        protected virtual void Awake()
         {
             transform.root.TryGetComponent(out body);
         }
