@@ -16,17 +16,29 @@ namespace Parogue_Heights
         private readonly int falling = Animator.StringToHash("Falling");
         private readonly int landing = Animator.StringToHash("Landing");
 
+        private float activeSpeed;
+        Coroutine speedModification;
+
+        #region UnityEvents
         private void Start()
         {
             _animator = transform.root.GetComponentInChildren<Animator>();
             transform.root.GetComponentInChildren<LocomotionController>().AddObserver(this);
         }
+        #endregion
 
+        #region Notifications
         public void OnNotify(MovementChange argument)
         {
-            playerModel.LookAt(playerModel.position + argument.Direction);
-            var speed = argument.Direction.normalized.magnitude;
-            _animator.SetFloat(_speed, speed);
+            playerModel.LookAt(playerModel.position + argument.Velocity);
+            float newSpeed = argument.Velocity.magnitude;
+            if (activeSpeed == newSpeed)
+                return;
+            Debug.Log(newSpeed);
+            if (speedModification != null)
+                StopCoroutine(speedModification);
+            speedModification = StartCoroutine(ModifySpeed(activeSpeed, newSpeed));
+            activeSpeed = newSpeed;
         }
 
         public void OnNotify(GroundedStatus argument)
@@ -42,6 +54,21 @@ namespace Parogue_Heights
                 _ => throw new System.ArgumentOutOfRangeException()
             };
             StartCoroutine(action());
+        }
+        #endregion
+
+        private IEnumerator ModifySpeed(float activeSpeed, float newSpeed)
+        {
+            float transitionDuration = 0.1f;
+            float elapsedTime = 0.0f;
+            while (elapsedTime < transitionDuration)
+            {
+                elapsedTime += Time.deltaTime;
+                float t = elapsedTime / transitionDuration;
+                _animator.SetFloat(_speed, Mathf.Lerp(activeSpeed, newSpeed, t));
+                yield return new WaitForSeconds(Time.deltaTime);
+            }
+            _animator.SetFloat(_speed, newSpeed);
         }
 
         private IEnumerator Jump()
