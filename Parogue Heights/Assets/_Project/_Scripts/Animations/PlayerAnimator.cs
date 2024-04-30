@@ -34,7 +34,6 @@ namespace Parogue_Heights
             float newSpeed = argument.Velocity.magnitude;
             if (activeSpeed == newSpeed)
                 return;
-            Debug.Log(newSpeed);
             if (speedModification != null)
                 StopCoroutine(speedModification);
             speedModification = StartCoroutine(ModifySpeed(activeSpeed, newSpeed));
