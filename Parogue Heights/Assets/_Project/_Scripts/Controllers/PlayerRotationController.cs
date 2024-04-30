@@ -64,7 +64,7 @@ namespace Parogue_Heights
         private void RotateXAxis(float direction)
         {
             var rotation = cameraFollow.rotation.eulerAngles;
-            rotation.x -= direction * cameraSpeed;
+            rotation.x -= direction * cameraSpeed * Settings.Sensitivity;
             if (rotation.x < 180 && rotation.x > verticalRange)
                 rotation.x = verticalRange;
             if (rotation.x > 180 && rotation.x < 360 - verticalRange)
@@ -95,7 +95,7 @@ namespace Parogue_Heights
         private void RotateYAxis(float direction)
         {
             var rotation = transform.rotation.eulerAngles;
-            rotation.y += direction * rotationSpeed;
+            rotation.y += direction * rotationSpeed * Settings.Sensitivity;
             transform.rotation = Quaternion.Euler(rotation);
         }
 

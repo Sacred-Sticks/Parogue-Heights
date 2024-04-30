@@ -85,6 +85,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d2b5c0ac6e13244ba8fbbcfe475bd7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cameraShakeRate:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: -0.0041656494
+      value: 0
+      inSlope: 1.8750286
+      outSlope: 1.8750286
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.0663891
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0.077187024
+      outSlope: 0.077187024
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.5934077
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  cameraShakeMultiplier: 1
+  cameraShakeHighSpeed: 50
 --- !u!1 &1696906989626248122
 GameObject:
   m_ObjectHideFlags: 0
@@ -269,6 +295,7 @@ GameObject:
   - component: {fileID: 2201349109820034518}
   - component: {fileID: 8999502255178623339}
   - component: {fileID: 2137599072177911151}
+  - component: {fileID: 8528214175078900902}
   m_Layer: 0
   m_Name: cm
   m_TagString: Untagged
@@ -342,7 +369,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd6043bde05a7fc4cba197d06915c1e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Damping: {x: 0.1, y: 0.25, z: 0.2}
+  Damping: {x: 0.1, y: 0.5, z: 0.2}
   ShoulderOffset: {x: 0.5, y: -0.4, z: 0}
   VerticalArmLength: 0.4
   CameraSide: 1
@@ -354,6 +381,23 @@ MonoBehaviour:
   CameraRadius: 0.2
   DampingIntoCollision: 0
   DampingFromCollision: 2
+--- !u!114 &8528214175078900902
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4212262224745963605}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68bb026fafb42b14791938953eaace77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_NoiseProfile: {fileID: 11400000, guid: e9ce97b7a206dc64d90931ea044e0c72, type: 2}
+  m_PivotOffset: {x: 0, y: 0, z: 0}
+  m_AmplitudeGain: 0
+  m_FrequencyGain: 1
+  mNoiseOffsets: {x: -549.048, y: -700.077, z: -59.237335}
 --- !u!1 &4814552617175299197
 GameObject:
   m_ObjectHideFlags: 0

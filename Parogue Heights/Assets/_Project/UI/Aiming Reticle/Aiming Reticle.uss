@@ -1,0 +1,22 @@
+VisualElement 
+{
+
+}
+
+:root
+{
+	justify-content: center;
+}
+
+.container
+{
+	align-self: center;
+	justify-content: center;
+	flex-direction: column;
+}
+
+.reticle
+{
+	width: 5px;
+	height: 5px;
+}

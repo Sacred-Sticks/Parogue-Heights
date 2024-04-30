@@ -1,0 +1,35 @@
+VisualElement 
+{
+
+}
+
+:root
+{
+	--container_margin: 100px;
+	--container_padding: 50px;
+}
+
+.container
+{
+	margin: var(--container_margin);
+	flex-grow: 1;
+	background-color: rgba(30, 30, 30, 0.95);
+	padding: var(--container_padding);
+	border-width: 3px;
+	border-radius: 10px;
+	border-color: #AAAAAA;
+	color: rgb(200, 200, 200);
+	font-size: 60px;
+}
+
+.title
+{
+	margin-top: 25px;
+	align-self: center;
+	font-size: 60px;
+}
+
+.options
+{
+	flex-grow: 1;
+}

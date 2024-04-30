@@ -13,12 +13,14 @@ namespace Parogue_Heights
 
         [SerializeField] private Texture2D background;
 
-        private string gameplayStr = "Gameplay";
         private const string rootStr = "root";
+        private const string titleContainerStr = "title_container";
         private const string titleStr = "title";
         private const string playButtonStr = "play_button";
-        private const string peacefulButtonStr = "peaceful_button";
-        private const string toolsButtonStr = "tools_button";
+        private const string buttonsStr = "buttons";
+        private const string spellsButtonStr = "spells_button";
+        private const string menuButtonsStr = "menu_buttons";
+        private const string optionsButtonStr = "options_button";
         private const string controlsButtonStr = "controls_button";
         private const string quitButtonStr = "quit_button";
 
@@ -38,26 +40,28 @@ namespace Parogue_Heights
             root.AddToClassList(rootStr);
             root.style.backgroundImage = new StyleBackground(background);
 
-            var title = root.CreateChild<Label>(titleStr);
+            var titleContainer = root.CreateChild<VisualElement>(titleContainerStr);
+
+            var title = titleContainer.CreateChild<Label>(titleStr);
             title.text = "Parogue Heights";
 
             var playButton = root.CreateChild<Button>(playButtonStr);
             playButton.text = "Play";
             playButton.clickable.clicked += () => sceneLoader.LoadSceneGroup("Gameplay");
 
-            var peacefulButton = root.CreateChild<Button>(peacefulButtonStr);
-            peacefulButton.text = "Peaceful Mode";
-            peacefulButton.clickable.clicked += () => sceneLoader.LoadSceneGroup("Peaceful Mode");
+            var buttons = root.CreateChild<VisualElement>(buttonsStr);
 
-            var toolsButton = root.CreateChild<Button>(toolsButtonStr);
-            toolsButton.text = "Spells";
-            toolsButton.clickable.clicked += () =>
+            var spellsButton = buttons.CreateChild<Button>(spellsButtonStr);
+            spellsButton.text = "Spells";
+            spellsButton.clickable.clicked += () =>
             {
                 Close();
                 Registry.Get<SpellsMenu>("Tools_Menu").Open();
             };
 
-            var controlsButton = root.CreateChild<Button>(controlsButtonStr);
+            var menuButtons = buttons.CreateChild<VisualElement>(menuButtonsStr);
+
+            var controlsButton = menuButtons.CreateChild<Button>(controlsButtonStr);
             controlsButton.text = "Controls";
             controlsButton.clickable.clicked += () =>
             {
@@ -65,7 +69,15 @@ namespace Parogue_Heights
                 Registry.Get<ControlsMenu>("Controls_Menu").Open();
             };
 
-            var quitButton = root.CreateChild<Button>(quitButtonStr);
+            var optionsButton = menuButtons.CreateChild<Button>(optionsButtonStr);
+            optionsButton.text = "Options";
+            optionsButton.clickable.clicked += () =>
+            {
+                Close();
+                Registry.Get<OptionsMenu>("Options_Menu").Open();
+            };
+
+            var quitButton = buttons.CreateChild<Button>(quitButtonStr);
             quitButton.text = "Quit";
             quitButton.clickable.clicked += () => Application.Quit();
         }

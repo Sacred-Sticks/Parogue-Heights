@@ -408,6 +408,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rotationSpeed: 0.25
   cameraSpeed: 0.5
+  sensitivity: {fileID: 11400000, guid: 261b2aeba00b9014ea92c3fe9ab7d587, type: 2}
   rotationInput: {fileID: 11400000, guid: b39ed4aa455b663449fde9e14a1059fe, type: 2}
   verticalRange: 60
   cameraFollow: {fileID: 7224811961306523781}
