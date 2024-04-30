@@ -13,12 +13,12 @@ namespace Parogue_Heights
 
         [SerializeField] private Texture2D background;
 
-        private string gameplayStr = "Gameplay";
         private const string rootStr = "root";
         private const string titleStr = "title";
         private const string playButtonStr = "play_button";
         private const string peacefulButtonStr = "peaceful_button";
-        private const string toolsButtonStr = "tools_button";
+        private const string optionsButtonStr = "options_button";
+        private const string spellsButtonStr = "spells_button";
         private const string controlsButtonStr = "controls_button";
         private const string quitButtonStr = "quit_button";
 
@@ -49,9 +49,17 @@ namespace Parogue_Heights
             peacefulButton.text = "Peaceful Mode";
             peacefulButton.clickable.clicked += () => sceneLoader.LoadSceneGroup("Peaceful Mode");
 
-            var toolsButton = root.CreateChild<Button>(toolsButtonStr);
-            toolsButton.text = "Spells";
-            toolsButton.clickable.clicked += () =>
+            var optionsButton = root.CreateChild<Button>(optionsButtonStr);
+            optionsButton.text = "Options";
+            optionsButton.clickable.clicked += () =>
+            {
+                Close();
+                Registry.Get<OptionsMenu>("Options_Menu").Open();
+            };
+
+            var spellsButton = root.CreateChild<Button>(spellsButtonStr);
+            spellsButton.text = "Spells";
+            spellsButton.clickable.clicked += () =>
             {
                 Close();
                 Registry.Get<SpellsMenu>("Tools_Menu").Open();

@@ -44,11 +44,18 @@ Button:hover
 	margin-bottom: 25px;
 }
 
-.tools_button
+.options_button
 {
 	width: 25%;
 	font-size: 40px;
 	margin-top: 10px;
+}
+
+.spells_button
+{
+	width: 25%;
+	font-size: 40px;
+	margin: 3px;
 }
 
 .controls_button
