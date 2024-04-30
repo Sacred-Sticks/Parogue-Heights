@@ -41,16 +41,16 @@ namespace Parogue_Heights
         {
             direction = cameraTransform.TransformDirection(direction);
             direction = Vector3.ProjectOnPlane(direction, Vector3.up).normalized;
-            NotifyObservers(new MovementChange(direction));
+            NotifyObservers(new MovementChange(direction * movementSpeed));
             if (!isGrounded)
             {
                 AirborneMoveTowards(direction);
                 return;
             }
             var currentVelocity = Vector3.ProjectOnPlane(body.velocity, transform.up);
-            if (currentVelocity.sqrMagnitude > movementSpeed * movementSpeed)
-                return;
             var desiredVelocity = direction * movementSpeed;
+            if (currentVelocity.sqrMagnitude > movementSpeed * movementSpeed && desiredVelocity != Vector3.zero)
+                return;
             body.AddForce(desiredVelocity - currentVelocity, ForceMode.VelocityChange);
         }
 
