@@ -35,12 +35,6 @@ Button:hover
 	padding: 10px;
 	font-size: 100px;
 	margin-top: 50px;
-}
-
-.peaceful_button {
-	width: 35%;
-	padding: 10px;
-	font-size: 50px;
 	margin-bottom: 25px;
 }
 

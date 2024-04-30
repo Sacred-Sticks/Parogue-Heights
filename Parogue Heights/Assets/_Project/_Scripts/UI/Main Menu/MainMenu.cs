@@ -16,7 +16,6 @@ namespace Parogue_Heights
         private const string rootStr = "root";
         private const string titleStr = "title";
         private const string playButtonStr = "play_button";
-        private const string peacefulButtonStr = "peaceful_button";
         private const string optionsButtonStr = "options_button";
         private const string spellsButtonStr = "spells_button";
         private const string controlsButtonStr = "controls_button";
@@ -44,10 +43,6 @@ namespace Parogue_Heights
             var playButton = root.CreateChild<Button>(playButtonStr);
             playButton.text = "Play";
             playButton.clickable.clicked += () => sceneLoader.LoadSceneGroup("Gameplay");
-
-            var peacefulButton = root.CreateChild<Button>(peacefulButtonStr);
-            peacefulButton.text = "Peaceful Mode";
-            peacefulButton.clickable.clicked += () => sceneLoader.LoadSceneGroup("Peaceful Mode");
 
             var optionsButton = root.CreateChild<Button>(optionsButtonStr);
             optionsButton.text = "Options";
