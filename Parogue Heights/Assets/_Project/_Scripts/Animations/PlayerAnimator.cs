@@ -30,10 +30,11 @@ namespace Parogue_Heights
         #region Notifications
         public void OnNotify(MovementChange argument)
         {
-            playerModel.LookAt(playerModel.position + argument.Direction);
-            float newSpeed = argument.Direction.normalized.magnitude;
+            playerModel.LookAt(playerModel.position + argument.Velocity);
+            float newSpeed = argument.Velocity.magnitude;
             if (activeSpeed == newSpeed)
                 return;
+            Debug.Log(newSpeed);
             if (speedModification != null)
                 StopCoroutine(speedModification);
             speedModification = StartCoroutine(ModifySpeed(activeSpeed, newSpeed));

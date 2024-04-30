@@ -94,11 +94,11 @@ namespace Parogue_Heights
 
         public struct MovementChange : INotification
         {
-            public Vector3 Direction { get; }
+            public Vector3 Velocity { get; }
 
             public MovementChange(Vector3 localDirection)
             {
-                Direction = localDirection.normalized;
+                Velocity = localDirection;
             }
         }
         #endregion
