@@ -10,7 +10,7 @@ namespace Parogue_Heights
             typeof(BounceSpell),
             typeof(HookshotSpell),
             typeof(JumpSpell),
-            typeof(ThrusterSpell),
+            typeof(DashSpell),
             typeof(SmasherSpell),
         };
 

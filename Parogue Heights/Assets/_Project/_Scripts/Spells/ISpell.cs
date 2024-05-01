@@ -9,7 +9,7 @@
                 BounceSpell _ => SpellType.Bounce,
                 HookshotSpell _ => SpellType.Hookshot,
                 JumpSpell _ => SpellType.Jump,
-                ThrusterSpell => SpellType.Thruster,
+                DashSpell => SpellType.Dash,
                 SmasherSpell => SpellType.Rebound,
                 _ => default,
             };
@@ -26,7 +26,7 @@
         {
             Hookshot,
             Jump,
-            Thruster,
+            Dash,
             Bounce,
             Rebound,
         }
