@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Jump
   m_EditorClassIdentifier: 
   toolType: 1
-  toolDescription: Cast this spell to gain speed upward with a propulsion!
+  toolDescription: Cast this spell to do another jump mid-air!
   toolSprite: {fileID: 2800000, guid: 691681f2534c14246aae2d615230efa5, type: 3}
   labelColor: {r: 0.9764706, g: 1, b: 0.41960785, a: 1}

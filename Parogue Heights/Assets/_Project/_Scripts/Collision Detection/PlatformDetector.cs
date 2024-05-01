@@ -16,6 +16,11 @@ namespace Parogue_Heights
         {
             PlatformManager.ActivatePlatform(collision.transform.position, body);
         }
+
+        private void OnTriggerEnter(Collider other)
+        {
+            PlatformManager.ActivatePlatform(other.transform.position, body);
+        }
         #endregion
     }
 }

@@ -12,7 +12,7 @@ namespace Parogue_Heights
         private Rigidbody body;
         
         private float highScore = 0;
-        private Label scoreElement;
+        private static Label scoreElement;
 
         private const string rootStr = "root";
         private const string scoreStr = "score";
@@ -30,11 +30,6 @@ namespace Parogue_Heights
         {
             body = Registry.Get<Rigidbody>(RegistryStrings.PlayerRigidbody);
         }
-
-        private void Update()
-        {
-            CheckScore();
-        }
         #endregion
 
         private void BuildDocument(VisualElement root)
@@ -43,15 +38,9 @@ namespace Parogue_Heights
             scoreElement.text = "0";
         }
     
-        private void CheckScore()
+        public static void ModifyScore(int modification)
         {
-            if (body == null)
-                return;
-            if (body.position.y > highScore)
-            {
-                highScore = body.position.y;
-                scoreElement.text = highScore.ToString("0");
-            }
+            scoreElement.text = (int.Parse(scoreElement.text) + modification).ToString();
         }
     }
 }
