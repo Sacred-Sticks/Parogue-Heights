@@ -63,10 +63,15 @@ namespace Parogue_Heights
         #endregion
 
         #region UnityEvents
+        protected override void Awake()
+        {
+            base.Awake();
+            Registry.Register(RegistryStrings.PlayerRigidbody, body);
+        }
+
         protected override void Start()
         {
             base.Start();
-            Registry.Register(RegistryStrings.PlayerRigidbody, body);
         }
 
         private void FixedUpdate()

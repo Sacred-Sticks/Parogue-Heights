@@ -23,7 +23,7 @@ namespace Parogue_Heights
         private const int initialUses = 3;
         private const float range = 25f;
         private const float radius = 1;
-        private const float forceStrength = 10f;
+        private const float forceStrength = 20f;
         private const float stoppingDistance = 0.5f;
         private const float height = 2;
         private readonly Rigidbody body;
