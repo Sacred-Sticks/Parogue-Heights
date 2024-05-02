@@ -11,10 +11,10 @@ namespace Parogue_Heights
         private static readonly Dictionary<IGenerator.LayerHeight, int> pointsPerLayerType = new Dictionary<IGenerator.LayerHeight, int>
         {
             {IGenerator.LayerHeight.Initial, 1 },
-            {IGenerator.LayerHeight.Easy, 2},
-            {IGenerator.LayerHeight.Medium, 5},
-            {IGenerator.LayerHeight.Hard, 15},
-            {IGenerator.LayerHeight.Impossible, 20},
+            {IGenerator.LayerHeight.Easy, 10},
+            {IGenerator.LayerHeight.Medium, 15},
+            {IGenerator.LayerHeight.Hard, 25},
+            {IGenerator.LayerHeight.Impossible, 50},
         };
         
         #region UnityEvents
