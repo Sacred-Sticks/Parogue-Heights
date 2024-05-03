@@ -89,9 +89,8 @@ namespace Parogue_Heights
 
         public override void Close()
         {
+            mainMenu?.Open();
             base.Close();
-            if (mainMenu != null)
-                mainMenu.Open();
         }
     }
 }

@@ -2,7 +2,7 @@
 
 namespace Parogue_Heights
 {
-    public sealed class ThrusterSpell : ISpell
+    public sealed class DashSpell : ISpell
     {
         private const float thrusterForce = 8.75f;
         private const int initialUses = 2;
@@ -12,7 +12,7 @@ namespace Parogue_Heights
         private readonly Transform cameraTransform;
         private bool active;
 
-        public ThrusterSpell()
+        public DashSpell()
         {
             Uses = initialUses;
             body = Registry.Get<Rigidbody>(RegistryStrings.PlayerRigidbody);
