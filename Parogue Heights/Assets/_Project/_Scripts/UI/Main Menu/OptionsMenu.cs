@@ -66,8 +66,8 @@ namespace Parogue_Heights
         public override void Close()
         {
             Settings.Sensitivity = sensitivitySlider.value;
-            base.Close();
             mainMenu?.Open();
+            base.Close();
         }
 
         public override void Open()
