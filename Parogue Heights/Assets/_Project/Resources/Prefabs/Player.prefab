@@ -396,7 +396,7 @@ MonoBehaviour:
   rotationSpeed: 0.125
   cameraSpeed: 0.25
   rotationInput: {fileID: 11400000, guid: b39ed4aa455b663449fde9e14a1059fe, type: 2}
-  verticalRange: 60
+  verticalRange: 80
   cameraFollow: {fileID: 7224811961306523781}
 --- !u!1 &7762198899256241362
 GameObject:
