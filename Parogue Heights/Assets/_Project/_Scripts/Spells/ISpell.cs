@@ -10,7 +10,7 @@
                 HookshotSpell _ => SpellType.Hookshot,
                 JumpSpell _ => SpellType.Jump,
                 DashSpell => SpellType.Dash,
-                SmasherSpell => SpellType.Rebound,
+                DashbackSpell => SpellType.Dashback,
                 _ => default,
             };
         }
@@ -28,7 +28,7 @@
             Jump,
             Dash,
             Bounce,
-            Rebound,
+            Dashback,
         }
 
         public int Uses { get; set; }
