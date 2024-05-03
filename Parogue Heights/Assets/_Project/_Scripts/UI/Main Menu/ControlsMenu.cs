@@ -73,8 +73,7 @@ namespace Parogue_Heights
         public override void Close()
         {
             base.Close();
-            if (mainMenu != null)
-                mainMenu.Open();
+            mainMenu?.Open();
         }
 
         [System.Serializable]
