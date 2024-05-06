@@ -22,9 +22,10 @@ namespace Parogue_Heights
         }
 
         private bool hookshotActive;
+        private bool hookshotPulling;
 
         private const int initialUses = 3;
-        private const float range = 25f;
+        private const float range = 30f;
         private const float forceStrength = 20f;
         private const float stoppingDistance = 0.5f;
         private const float height = 1.5f;
@@ -36,14 +37,18 @@ namespace Parogue_Heights
         private async void MoveInDirection(Vector3 goalPosition)
         {
             hookshotActive = true;
+            hookshotPulling = true;
             var newVelocity = (goalPosition - body.position).normalized * forceStrength;
             while (hookshotActive)
             {
                 if (body == null)
                     return;
+
                 var velocity = newVelocity - body.velocity;
                 var currentPosition = body.position + body.transform.up * height;
-                if (Vector3.SqrMagnitude(currentPosition - goalPosition) < stoppingDistance * stoppingDistance)
+                if (Vector3.Dot(goalPosition - currentPosition, velocity) < 0 || Vector3.SqrMagnitude(currentPosition - goalPosition) < stoppingDistance * stoppingDistance)
+                    hookshotPulling = false;
+                if (!hookshotPulling)
                     velocity = -body.velocity;
                 body.AddForce(velocity, ForceMode.VelocityChange);
                 await Task.Delay(TimeSpan.FromSeconds(Time.fixedDeltaTime));
