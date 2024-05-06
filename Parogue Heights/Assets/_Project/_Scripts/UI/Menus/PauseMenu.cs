@@ -80,6 +80,10 @@ namespace Parogue_Heights
                 sceneLoader.LoadSceneGroup("Main Menu");
                 Close();
             };
+
+            var text = container.CreateChild<Label>();
+            text.text = "Press ESC to close this menu";
+            text.style.display = DisplayStyle.None;
         }
 
         public override void Open()
