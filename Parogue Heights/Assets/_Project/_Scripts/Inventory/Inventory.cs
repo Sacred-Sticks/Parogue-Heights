@@ -60,6 +60,16 @@ namespace Parogue_Heights
         }
         #endregion
 
+        #region UnityEvents
+        private void Update()
+        {
+            if (inventorySlots.Count == 0)
+                return;
+
+            inventorySlots[activeSlotIndex].Tool.OnSlotActive();
+        }
+        #endregion
+
         private void CycleInventory(int direction)
         {
             if (inventorySlots.Count == 0)
