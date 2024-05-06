@@ -19,6 +19,7 @@ namespace Parogue_Heights
             lineRendererMediator = Registry.Get<LineRendererMediator>(RegistryStrings.HookshotLineRenderer);
             lineRendererMediator.WithInitialPoint(body.transform);
             lineRendererMediator.WithInitialOffset(Vector3.up * height / 2);
+            moveController = body.GetComponentInChildren<IMoveController>();
         }
 
         private bool hookshotActive;
@@ -33,12 +34,14 @@ namespace Parogue_Heights
         private readonly LayerMaskData _platformMask;
         private readonly ParticlesMediator[] particleMediators;
         private readonly LineRendererMediator lineRendererMediator;
+        private readonly IMoveController moveController;
 
         private async void MoveInDirection(Vector3 goalPosition)
         {
             hookshotActive = true;
             hookshotPulling = true;
             var newVelocity = (goalPosition - body.position).normalized * forceStrength;
+            moveController.CanMove = false;
             while (hookshotActive)
             {
                 if (body == null)
@@ -46,7 +49,7 @@ namespace Parogue_Heights
 
                 var velocity = newVelocity - body.velocity;
                 var currentPosition = body.position + body.transform.up * height;
-                if (Vector3.Dot(goalPosition - currentPosition, velocity) < 0 || Vector3.SqrMagnitude(currentPosition - goalPosition) < stoppingDistance * stoppingDistance)
+                if (Vector3.Dot(goalPosition - currentPosition, velocity) < 0 && Vector3.SqrMagnitude(currentPosition - goalPosition) < stoppingDistance * stoppingDistance)
                     hookshotPulling = false;
                 if (!hookshotPulling)
                     velocity = -body.velocity;
@@ -90,6 +93,7 @@ namespace Parogue_Heights
                 return;
             body.useGravity = true;
             hookshotActive = false;
+            moveController.CanMove = true;
             ISpell.LowerUses(this);
             foreach (var particleMediator in particleMediators)
                 particleMediator.Stop();
