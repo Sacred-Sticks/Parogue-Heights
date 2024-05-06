@@ -1,13 +1,12 @@
 using UnityEngine;
 using Kickstarter.Inputs;
 using Kickstarter.DependencyInjection;
-using Kickstarter.Bootstrapper;
 
 namespace Parogue_Heights
 {
     public class PauseController : MonoBehaviour, IInputReceiver
     {
-        [Inject] private SceneLoader sceneLoader;
+        [Inject] private Menu menu;
 
         [SerializeField] private FloatInput pauseInput;
 
@@ -27,7 +26,7 @@ namespace Parogue_Heights
         {
             if (input == 0)
                 return;
-            sceneLoader.LoadSceneGroup("Main Menu");
+            menu.ToggleMenu();
         }
     }
 }

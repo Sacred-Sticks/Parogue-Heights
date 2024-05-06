@@ -4,13 +4,11 @@ using UnityEngine.UIElements;
 
 namespace Parogue_Heights
 {
-    [RequireComponent(typeof(UIDocument))]
     public class ControlsMenu : Menu
     {
-        [Inject] private MainMenu mainMenu;
+        [Inject] private Menu mainMenu;
 
         [SerializeField] private Input[] inputs;
-        [SerializeField] private Texture2D background;
 
         private const string headerStr = "header";
         private const string containerStr = "container";
@@ -45,7 +43,6 @@ namespace Parogue_Heights
                 return;
             root.Clear();
             root.styleSheets.Add(styleSheet);
-            root.style.backgroundImage = new StyleBackground(background);
 
             root.CreateChild<Label>(headerStr).text = "Controls";
             var scrollView = root.CreateChild<ScrollView>(containerStr);
