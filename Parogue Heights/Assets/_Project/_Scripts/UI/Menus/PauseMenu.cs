@@ -49,9 +49,9 @@ namespace Parogue_Heights
 
             var buttons = container.CreateChild<VisualElement>(buttonsStr);
 
-            var settingsButton = buttons.CreateChild<Button>(optionsStr);
-            settingsButton.text = "Settings";
-            settingsButton.clickable.clicked += () =>
+            var optionsButton = buttons.CreateChild<Button>(optionsStr);
+            optionsButton.text = "Options";
+            optionsButton.clickable.clicked += () =>
             {
                 Registry.Get<Menu>("Options_Menu").Open();
                 base.Close();
@@ -73,17 +73,13 @@ namespace Parogue_Heights
                 base.Close();
             };
 
-            var quitButton = buttons.CreateChild<Button>(quitStr);
+            var quitButton = container.CreateChild<Button>(quitStr);
             quitButton.text = "Quit to Menu";
             quitButton.clickable.clicked += () =>
             {
                 sceneLoader.LoadSceneGroup("Main Menu");
                 Close();
             };
-
-            var text = container.CreateChild<Label>();
-            text.text = "Press ESC to close this menu";
-            text.style.display = DisplayStyle.None;
         }
 
         public override void Open()
