@@ -5,13 +5,10 @@ using UnityEngine.UIElements;
 
 namespace Parogue_Heights
 {
-    [RequireComponent(typeof(UIDocument))]
     public class MainMenu : Menu, IDependencyProvider
     {
-        [Provide] private MainMenu mainMenu => this;
+        [Provide] private Menu mainMenu => this;
         [Inject] private SceneLoader sceneLoader;
-
-        [SerializeField] private Texture2D background;
 
         private const string rootStr = "root";
         private const string titleContainerStr = "title_container";
@@ -38,7 +35,6 @@ namespace Parogue_Heights
                 return;
             root.styleSheets.Add(styleSheet);
             root.AddToClassList(rootStr);
-            root.style.backgroundImage = new StyleBackground(background);
 
             var titleContainer = root.CreateChild<VisualElement>(titleContainerStr);
 

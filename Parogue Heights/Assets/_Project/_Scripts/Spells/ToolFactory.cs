@@ -11,7 +11,7 @@ namespace Parogue_Heights
             typeof(HookshotSpell),
             typeof(JumpSpell),
             typeof(DashSpell),
-            typeof(SmasherSpell),
+            typeof(DashbackSpell),
         };
 
         public static ISpell CreateRandomTool()

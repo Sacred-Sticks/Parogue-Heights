@@ -4,12 +4,9 @@ using UnityEngine.UIElements;
 
 namespace Parogue_Heights
 {
-    [RequireComponent(typeof(UIDocument))]
     public class OptionsMenu : Menu
     {
-        [Inject] private MainMenu mainMenu;
-
-        [SerializeField] private Texture2D background;
+        [Inject] private Menu primaryMenu;
 
         private const string containerStr = "container";
         private const string titleStr = "title";
@@ -44,7 +41,6 @@ namespace Parogue_Heights
                 return;
             root.Clear();
             root.styleSheets.Add(styleSheet);
-            root.style.backgroundImage = new StyleBackground(background);
 
             var container = root.CreateChild<VisualElement>(containerStr);
             var title = container.CreateChild<Label>(titleStr);
@@ -66,9 +62,8 @@ namespace Parogue_Heights
         public override void Close()
         {
             Settings.Sensitivity = sensitivitySlider.value;
+            primaryMenu?.Open();
             base.Close();
-            if (mainMenu != null)
-                mainMenu.Open();
         }
 
         public override void Open()

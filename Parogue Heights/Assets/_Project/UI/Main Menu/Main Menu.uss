@@ -22,7 +22,6 @@ Button:hover
 	flex-direction: column;
 	padding: 50px;
 	align-items: center;
-	background-color: rgb(25, 25, 25);
 }
 
 .title_container

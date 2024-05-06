@@ -4,12 +4,10 @@ using UnityEngine.UIElements;
 
 namespace Parogue_Heights
 {
-    [RequireComponent(typeof(UIDocument))]
     public class SpellsMenu : Menu
     {
-        [Inject] private MainMenu mainMenu;
+        [Inject] private Menu mainMenu;
 
-        [SerializeField] private Texture2D background;
         [SerializeField] private Spells spells;
 
         // Constants
@@ -49,7 +47,6 @@ namespace Parogue_Heights
                 return;
             root.Clear();
             root.styleSheets.Add(styleSheet);
-            root.style.backgroundImage = new StyleBackground(background);
 
             var globalContainer = root.CreateChild<VisualElement>("global_container");
 
@@ -89,9 +86,8 @@ namespace Parogue_Heights
 
         public override void Close()
         {
+            mainMenu?.Open();
             base.Close();
-            if (mainMenu != null)
-                mainMenu.Open();
         }
     }
 }
