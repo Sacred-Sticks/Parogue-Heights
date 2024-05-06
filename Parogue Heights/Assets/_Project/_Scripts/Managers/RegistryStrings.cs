@@ -12,5 +12,6 @@
         public const string RightThruster = "Right Thruster";
         public const string LeftSmasher = "Left Smasher";
         public const string RightSmasher = "Right Smasher";
+        public const string HookshotLineRenderer = "Hookshot Line Renderer";
     }
 }

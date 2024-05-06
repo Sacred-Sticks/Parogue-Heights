@@ -40,5 +40,9 @@
         {
             // Noop
         }
+        public void OnSlotActive()
+        {
+            // Noop
+        }
     }
 }
