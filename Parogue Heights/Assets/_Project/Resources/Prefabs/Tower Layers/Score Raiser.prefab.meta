@@ -1,6 +1,12 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Parogue Heights/Assets/_Project/Resources/Prefabs/Tower Layers/Score Raiser.prefab.meta
 guid: bc41bdc5e712b6b44b48f74eed3f0729
 PrefabImporter:
+========
+guid: 9d802a07286317e45a232039fb017c05
+folderAsset: yes
+DefaultImporter:
+>>>>>>>> main:Parogue Heights/Assets/_Project/Resources/Prefabs/UI.meta
   externalObjects: {}
   userData: 
   assetBundleName: 
