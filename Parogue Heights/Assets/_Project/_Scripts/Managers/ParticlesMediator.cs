@@ -18,6 +18,7 @@ namespace Parogue_Heights
         {
             Left,
             Right,
+            Reticle,
         }
 
         private string registryKey;
@@ -60,6 +61,7 @@ namespace Parogue_Heights
                     ParticleType.Smashers => RegistryStrings.RightSmasher,
                     _ => string.Empty,
                 },
+                Side.Reticle => RegistryStrings.HookshotReticle,
                 _ => string.Empty,
             };
             Registry.Register(registryKey, this);
