@@ -31,6 +31,7 @@ namespace Parogue_Heights
         private const float forceStrength = 20f;
         private const float stoppingDistance = 0.5f;
         private const float height = 1.5f;
+        private readonly Vector3 offset = Vector3.up * height;
         private readonly Rigidbody body;
         private readonly LayerMaskData _platformMask;
         private readonly ParticlesMediator[] particleMediators;
@@ -80,7 +81,7 @@ namespace Parogue_Heights
             if (hookshotActive)
                 return;
             var cameraTransform = Camera.main.transform;
-            var ray = new Ray(cameraTransform.position, cameraTransform.forward);
+            var ray = new Ray(body.position + offset, cameraTransform.forward);
             if (!Physics.Raycast(ray, out var hit, range, _platformMask.Mask))
                 return;
             body.useGravity = false;
@@ -108,7 +109,7 @@ namespace Parogue_Heights
         public void OnSlotActive()
         {
             var cameraTransform = Camera.main.transform;
-            var ray = new Ray(cameraTransform.position, cameraTransform.forward);
+            var ray = new Ray(body.position + offset, cameraTransform.forward);
             if (Physics.Raycast(ray, out var hit, range, _platformMask.Mask))
                 lineRendererMediator.RenderLine(hit.point);
         }
