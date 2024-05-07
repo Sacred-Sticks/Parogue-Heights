@@ -16,6 +16,7 @@ namespace Parogue_Heights
                 Registry.Get<ParticlesMediator>(RegistryStrings.LeftHookshot),
                 Registry.Get<ParticlesMediator>(RegistryStrings.RightHookshot),
             };
+            reticleMediator = Registry.Get<ParticlesMediator>(RegistryStrings.HookshotReticle);
             lineRendererMediator = Registry.Get<LineRendererMediator>(RegistryStrings.HookshotLineRenderer);
             lineRendererMediator.WithInitialPoint(body.transform);
             lineRendererMediator.WithInitialOffset(Vector3.up * height / 2);
@@ -33,6 +34,7 @@ namespace Parogue_Heights
         private readonly Rigidbody body;
         private readonly LayerMaskData _platformMask;
         private readonly ParticlesMediator[] particleMediators;
+        private readonly ParticlesMediator reticleMediator;
         private readonly LineRendererMediator lineRendererMediator;
         private readonly IMoveController moveController;
 
@@ -85,6 +87,9 @@ namespace Parogue_Heights
             MoveInDirection(hit.point);
             foreach (var particleMediator in particleMediators)
                 particleMediator.Play();
+            reticleMediator.transform.position = hit.point;
+            reticleMediator.transform.rotation = Quaternion.FromToRotation(Vector3.up, hit.normal);
+            reticleMediator.Play();
         }
 
         public void OnActivateEnd()
@@ -97,6 +102,7 @@ namespace Parogue_Heights
             ISpell.LowerUses(this);
             foreach (var particleMediator in particleMediators)
                 particleMediator.Stop();
+            reticleMediator.Stop();
         }
 
         public void OnSlotActive()
