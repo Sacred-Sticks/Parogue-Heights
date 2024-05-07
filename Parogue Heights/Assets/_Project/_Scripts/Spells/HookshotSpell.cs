@@ -52,7 +52,11 @@ namespace Parogue_Heights
 
                 var velocity = newVelocity - body.velocity;
                 var currentPosition = body.position + body.transform.up * height;
-                if (Vector3.Dot(goalPosition - currentPosition, velocity) < 0 && Vector3.SqrMagnitude(currentPosition - goalPosition) < stoppingDistance * stoppingDistance)
+                var direction = goalPosition - currentPosition;
+                float x = direction.x * newVelocity.x;
+                float y = direction.y * newVelocity.y;
+                float z = direction.z * newVelocity.z;
+                if (x < 0 || y < 0 || z < 0)
                     hookshotPulling = false;
                 if (!hookshotPulling)
                     velocity = -body.velocity;
