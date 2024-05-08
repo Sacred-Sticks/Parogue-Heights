@@ -19,7 +19,7 @@ namespace Parogue_Heights
             reticleMediator = Registry.Get<ParticlesMediator>(RegistryStrings.HookshotReticle);
             lineRendererMediator = Registry.Get<LineRendererMediator>(RegistryStrings.HookshotLineRenderer);
             lineRendererMediator.WithInitialPoint(body.transform);
-            lineRendererMediator.WithInitialOffset(Vector3.up * height / 2);
+            lineRendererMediator.WithInitialOffset(Vector3.up * aimingOffset / 2);
             moveController = body.GetComponentInChildren<IMoveController>();
         }
 
@@ -29,9 +29,7 @@ namespace Parogue_Heights
         private const int initialUses = 3;
         private const float range = 30f;
         private const float forceStrength = 20f;
-        private const float stoppingDistance = 0.5f;
-        private const float height = 1.5f;
-        private readonly Vector3 offset = Vector3.up * height;
+        private const float aimingOffset = 0.25f;
         private readonly Rigidbody body;
         private readonly LayerMaskData _platformMask;
         private readonly ParticlesMediator[] particleMediators;
@@ -51,7 +49,7 @@ namespace Parogue_Heights
                     return;
 
                 var velocity = newVelocity - body.velocity;
-                var currentPosition = body.position + body.transform.up * height;
+                var currentPosition = body.position + body.transform.up * aimingOffset;
                 var direction = goalPosition - currentPosition;
                 float x = direction.x * newVelocity.x;
                 float y = direction.y * newVelocity.y;
@@ -85,7 +83,7 @@ namespace Parogue_Heights
             if (hookshotActive)
                 return;
             var cameraTransform = Camera.main.transform;
-            var ray = new Ray(body.position + offset, cameraTransform.forward);
+            var ray = new Ray(body.position + Vector3.up * aimingOffset, cameraTransform.forward);
             if (!Physics.Raycast(ray, out var hit, range, _platformMask.Mask))
                 return;
             body.useGravity = false;
@@ -113,7 +111,7 @@ namespace Parogue_Heights
         public void OnSlotActive()
         {
             var cameraTransform = Camera.main.transform;
-            var ray = new Ray(body.position + offset, cameraTransform.forward);
+            var ray = new Ray(body.position + Vector3.up * aimingOffset, cameraTransform.forward);
             if (Physics.Raycast(ray, out var hit, range, _platformMask.Mask))
                 lineRendererMediator.RenderLine(hit.point);
         }
