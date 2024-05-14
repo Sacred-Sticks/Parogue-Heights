@@ -92,5 +92,13 @@ namespace Parogue_Heights
                 yield return delay;
             }
         }
+
+        public enum NotificationType
+        {
+            Idle,
+            Walk,
+            Jump,
+            GroundSlam,
+        }
     }
 }
