@@ -1,5 +1,6 @@
 using Kickstarter.Bootstrapper;
 using Kickstarter.DependencyInjection;
+using Kickstarter.Extensions;
 using UnityEngine;
 using UnityEngine.UIElements;
 

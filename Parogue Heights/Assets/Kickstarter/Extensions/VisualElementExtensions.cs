@@ -1,21 +1,24 @@
 using UnityEngine.UIElements;
 
-public static class VisualElementExtensions
+namespace Kickstarter.Extensions
 {
-    public static T CreateChild<T>(this VisualElement parent, params string[] classes) where T : VisualElement, new()
+    public static class VisualElementExtensions
     {
-        var child = new T();
-        foreach (var @class in classes)
+        public static T CreateChild<T>(this VisualElement parent, params string[] classes) where T : VisualElement, new()
         {
-            child.AddToClassList(@class);
+            var child = new T();
+            foreach (var @class in classes)
+            {
+                child.AddToClassList(@class);
+            }
+            parent.AddChild(child);
+            return child;
         }
-        parent.AddChild(child);
-        return child;
-    }
 
-    public static VisualElement AddChild(this VisualElement parent, VisualElement child)
-    {
-        parent.hierarchy.Add(child);
-        return child;
+        public static VisualElement AddChild(this VisualElement parent, VisualElement child)
+        {
+            parent.hierarchy.Add(child);
+            return child;
+        }
     }
 }
