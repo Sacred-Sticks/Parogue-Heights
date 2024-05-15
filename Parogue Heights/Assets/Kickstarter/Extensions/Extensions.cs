@@ -10,15 +10,31 @@ namespace Kickstarter.Extensions
     {
         public static void LoadDictionary<TEnum, TType>(this Dictionary<TEnum, TType> dictionary, TType[] items) where TEnum : Enum
         {
-            var values = Enum.GetValues(typeof(TEnum));
-            if (values.Length != items.Length)
+            var keys = Enum.GetValues(typeof(TEnum));
+            LoadValues(dictionary, keys, items);
+        }
+
+        public static void LoadDictionary<TType>(this Dictionary<Enum, TType> dictionary, TType[] items, Type enumType)
+        {
+            if (!enumType.IsEnum)
+            {
+                Debug.LogError($"{enumType} is not an Enum");
+                return;
+            }
+            var keys = Enum.GetValues(enumType);
+            LoadValues(dictionary, keys, items);
+        }
+
+        private static void LoadValues<TEnum, TType>(Dictionary<TEnum, TType> dictionary, Array keys, TType[] items) where TEnum : Enum
+        {
+            if (keys.Length != items.Length)
             {
                 Debug.LogError("Invalid Use of LoadDictionary Extension Method. Items must have the same length as the enum.");
                 return;
             }
-            var valuesArray = new TEnum[values.Length];
-            values.CopyTo(valuesArray, 0);
-            for (int i = 0; i < values.Length; i++)
+            var valuesArray = new TEnum[keys.Length];
+            keys.CopyTo(valuesArray, 0);
+            for (int i = 0; i < keys.Length; i++)
                 dictionary.Add(valuesArray[i], items[i]);
         }
     }

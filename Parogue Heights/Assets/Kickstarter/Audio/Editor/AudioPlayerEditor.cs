@@ -12,7 +12,10 @@ namespace Kickstarter.Audio
 
             serializedObject.Update();
 
-            // Draw the listenTarget property
+            GUI.enabled = false;
+            EditorGUILayout.PropertyField(serializedObject.FindProperty("m_Script"));
+            GUI.enabled = true;
+
             SerializeProperties(audioPlayer);
 
             serializedObject.ApplyModifiedProperties();
