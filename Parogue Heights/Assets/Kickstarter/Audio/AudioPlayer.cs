@@ -26,6 +26,10 @@ namespace Kickstarter.Audio
         private void Awake()
         {
             audioSource = GetComponent<AudioSource>();
+        }
+
+        private void Start()
+        {
             AddToObservablesWatchlist();
 
             var notificationTypeEnum = GetNotificationType();

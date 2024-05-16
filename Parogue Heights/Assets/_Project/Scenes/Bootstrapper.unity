@@ -149,6 +149,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4428548323318455960, guid: 6e232fa1e86ef044984e0b7cfc2662b2,
         type: 3}
+      propertyPath: _sceneGroups.Array.data[0].Scenes.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4428548323318455960, guid: 6e232fa1e86ef044984e0b7cfc2662b2,
+        type: 3}
       propertyPath: _sceneGroups.Array.data[1].Scenes.Array.size
       value: 6
       objectReference: {fileID: 0}
@@ -161,6 +166,16 @@ PrefabInstance:
         type: 3}
       propertyPath: _sceneGroups.Array.data[3].Scenes.Array.size
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4428548323318455960, guid: 6e232fa1e86ef044984e0b7cfc2662b2,
+        type: 3}
+      propertyPath: _sceneGroups.Array.data[0].Scenes.Array.data[1].Type
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4428548323318455960, guid: 6e232fa1e86ef044984e0b7cfc2662b2,
+        type: 3}
+      propertyPath: _sceneGroups.Array.data[0].Scenes.Array.data[2].Type
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4428548323318455960, guid: 6e232fa1e86ef044984e0b7cfc2662b2,
         type: 3}
@@ -251,6 +266,16 @@ PrefabInstance:
         type: 3}
       propertyPath: _sceneGroups.Array.data[3].Scenes.Array.data[6].Type
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4428548323318455960, guid: 6e232fa1e86ef044984e0b7cfc2662b2,
+        type: 3}
+      propertyPath: _sceneGroups.Array.data[0].Scenes.Array.data[1].Reference.guid
+      value: 50a9ab5bff607c14592cf8c83fa62cc0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4428548323318455960, guid: 6e232fa1e86ef044984e0b7cfc2662b2,
+        type: 3}
+      propertyPath: _sceneGroups.Array.data[0].Scenes.Array.data[2].Reference.guid
+      value: d5ea8bcbcca5dad458167f3bd823bcdb
       objectReference: {fileID: 0}
     - target: {fileID: 4428548323318455960, guid: 6e232fa1e86ef044984e0b7cfc2662b2,
         type: 3}
@@ -347,6 +372,18 @@ PrefabInstance:
       propertyPath: _sceneGroups.Array.data[3].Scenes.Array.data[6].Reference.guid
       value: d5ea8bcbcca5dad458167f3bd823bcdb
       objectReference: {fileID: 0}
+    - target: {fileID: 4428548323318455960, guid: 6e232fa1e86ef044984e0b7cfc2662b2,
+        type: 3}
+      propertyPath: _sceneGroups.Array.data[0].Scenes.Array.data[1].Reference.asset
+      value: 
+      objectReference: {fileID: 102900000, guid: 50a9ab5bff607c14592cf8c83fa62cc0,
+        type: 3}
+    - target: {fileID: 4428548323318455960, guid: 6e232fa1e86ef044984e0b7cfc2662b2,
+        type: 3}
+      propertyPath: _sceneGroups.Array.data[0].Scenes.Array.data[2].Reference.asset
+      value: 
+      objectReference: {fileID: 102900000, guid: d5ea8bcbcca5dad458167f3bd823bcdb,
+        type: 3}
     - target: {fileID: 4428548323318455960, guid: 6e232fa1e86ef044984e0b7cfc2662b2,
         type: 3}
       propertyPath: _sceneGroups.Array.data[1].Scenes.Array.data[2].Reference.asset
