@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace Parogue_Heights
 {
-    public class MusicListener : Observable
+    public class MusicPlayer : Observable
     {
         [Inject] private SceneLoader sceneLoader
         {
@@ -20,10 +20,8 @@ namespace Parogue_Heights
 
         public enum NotificationType
         {
-            Baseline,
-            Percussion,
-            Highlights,
-            Melody,
+            Menu,
+            Gameplay,
         }
     }
 }

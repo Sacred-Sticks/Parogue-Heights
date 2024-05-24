@@ -119,344 +119,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &806391742
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 806391746}
-  - component: {fileID: 806391745}
-  - component: {fileID: 806391744}
-  - component: {fileID: 806391743}
-  m_Layer: 0
-  m_Name: Melody
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &806391743
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 806391742}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d9e39efe1278cfb48b87a05dce0a1be6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  listenTarget:
-    assemblyQualifiedName: Parogue_Heights.MusicListener, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  clips:
-  - clips:
-    - {fileID: 8300000, guid: e9aee894b5c50964b90e6ee3eb04aaa5, type: 3}
-  - clips:
-    - {fileID: 8300000, guid: 1cb37ccf79505114897c8b3e0bf5657c, type: 3}
-  - clips:
-    - {fileID: 8300000, guid: 5dd75fc94a8a7364ab6ffba0a8f05d0e, type: 3}
-  - clips:
-    - {fileID: 8300000, guid: 52324521c635d784fb13a2eb809d54fb, type: 3}
---- !u!82 &806391744
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 806391742}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 1622526336317212990, guid: 25dd0a5845655754b80bd1249ce157a4,
-    type: 2}
-  m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 0}
-  m_PlayOnAwake: 0
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 1
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
---- !u!114 &806391745
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 806391742}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2b4674e6eb8277d4691d015cb9e0f9fb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  notificationType: 3
---- !u!4 &806391746
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 806391742}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.2802463, y: -3.492264, z: -1.4650728}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &807443316
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 807443320}
-  - component: {fileID: 807443319}
-  - component: {fileID: 807443318}
-  - component: {fileID: 807443317}
-  m_Layer: 0
-  m_Name: Highlights
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &807443317
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 807443316}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d9e39efe1278cfb48b87a05dce0a1be6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  listenTarget:
-    assemblyQualifiedName: Parogue_Heights.MusicListener, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  clips:
-  - clips:
-    - {fileID: 8300000, guid: e9aee894b5c50964b90e6ee3eb04aaa5, type: 3}
-  - clips:
-    - {fileID: 8300000, guid: 1cb37ccf79505114897c8b3e0bf5657c, type: 3}
-  - clips:
-    - {fileID: 8300000, guid: 5dd75fc94a8a7364ab6ffba0a8f05d0e, type: 3}
-  - clips:
-    - {fileID: 8300000, guid: 52324521c635d784fb13a2eb809d54fb, type: 3}
---- !u!82 &807443318
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 807443316}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: -1999455646365220898, guid: 25dd0a5845655754b80bd1249ce157a4,
-    type: 2}
-  m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 0}
-  m_PlayOnAwake: 0
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 1
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
---- !u!114 &807443319
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 807443316}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2b4674e6eb8277d4691d015cb9e0f9fb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  notificationType: 2
---- !u!4 &807443320
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 807443316}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.2802463, y: -3.492264, z: -1.4650728}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1233649519
 GameObject:
   m_ObjectHideFlags: 0
@@ -489,17 +151,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   listenTarget:
-    assemblyQualifiedName: Parogue_Heights.MusicListener, Assembly-CSharp, Version=0.0.0.0,
+    assemblyQualifiedName: Parogue_Heights.MusicPlayer, Assembly-CSharp, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   clips:
   - clips:
     - {fileID: 8300000, guid: e9aee894b5c50964b90e6ee3eb04aaa5, type: 3}
-  - clips:
-    - {fileID: 8300000, guid: 1cb37ccf79505114897c8b3e0bf5657c, type: 3}
-  - clips:
-    - {fileID: 8300000, guid: 5dd75fc94a8a7364ab6ffba0a8f05d0e, type: 3}
-  - clips:
-    - {fileID: 8300000, guid: 52324521c635d784fb13a2eb809d54fb, type: 3}
+  - clips: []
+  - clips: []
 --- !u!82 &1233649521
 AudioSource:
   m_ObjectHideFlags: 0
@@ -626,7 +284,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1739230367
+--- !u!1 &1639467707
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -634,51 +292,46 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1739230371}
-  - component: {fileID: 1739230370}
-  - component: {fileID: 1739230369}
-  - component: {fileID: 1739230368}
+  - component: {fileID: 1639467711}
+  - component: {fileID: 1639467710}
+  - component: {fileID: 1639467709}
+  - component: {fileID: 1639467708}
   m_Layer: 0
-  m_Name: Baseline
+  m_Name: Melody
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1739230368
+--- !u!114 &1639467708
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1739230367}
+  m_GameObject: {fileID: 1639467707}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d9e39efe1278cfb48b87a05dce0a1be6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   listenTarget:
-    assemblyQualifiedName: Parogue_Heights.MusicListener, Assembly-CSharp, Version=0.0.0.0,
+    assemblyQualifiedName: Parogue_Heights.MusicPlayer, Assembly-CSharp, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   clips:
   - clips:
     - {fileID: 8300000, guid: e9aee894b5c50964b90e6ee3eb04aaa5, type: 3}
-  - clips:
-    - {fileID: 8300000, guid: 1cb37ccf79505114897c8b3e0bf5657c, type: 3}
-  - clips:
-    - {fileID: 8300000, guid: 5dd75fc94a8a7364ab6ffba0a8f05d0e, type: 3}
-  - clips:
-    - {fileID: 8300000, guid: 52324521c635d784fb13a2eb809d54fb, type: 3}
---- !u!82 &1739230369
+  - clips: []
+--- !u!82 &1639467709
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1739230367}
+  m_GameObject: {fileID: 1639467707}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: -5471782654350972965, guid: 25dd0a5845655754b80bd1249ce157a4,
+  OutputAudioMixerGroup: {fileID: 1622526336317212990, guid: 25dd0a5845655754b80bd1249ce157a4,
     type: 2}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
@@ -767,26 +420,26 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &1739230370
+--- !u!114 &1639467710
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1739230367}
+  m_GameObject: {fileID: 1639467707}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2b4674e6eb8277d4691d015cb9e0f9fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  notificationType: 0
---- !u!4 &1739230371
+  notificationType: 1
+--- !u!4 &1639467711
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1739230367}
+  m_GameObject: {fileID: 1639467707}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 4.2802463, y: -3.492264, z: -1.4650728}
@@ -799,7 +452,5 @@ Transform:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
-  - {fileID: 1739230371}
   - {fileID: 1233649523}
-  - {fileID: 807443320}
-  - {fileID: 806391746}
+  - {fileID: 1639467711}
