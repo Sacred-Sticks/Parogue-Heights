@@ -128,8 +128,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1233649523}
-  - component: {fileID: 1233649522}
   - component: {fileID: 1233649521}
+  - component: {fileID: 1233649522}
   - component: {fileID: 1233649520}
   m_Layer: 0
   m_Name: Background Musics
