@@ -87,7 +87,7 @@ namespace Parogue_Heights
 
         private IEnumerator Landing()
         {
-            const float landDuration = 0.5f;
+            const float landDuration = 0.2f;
             _animator.Play(landing, 0, landDuration);
             yield break;
         }
