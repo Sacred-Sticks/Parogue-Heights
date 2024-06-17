@@ -83,8 +83,10 @@ namespace Parogue_Heights
         protected void CheckGrounded()
         {
             var ray = new Ray(transform.position + Vector3.up, -Vector3.up);
+            bool wasGrounded = isGrounded;
             isGrounded = Physics.SphereCast(ray, groundRadius, groundDistance);
-            NotifyObservers(isGrounded ? GroundedStatus.Landing : GroundedStatus.Falling);
+            if (wasGrounded != isGrounded)
+                NotifyObservers(isGrounded ? GroundedStatus.Landing : GroundedStatus.Falling);
         }
 
         #region Notifications
