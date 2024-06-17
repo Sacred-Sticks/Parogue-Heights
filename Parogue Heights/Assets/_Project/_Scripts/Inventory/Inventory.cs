@@ -2,6 +2,7 @@ using Kickstarter.DependencyInjection;
 using Kickstarter.Inputs;
 using Kickstarter.Singleton;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -16,6 +17,7 @@ namespace Parogue_Heights
 
         private int activeSlotIndex = 0;
         private readonly List<InventorySlot> inventorySlots = new List<InventorySlot>();
+        private bool canUseTool = true;
 
         #region InputHandler
         public void RegisterInputs(Player.PlayerIdentifier playerIdentifier)
@@ -39,6 +41,9 @@ namespace Parogue_Heights
 
         private void OnUseToolInputChange(float input)
         {
+            if (!canUseTool && input == 1)
+                return;
+
             if (inventorySlots.Count == 0)
                 return;
 
@@ -49,6 +54,19 @@ namespace Parogue_Heights
 
             if (activeSlotIndex >= inventorySlots.Count && activeSlotIndex > 0)
                 CycleInventory(-1);
+
+            if (input == 1)
+                StartCoroutine(UseSpellCooldown());
+        }
+        #endregion
+
+        #region UnityEvents
+        private void Update()
+        {
+            if (inventorySlots.Count == 0)
+                return;
+
+            inventorySlots[activeSlotIndex].Tool.OnSlotActive();
         }
         #endregion
 
@@ -67,6 +85,14 @@ namespace Parogue_Heights
             if (activeSlotIndex < 0)
                 activeSlotIndex = inventorySlots.Count - 1;
             inventoryHUD.ActivateSlot(activeSlotIndex, formerIndex);
+        }
+
+        private IEnumerator UseSpellCooldown()
+        {
+            var cooldown = 0.125f;
+            canUseTool = false;
+            yield return new WaitForSeconds(cooldown);
+            canUseTool = true;
         }
 
         #region Inventory

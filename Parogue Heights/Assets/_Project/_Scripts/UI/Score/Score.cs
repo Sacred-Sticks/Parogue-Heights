@@ -1,4 +1,4 @@
-using Kickstarter.DependencyInjection;
+using Kickstarter.Extensions;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -11,11 +11,13 @@ namespace Parogue_Heights
 
         private Rigidbody body;
         
-        private float highScore = 0;
-        private Label scoreElement;
+        private static Label scoreLabel;
+        private Label heightLabel;
 
         private const string rootStr = "root";
+        private const string containerStr = "container";
         private const string scoreStr = "score";
+        private const string heightStr = "height";
 
         #region UnityEvents
         private void Awake()
@@ -33,25 +35,22 @@ namespace Parogue_Heights
 
         private void Update()
         {
-            CheckScore();
+            heightLabel.text = $"{body.position.y.ToString("0.")} m";
         }
         #endregion
 
         private void BuildDocument(VisualElement root)
         {
-            scoreElement = root.CreateChild<Label>(scoreStr);
-            scoreElement.text = "0";
+            var container = root.CreateChild<VisualElement>(containerStr);
+            scoreLabel = container.CreateChild<Label>(scoreStr);
+            scoreLabel.text = "0";
+            heightLabel = container.CreateChild<Label>(heightStr);
+            heightLabel.text = "0";
         }
     
-        private void CheckScore()
+        public static void ModifyScore(int modification)
         {
-            if (body == null)
-                return;
-            if (body.position.y > highScore)
-            {
-                highScore = body.position.y;
-                scoreElement.text = highScore.ToString("0");
-            }
+            scoreLabel.text = (int.Parse(scoreLabel.text) + modification).ToString();
         }
     }
 }

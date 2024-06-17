@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UIElements;
+using Kickstarter.Extensions;
 
 namespace Kickstarter.Bootstrapper
 {

@@ -63,10 +63,15 @@ namespace Parogue_Heights
         #endregion
 
         #region UnityEvents
+        protected override void Awake()
+        {
+            base.Awake();
+            Registry.Register(RegistryStrings.PlayerRigidbody, body);
+        }
+
         protected override void Start()
         {
             base.Start();
-            Registry.Register(RegistryStrings.PlayerRigidbody, body);
         }
 
         private void FixedUpdate()
@@ -86,6 +91,14 @@ namespace Parogue_Heights
                 body.AddForce(Vector3.down * groundSlamForce, ForceMode.Force);
                 yield return delay;
             }
+        }
+
+        public enum NotificationType
+        {
+            Idle,
+            Walk,
+            Jump,
+            GroundSlam,
         }
     }
 }

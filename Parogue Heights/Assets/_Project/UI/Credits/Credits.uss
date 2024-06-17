@@ -1,0 +1,17 @@
+VisualElement 
+{
+
+}
+
+.downward {
+	flex: 1;
+	flex-direction: column;
+	justify-content: flex-end;
+}
+
+.credits {
+	align-self: flex-end;
+	font-size: 50px;
+	margin: 10px;
+	color: #AAAAAA;
+}

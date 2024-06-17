@@ -8,20 +8,7 @@ namespace Parogue_Heights
 {
     public class PlayerRotationController : Observable, IInputReceiver
     {
-        private CinemachineVirtualCamera vCam;
-        [Inject] private CinemachineVirtualCamera VCam
-        {
-            get => vCam;
-            set
-            {
-                vCam = value;
-
-                highRig = new RigSettings(4.0f, VCam.LookAt.transform.localPosition + Vector3.up * 0.25f);
-                midRig = new RigSettings(6.0f, VCam.LookAt.transform.localPosition);
-                lowRig = new RigSettings(3.0f, VCam.LookAt.transform.localPosition - Vector3.up * 0.5f);
-            }
-        }
-        [Inject] private Cinemachine3rdPersonFollow vCamFollow;
+        [Inject] private CameraMediator cameraMediator;
 
         [SerializeField] protected float rotationSpeed;
         [SerializeField] private float cameraSpeed;
@@ -71,25 +58,7 @@ namespace Parogue_Heights
                 rotation.x = 360 - verticalRange;
             cameraFollow.rotation = Quaternion.Euler(rotation);
 
-            if (vCamFollow == null)
-                return;
-
-            float angle = rotation.x;
-
-            if (angle > 180)
-                angle = angle - 360;
-            float lowValue = midRig.CameraDistance;
-            float highValue = lowRig.CameraDistance;
-            if (angle > 0)
-            {
-                lowValue = midRig.CameraDistance;
-                highValue = highRig.CameraDistance;
-            }
-
-            float range = Mathf.Lerp(lowValue, highValue, Mathf.Abs(angle / verticalRange));
-            vCamFollow.CameraDistance = range;
-
-            vCam.LookAt.transform.localPosition = Vector3.Lerp(lowRig.Position, highRig.Position, Mathf.Abs(angle + verticalRange) / (verticalRange * 2));
+            cameraMediator?.CalibrateByXAngle(rotation.x, verticalRange);
         }
 
         private void RotateYAxis(float direction)
@@ -97,18 +66,6 @@ namespace Parogue_Heights
             var rotation = transform.rotation.eulerAngles;
             rotation.y += direction * rotationSpeed * Settings.Sensitivity;
             transform.rotation = Quaternion.Euler(rotation);
-        }
-
-        private class Rig
-        {
-            public Rig(Transform cameraLookAtTarget, float cameraDistance)
-            {
-                CameraLookAtTarget = cameraLookAtTarget;
-                CameraDistance = cameraDistance;
-            }
-
-            public float CameraDistance { get; }
-            public Transform CameraLookAtTarget { get; }
         }
 
         private struct RigSettings

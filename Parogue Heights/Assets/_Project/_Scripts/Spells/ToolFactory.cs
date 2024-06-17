@@ -10,8 +10,8 @@ namespace Parogue_Heights
             typeof(BounceSpell),
             typeof(HookshotSpell),
             typeof(JumpSpell),
-            typeof(ThrusterSpell),
-            typeof(SmasherSpell),
+            typeof(DashSpell),
+            typeof(DashbackSpell),
         };
 
         public static ISpell CreateRandomTool()

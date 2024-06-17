@@ -9,8 +9,8 @@
                 BounceSpell _ => SpellType.Bounce,
                 HookshotSpell _ => SpellType.Hookshot,
                 JumpSpell _ => SpellType.Jump,
-                ThrusterSpell => SpellType.Thruster,
-                SmasherSpell => SpellType.Rebound,
+                DashSpell => SpellType.Dash,
+                DashbackSpell => SpellType.Dashback,
                 _ => default,
             };
         }
@@ -26,9 +26,9 @@
         {
             Hookshot,
             Jump,
-            Thruster,
+            Dash,
             Bounce,
-            Rebound,
+            Dashback,
         }
 
         public int Uses { get; set; }
@@ -37,6 +37,10 @@
         public void GainUses();
         public void OnActivateBegin();
         public void OnActivateEnd()
+        {
+            // Noop
+        }
+        public void OnSlotActive()
         {
             // Noop
         }

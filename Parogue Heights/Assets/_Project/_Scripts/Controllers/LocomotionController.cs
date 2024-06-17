@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Parogue_Heights
 {
-    public abstract class LocomotionController : Observable
+    public abstract class LocomotionController : Observable, IMoveController
     {
         [SerializeField] protected float walkingSpeed;
         [SerializeField] protected float sprintSpeed;
@@ -11,6 +11,7 @@ namespace Parogue_Heights
 
         protected bool isGrounded;
         protected float movementSpeed;
+        public bool CanMove { private get; set; } = true;
 
         // Cached References & Constant Values
         protected Rigidbody body;
@@ -22,7 +23,7 @@ namespace Parogue_Heights
         private Transform cameraTransform;
 
         #region UnityEvents
-        private void Awake()
+        protected virtual void Awake()
         {
             transform.root.TryGetComponent(out body);
         }
@@ -42,6 +43,8 @@ namespace Parogue_Heights
             direction = cameraTransform.TransformDirection(direction);
             direction = Vector3.ProjectOnPlane(direction, Vector3.up).normalized;
             NotifyObservers(new MovementChange(direction * movementSpeed));
+            if (!CanMove)
+                return;
             if (!isGrounded)
             {
                 AirborneMoveTowards(direction);
@@ -103,5 +106,4 @@ namespace Parogue_Heights
         }
         #endregion
     }
-
 }

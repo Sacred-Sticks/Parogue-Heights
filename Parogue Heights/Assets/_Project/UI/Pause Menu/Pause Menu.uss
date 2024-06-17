@@ -1,0 +1,73 @@
+VisualElement 
+{
+
+}
+
+:root {
+	background-color: rgba(15, 15, 15, 0.25);
+
+	--vertical_padding: 15px;
+}
+
+Button {
+	background-color: rgba(25, 25, 25, 0.95);
+	color: #FFFFFF;
+	border-width: 3px;
+	border-radius: 20px;
+	border-color: rgb(200, 200, 200);
+	padding: 20px;
+	padding-top: var(--vertical_padding);
+	padding-bottom: var(--vertical_padding);
+	font-size: 35px;
+	align-self: center;
+}
+
+Button:hover {
+	background-color: rgba(0, 0, 0, 0.99);
+	border-radius: 40px;
+}
+
+.container {
+	background-color: rgba(15, 15, 15, 0.9);
+	flex: 1;
+	width: 500px;
+	margin: 100px;
+	border-width: 3px;
+	border-radius: 10px;
+	border-color: #AAAAAA;
+	justify-content: space-between;
+	padding: 50px;
+}
+
+.gamePaused {
+	color: #AAAAAA;
+	font-size: 50px;
+	align-self: center;
+	flex: 0.1;
+}
+
+.resume {
+	font-size: 50px;
+	padding-left: 30px;
+	padding-right: 30px;
+}
+
+.buttons {
+	flex: 0.5;
+}
+
+.options {
+
+}
+
+.spells {
+	margin: 10px;
+}
+
+.controls {
+
+}
+
+.quit {
+	font-size: 40px;
+}

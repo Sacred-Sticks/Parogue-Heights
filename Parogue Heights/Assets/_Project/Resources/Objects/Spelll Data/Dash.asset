@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74362cc290bc57c4f9bb02986762e1a9, type: 3}
+  m_Name: Dash
+  m_EditorClassIdentifier: 
+  toolType: 2
+  toolDescription: Cast this spell to dash forward!
+  toolSprite: {fileID: 2800000, guid: 94b9045b61baf484dbf53ea289f3c101, type: 3}
+  labelColor: {r: 0.21605268, g: 0.9622642, b: 0.21333215, a: 1}
