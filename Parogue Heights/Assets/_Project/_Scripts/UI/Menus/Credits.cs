@@ -25,7 +25,7 @@ namespace Parogue_Heights
             var downwardContainer = root.CreateChild<VisualElement>(downwardStr);
 
             var credits = downwardContainer.CreateChild<Label>(creditsStr);
-            credits.text = "A Game by Lucas Ackman";
+            credits.text = "A Game by Avery Ackman";
         }
     }
 }

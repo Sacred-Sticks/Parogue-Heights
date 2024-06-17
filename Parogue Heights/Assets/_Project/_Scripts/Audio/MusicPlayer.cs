@@ -1,5 +1,4 @@
 using Kickstarter.Audio;
-using Kickstarter.Bootstrapper;
 using Kickstarter.DependencyInjection;
 using Kickstarter.Observer;
 using UnityEngine;
@@ -8,15 +7,14 @@ namespace Parogue_Heights
 {
     public class MusicPlayer : Observable
     {
-        [Inject] private SceneLoader sceneLoader
+        [Inject]
+        private NotificationType audioNotification
         {
             set
             {
-                NotifyObservers(new AudioPlayer.AudioEvent(notificationType));
+                NotifyObservers(new AudioPlayer.AudioEvent(value));
             }
         }
-
-        [SerializeField] private NotificationType notificationType;
 
         public enum NotificationType
         {
