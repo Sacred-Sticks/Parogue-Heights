@@ -1,4 +1,4 @@
-using Kickstarter.Audio;
+
 using Kickstarter.DependencyInjection;
 using Kickstarter.Observer;
 using UnityEngine;
@@ -12,7 +12,7 @@ namespace Parogue_Heights
         {
             set
             {
-                NotifyObservers(new AudioPlayer.AudioEvent(value));
+                //NotifyObservers(new AudioPlayer.AudioEvent(value));
             }
         }
 

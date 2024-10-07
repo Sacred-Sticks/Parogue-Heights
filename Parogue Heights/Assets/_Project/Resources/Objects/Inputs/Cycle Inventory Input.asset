@@ -68,4 +68,28 @@ MonoBehaviour:
       m_Groups: 
       m_Action: Input
       m_Flags: 8
+    - m_Name: Left and Right Shoulders
+      m_Id: 89abf176-43be-4f85-a928-00c545cbd78d
+      m_Path: 1DAxis
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Input
+      m_Flags: 4
+    - m_Name: negative
+      m_Id: 8c684707-d525-415e-a7fb-d219f466ac32
+      m_Path: <Gamepad>/leftShoulder
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Input
+      m_Flags: 8
+    - m_Name: positive
+      m_Id: 09f1cda2-86bb-4757-8a72-93523a2a1430
+      m_Path: <Gamepad>/rightShoulder
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Input
+      m_Flags: 8
     m_Flags: 0

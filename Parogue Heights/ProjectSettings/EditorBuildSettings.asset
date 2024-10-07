@@ -29,8 +29,5 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Project/Scenes/Main Menu.unity
     guid: 35895331cdc682f42852ed9893fb91db
-  - enabled: 1
-    path: Assets/_Project/Scenes/Music.unity
-    guid: 50a9ab5bff607c14592cf8c83fa62cc0
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0

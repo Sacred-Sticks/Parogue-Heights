@@ -28,4 +28,12 @@ MonoBehaviour:
       m_Groups: 
       m_Action: Input
       m_Flags: 0
+    - m_Name: 
+      m_Id: e2e779d5-8e5f-4b79-bb0f-4f8321e07e1d
+      m_Path: <Gamepad>/rightStick
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Input
+      m_Flags: 0
     m_Flags: 0

@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "com.averyackman.kickstarter": "https://github.com/Sacred-Sticks/Project-Kickstarter.git",
     "com.eflatun.scenereference": "git+https://github.com/starikcetin/Eflatun.SceneReference.git#4.0.0",
     "com.unity.ai.navigation": "2.0.0",
     "com.unity.cinemachine": "2.9.7",

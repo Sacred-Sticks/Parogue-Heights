@@ -29,8 +29,8 @@ MonoBehaviour:
       m_Action: Input
       m_Flags: 0
     - m_Name: 
-      m_Id: ba4ce240-e296-46da-b01e-caa8ee9ed3d4
-      m_Path: <Keyboard>/z
+      m_Id: 617e28f3-1c89-42c5-9992-7bd95b232012
+      m_Path: <Gamepad>/start
       m_Interactions: 
       m_Processors: 
       m_Groups: 

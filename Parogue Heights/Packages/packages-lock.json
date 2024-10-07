@@ -1,5 +1,14 @@
 {
   "dependencies": {
+    "com.averyackman.kickstarter": {
+      "version": "https://github.com/Sacred-Sticks/Project-Kickstarter.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {
+        "com.unity.inputsystem": "1.7.0"
+      },
+      "hash": "5fe3f349069c114d26b9ccc3c0bd17e8f143afa3"
+    },
     "com.eflatun.scenereference": {
       "version": "git+https://github.com/starikcetin/Eflatun.SceneReference.git#4.0.0",
       "depth": 0,
@@ -51,8 +60,8 @@
       "source": "registry",
       "dependencies": {
         "com.unity.burst": "1.6.6",
-        "com.unity.nuget.mono-cecil": "1.11.4",
-        "com.unity.test-framework": "1.1.31"
+        "com.unity.test-framework": "1.1.31",
+        "com.unity.nuget.mono-cecil": "1.11.4"
       },
       "url": "https://packages.unity.com"
     },
@@ -184,9 +193,9 @@
       "depth": 0,
       "source": "registry",
       "dependencies": {
+        "com.unity.modules.audio": "1.0.0",
         "com.unity.modules.director": "1.0.0",
         "com.unity.modules.animation": "1.0.0",
-        "com.unity.modules.audio": "1.0.0",
         "com.unity.modules.particlesystem": "1.0.0"
       },
       "url": "https://packages.unity.com"
